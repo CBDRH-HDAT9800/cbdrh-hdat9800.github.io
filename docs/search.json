@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-05-17T20:33:58+10:00"
+    },
+    {
+      "path": "index.html",
+      "title": "HDAT9700 Statistical Modelling II",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-05-17T20:33:59+10:00"
+    }
+  ],
+  "collections": []
+}

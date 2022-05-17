@@ -1,0 +1,12 @@
+name: "cbdrh-hdat9700"
+title: "HDAT9700 Statistical Modelling II"
+description: |
+  HDAT9700 Statistical Modelling II
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article
