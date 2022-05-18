@@ -14,5 +14,78 @@ knitr::opts_chunk$set(echo = FALSE)
 # Learn more about publishing to GitHub Pages at:
 # https://rstudio.github.io/distill/publish_website.html#github-pages
 
+library(fontawesome)
+library(knitr)
+library(kableExtra)
 ```
+
+## Course Schedule
+
+
+<a class='fa fa-code' href='https://google.com' target='_blank'></a>
+
+
+```{r}
+
+firstDay <- as.Date("20220530", format = "%Y%m%d")
+startDays <- format(firstDay + seq(0,69, 7), "%a %d %B")
+
+topic <- c(
+'Directed Acyclic Graphs (DAGs)',
+'Matching for causal inference from observational data',
+'Multilevel modelling I (Introduction)',
+'Multilevel modelling II (Beyond the basics)',
+'Multilevel modelling III (Repeated measures analysis)',
+'Reading week',
+'Time series analysis',
+'Interrupted time series analysis',
+'Missing data and multiple imputation',
+'Presenting and summarising model results'
+)
+
+tutorial <- c(
+"5-7pm, Mon 30 May",
+"5-7pm, Mon 6 Jun",
+"5-7pm, Tue 14 Jun",
+"5-7pm, Mon 20 Jun",
+"5-7pm, Mon 27 Jun",
+"No tutorial",
+"11-1pm, Mon 11 Jul",
+"5-7pm, Mon 18 Jul",
+"5-7pm, Mon 25 Jul",
+"5-7pm, Mon 1 Aug"
+)
+
+learnrLinks <- c(
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/dags/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/matching/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/multilevel-modelling-i/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/multilevel-modelling-ii/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/growth-curve-modelling/' target='_blank'></a>",
+  "",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/time-series-analysis/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/interrupted-time-series/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/multiple-imputation/' target='_blank'></a>",
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/presenting-results/' target='_blank'></a>"
+)
+
+df <-
+  data.frame(
+    Week = paste("Week", 1:10),
+    Start <- startDays,
+    Topic = topic,
+    Link = learnrLinks,
+    tutorial = tutorial
+  )
+
+kbl(df, 
+    escape = FALSE,
+    align = c('l', 'l', 'l', 'c', 'l'),
+    col.names = c("Week", "Week starting", "Topic", 'learnr tutorial', 'Online tutorial')
+    ) %>% 
+  kable_styling(bootstrap_options = "striped")
+
+```
+
+
 

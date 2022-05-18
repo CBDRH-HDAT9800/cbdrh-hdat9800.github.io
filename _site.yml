@@ -3,6 +3,7 @@ title: "HDAT9700 Statistical Modelling II"
 description: |
   HDAT9700 Statistical Modelling II
 output_dir: "docs"
+favicon: images/favicon.ico
 navbar:
   right:
     - text: "Home"

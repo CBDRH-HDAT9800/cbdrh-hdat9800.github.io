@@ -6,15 +6,15 @@
       "description": "Some additional details about the website",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-17T20:45:12+10:00"
+      "last_modified": "2022-05-18T11:51:25+10:00"
     },
     {
       "path": "index.html",
       "title": "HDAT9700 Statistical Modelling II",
       "description": "Welcome to the website. I hope you enjoy it!\n",
       "author": [],
-      "contents": "\n\n\n\n",
-      "last_modified": "2022-05-17T20:45:13+10:00"
+      "contents": "\nCourse Schedule\n\n\n\nWeek\n\n\nWeek starting\n\n\nTopic\n\n\nlearnr tutorial\n\n\nOnline tutorial\n\n\nWeek 1\n\n\nMon 30 May\n\n\nDirected Acyclic Graphs (DAGs)\n\n\n\n\n\n5-7pm, Mon 30 May\n\n\nWeek 2\n\n\nMon 06 June\n\n\nMatching for causal inference from observational data\n\n\n\n\n\n5-7pm, Mon 6 Jun\n\n\nWeek 3\n\n\nMon 13 June\n\n\nMultilevel modelling I (Introduction)\n\n\n\n\n\n5-7pm, Tue 14 Jun\n\n\nWeek 4\n\n\nMon 20 June\n\n\nMultilevel modelling II (Beyond the basics)\n\n\n\n\n\n5-7pm, Mon 20 Jun\n\n\nWeek 5\n\n\nMon 27 June\n\n\nMultilevel modelling III (Repeated measures analysis)\n\n\n\n\n\n5-7pm, Mon 27 Jun\n\n\nWeek 6\n\n\nMon 04 July\n\n\nReading week\n\n\n\n\nNo tutorial\n\n\nWeek 7\n\n\nMon 11 July\n\n\nTime series analysis\n\n\n\n\n\n11-1pm, Mon 11 Jul\n\n\nWeek 8\n\n\nMon 18 July\n\n\nInterrupted time series analysis\n\n\n\n\n\n5-7pm, Mon 18 Jul\n\n\nWeek 9\n\n\nMon 25 July\n\n\nMissing data and multiple imputation\n\n\n\n\n\n5-7pm, Mon 25 Jul\n\n\nWeek 10\n\n\nMon 01 August\n\n\nPresenting and summarising model results\n\n\n\n\n\n5-7pm, Mon 1 Aug\n\n\n\n\n\n",
+      "last_modified": "2022-05-18T11:51:26+10:00"
     }
   ],
   "collections": []
