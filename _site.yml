@@ -3,6 +3,7 @@ title: "HDAT9700 Statistical Modelling II"
 description: |
   HDAT9700 Statistical Modelling II
 output_dir: "docs"
+theme: theme.css
 favicon: images/favicon.ico
 navbar:
   right:
@@ -10,4 +11,7 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
-output: distill::distill_article
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true

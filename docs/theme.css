@@ -76,3 +76,26 @@ d-appendix {
 /*-- Additional custom styles --*/
 /* Add any additional CSS rules below                      */
 
+.fa-twitter {
+  color: #1DA1F2;
+}
+
+.fa-youtube {
+  color: #FF0000;
+}
+
+.fa-file-pdf {
+  color: #F40F02;
+}
+
+.fa-file-powerpoint {
+  color: #d04423;
+}
+
+.fa-clock {
+  color: #d3d3d3;
+}
+
+.fa-code {
+  color: #75aadb;
+}
