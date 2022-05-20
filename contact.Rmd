@@ -1,0 +1,36 @@
+---
+title: "Contact us"
+description: "Contact details for HDAT9700"
+---
+
+# Your lecturers
+
+Dr Mark Hanly \
+Lecturer and course convenor
+ \
+Centre for Big Data Research in Health, UNSW Sydney \
+E: m.hanly@unsw.edu.au \
+W: [https://cbdrh.med.unsw.edu.au/people/dr-mark-hanly](https://cbdrh.med.unsw.edu.au/people/dr-mark-hanly){target="_blank"}
+
+<aside>
+![](images/mhanly.jpg){width=60%}
+</aside>
+
+<br>
+
+Dr Md Shajedur Rahman Shawon \
+Research Associate 
+ \
+Centre for Big Data Research in Health, UNSW Sydney \
+E: s.shawon@unsw.edu.au \
+W: [https://cbdrh.med.unsw.edu.au/people/dr-md-shajedur-rahman-shawon](https://cbdrh.med.unsw.edu.au/people/dr-md-shajedur-rahman-shawon){target="_blank"}
+
+<aside>
+![](images/shawon.png){width=60%}
+</aside>
+
+<br>
+
+# Errors or omissions on this webside
+
+_This website was built using [Distill for R Markdown](https://rstudio.github.io/distill/){target="_blank"}. The source code is available online at [https://github.com/CBDRH-HDAT9700/cbdrh-hdat9700.github.io](https://github.com/CBDRH-HDAT9700/cbdrh-hdat9700.github.io){target="_blank"}. Errors or omissions on this website can be logged using GitHub issues [here](https://github.com/CBDRH-HDAT9700/cbdrh-hdat9700.github.io/issues){target="_blank"}._

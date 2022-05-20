@@ -99,3 +99,26 @@ d-appendix {
 .fa-code {
   color: #75aadb;
 }
+
+
+.boxChapter {
+  background: #102E3D;
+    display: flex;
+  flex-wrap: wrap;
+}
+
+.boxVid {
+  width: 36%;
+  margin: 2%;
+}
+
+.boxText {
+  width: 56%;
+  margin: 2%;
+  font: sans-serif;
+  color: white;
+}
+
+
+
+
