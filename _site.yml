@@ -3,6 +3,7 @@ title: "HDAT9700 Statistical Modelling II"
 description: |
   HDAT9700 Statistical Modelling II
 base_url: https://cbdrh-hdat9700.github.io
+preview: images/wallpaperflare-cropped.jpeg
 output_dir: "docs"
 theme: theme.css
 favicon: images/favicon.ico
