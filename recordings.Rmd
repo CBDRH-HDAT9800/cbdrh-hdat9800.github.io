@@ -25,6 +25,13 @@ tags$div(class = "boxText", tags$p("Closing pathways to estimate causal effects"
 
 ```
 
+<aside>
+
+<br>
+
+To watch the video in full-screen, first click play then choose Full screen. 
+
+</aside>
 
 # Week 2. Matching for causal inference from observational data
 
@@ -53,6 +60,13 @@ tags$div(class = "boxText", tags$p("Propensity score distance")),
 
 ```
 
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>
 
 # Week 3. Multilevel modelling I (Introduction)
 
@@ -81,6 +95,15 @@ tags$div(class = "boxText", tags$p("Multilevel models in R")),
 
 ```
 
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>
+
+
 # Week 4. Multilevel Modelling II (Beyond the basics)
 
 ```{r, echo = FALSE}
@@ -101,6 +124,15 @@ tags$div(class = "boxText", tags$p("Modelling binary outcomes")),
 )
 
 ```
+
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>
+
 
 # Week 7. Time Series Analysis
 
@@ -129,6 +161,15 @@ tags$div(class = "boxText", tags$p("ARIMA models"))
 
 ```
 
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>
+
+
 # Week 8. Interrupted Time Series Analysis
 
 ```{r, echo = FALSE}
@@ -149,6 +190,14 @@ tags$div(class = "boxText", tags$p("Model choice"))
 )
 
 ```
+
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>
 
 
 # Week 9. Missing Data and Multiple Imputation
@@ -172,6 +221,15 @@ tags$div(class = "boxText", tags$p("How many cycles for ICE?"))
 
 ```
 
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>
+
+
 # Week 10. Presenting and summarising model results
 
 ```{r, echo = FALSE}
@@ -187,3 +245,11 @@ tags$div(class = "boxText", tags$p("Interpreting and Presenting Statistical Resu
 )
 
 ```
+
+<aside>
+
+<br>
+
+[Back to the top `r fontawesome::fa("arrow-up")`](recordings.html) 
+
+</aside>

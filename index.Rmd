@@ -129,6 +129,35 @@ Links to slides and recordings will be posted here throughout the course
 </aside>
 
 
+
+<br>
+
+# The turorials R package `hdat9700tutorials` 
+
+The learnr tutorials for this course can be accessed throught the links above but it is ideal to have a local copy that you can work on in the RStudio environment without the need for internet access. 
+
+The tutorials are shipped in the package `hdat9700tutorials`. To install this package you can enter the following code at the console:
+
+```{r, eval = FALSE, echo = TRUE}
+devtools::install_github("CBDRH/hdat9700")
+```
+
+You may get prompted to update some packages. You can chose to ignore this by selecting option 3 (None).
+
+![](images/package-update.png){width=95%}
+
+If you choose to update packages, you may subsequently be asked if you want to install binary or source versions. Source versions require special tools to compile which you may not have configured, so you should choose to install the binary version, i.e. if prompted _Do you want to install from sources the packages which need compilation?_ enter n for 'No'.
+
+The package installation can occasionally fail, usually if there is a dependency that is not installed or has an outdated version. If you get an error message relating to a package, try installing that package first and then try again. If there are still issues, don't worry, just [drop an email to the course convenor](contact.html).
+
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
+
 <br>
 
 # Assessment
@@ -254,7 +283,13 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
 
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 ## Week 3. Multilevel modelling I (Introduction)
 ```{r}
@@ -293,6 +328,13 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 ## Week 4. Multilevel Modelling II (Beyond the basics)
 ```{r}
@@ -322,6 +364,13 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 ## Week 5. Multilevel modelling III (Repeated measures analysis)
 ```{r}
@@ -356,7 +405,13 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
 
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 ## Week 7. Time Series Analysis
 ```{r}
@@ -390,6 +445,13 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 ## Week 8. Interrupted Time Series Analysis
 ```{r}
@@ -427,6 +489,13 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 ## Week 9. Missing Data and Multiple Imputation
 ```{r}
@@ -487,3 +556,10 @@ kbl(df, escape = FALSE,
 
 ```
 
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
