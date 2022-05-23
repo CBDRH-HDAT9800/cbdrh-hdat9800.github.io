@@ -129,10 +129,15 @@ Links to slides and recordings will be posted here throughout the course
 </aside>
 
 
+<br>
+
+# Teams Space 
+
+Discussions, questions and online tutorials will be hosted in the course Teams Space which you can access [here](https://teams.microsoft.com/l/team/19%3an4iVLn4TeivKMF2Z2gUdDt-qsnscsMJNceiQEOoTHdw1%40thread.tacv2/conversations?groupId=6708e76d-b760-4844-9006-7c87e96be920&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3).
 
 <br>
 
-# The turorials R package `hdat9700tutorials` 
+# The turorials R package
 
 The learnr tutorials for this course can be accessed throught the links above but it is ideal to have a local copy that you can work on in the RStudio environment without the need for internet access. 
 
@@ -525,6 +530,14 @@ kbl(df, escape = FALSE,
     kableExtra::group_rows(start_row = 2, end_row = 2, group_label = "Other resources") 
 
 ```
+
+<aside>
+
+<br>
+
+<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
+
+</aside>
 
 
 ## Week 10. Presenting and summarising model results
