@@ -1,6 +1,6 @@
 ---
 title: "Contact us"
-description: "Contact details for HDAT9700"
+description: "Contact details for HDAT9800"
 ---
 
 # Questions and discussion
@@ -9,12 +9,12 @@ Class or assessment related questions can be posted to the Teams space [here](ht
 
 # Your lecturers
 
-Dr Mark Hanly \
+Dr Tim Churches \
 Lecturer and course convenor
  \
 Centre for Big Data Research in Health, UNSW Sydney \
-E: m.hanly@unsw.edu.au \
-W: [https://cbdrh.med.unsw.edu.au/people/dr-mark-hanly](https://cbdrh.med.unsw.edu.au/people/dr-mark-hanly){target="_blank"}
+E: timothy.churches@unsw.edu.au \
+
 
 <aside>
 ![](images/mhanly.jpg){width=60%}

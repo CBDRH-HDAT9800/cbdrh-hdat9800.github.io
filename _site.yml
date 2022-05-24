@@ -1,8 +1,8 @@
-name: "cbdrh-hdat9700"
-title: "HDAT9700 Statistical Modelling II"
+name: "cbdrh-hdat9800"
+title: "HDAT9800 Statistical Modelling II"
 description: |
-  HDAT9700 Statistical Modelling II
-base_url: https://cbdrh-hdat9700.github.io
+  HDAT9800 Health Data Visualisation and Communication
+base_url: https://cbdrh-hdat9800.github.io
 preview: images/wallpaperflare-cropped.jpeg
 output_dir: "docs"
 theme: theme.css
@@ -16,7 +16,7 @@ navbar:
     - text: "Contact us"
       href: contact.html
     - icon: fa-github
-      href: https://github.com/CBDRH-HDAT9700/cbdrh-hdat9700.github.io
+      href: https://github.com/CBDRH-HDAT9800/cbdrh-hdat9800.github.io
 output:
   distill::distill_article:
     self_contained: false
