@@ -1,7 +1,7 @@
 ---
-title: "HDAT9700 Statistical Modelling II"
+title: "HDAT9800 Health Data Visualisation and Communication"
 description: |
-  A trend is a trend is a trend. But the question is, will it bend? Will it alter its course through some unforeseen force and come to a premature end?
+  The greatest value of a picture is when it forces us to notice what we never expected to see.<br> -- John Tukey
 site: distill::distill_website
 ---
 
@@ -27,7 +27,7 @@ options(kableExtra.html.bsTable = T)
 
 
 ```{r, preview=TRUE}
-knitr::include_graphics("images/wallpaperflare-cropped.jpeg")
+knitr::include_graphics("images/hdat9800.gif")
 ```
 
 
