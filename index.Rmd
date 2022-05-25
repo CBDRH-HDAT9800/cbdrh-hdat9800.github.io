@@ -31,7 +31,15 @@ knitr::include_graphics("images/hdat9800.gif")
 ```
 
 
-# Course Schedule
+# Course Schedule Term 2 2022
+
+<aside>
+
+<br>
+
+Links to slides and recordings will be posted here throughout the course
+
+</aside>
 
 ```{r}
 
@@ -39,29 +47,43 @@ firstDay <- as.Date("20220530", format = "%Y%m%d")
 startDays <- format(firstDay + seq(0,69, 7), "%a %d %B")
 
 topic <- c(
-'Directed Acyclic Graphs (DAGs)',
-'Matching for causal inference from observational data',
-'Multilevel modelling I (Introduction)',
-'Multilevel modelling II (Beyond the basics)',
-'Multilevel modelling III (Repeated measures analysis)',
-'Reading week',
-'Time series analysis',
-'Interrupted time series analysis',
-'Missing data and multiple imputation',
-'Presenting and summarising model results'
+'Course Introduction; What is Data Visualisation; Introduction to R; Introduction to git',
+'Introduction to Literate Programming',
+'Constructing Charts using ggplot',
+'Collaborative Report Writing (including tables)',
+'Visualisation and Mapping part 1',
+'Building Interactive Data-driven Web Apps using Shiny part 1',
+'Visualisation and Mapping part 2',
+'Building Interactive Data-driven Web Apps using Shiny part 2',
+'Building Interactive Data-driven Web Apps using Shiny part 3',
+'Course Review and Group Project Presentations'
 )
 
+extension <- c(
+'Introductions; dplyr and the R tidyverse; computer architecture, databases, SQL and accessing databases from R; hands-on exercise',
+'Presentations by program code; communication by self-publishing; hands-on setting up your own health data science blog; a visualisation I am proud of (guest presentation)',
+'Some more visualisation theory; more on data visualisation using ggplot2',
+'Visualisation with Python -- guest tutorial by Dr Georgina Kennedy',
+'Theories of Visual Perception -- guest tutorial by Andy Blance; a visualisation I am proud of (guest presentation)',
+'Visualisation and exploratory data analysis; visualisation of statistical models',
+'Incorporating time -- uses and misuses of animation in data visualisation; accessibility aspects of visualisation',
+'Visualisation of categorical data; visualising big data; a visualisation I am proud of (guest presentation)',
+'Communicating COVID-19 models through Markdown documents, web sites, pre-print papers and Shiny apps -- guest presentation by Dr Mark Hanly',
+'Visualising higher dimensions -- uses and misuses of 3D graphics; dimensionality reduction techniques, including guest presentation by Dr Meg Stevens on visualising NLP models'
+)
+
+
 tutorial <- c(
-"5-7pm, Mon 30 May",
-"5-7pm, Mon 6 Jun",
-"5-7pm, Tue 14 Jun",
-"5-7pm, Mon 20 Jun",
-"5-7pm, Mon 27 Jun",
-"No tutorial",
-"11-1pm, Mon 11 Jul",
-"5-7pm, Mon 18 Jul",
-"5-7pm, Mon 25 Jul",
-"5-7pm, Mon 1 Aug"
+"2-5pm, Thur 2 Jun",
+"2-5pm, Thur 9 Jun",
+"2-5pm, Thur 16 Jun",
+"2-5pm, Thur 23 Jun",
+"2-5pm, Thur 30 Jun",
+"Study period T2, no tutorial",
+"2-5pm, Thur 14 Jul",
+"2-5pm, Thur 21 Jul",
+"2-5pm, Thur 28 Jul",
+"2-5pm, Thur 4 Aug"
 )
 
 learnrLinks <- c(
@@ -104,6 +126,7 @@ df <-
     Week = paste("Week", 1:10),
     Start <- startDays,
     Topic = topic,
+    Extension = extension,
     Link = learnrLinks,
     videos=videos,
     tutorial = tutorial,
@@ -113,20 +136,13 @@ df <-
 
 kbl(df, 
     escape = FALSE,
-    align = c('l', 'l', 'l', 'c', 'c', 'l', 'c', 'c'),
-    col.names = c("Week", "Week starting", "Topic", 'learnr tutorial', 'Videos', 'Online tutorial', 'Tutorial slides', "Tutorial recordings")
+    align = c('l', 'l', 'l', 'l', 'c', 'c', 'l', 'c', 'c'),
+    col.names = c("Week", "Week starting", "Core topic(s)", "Extension material", 'learnr tutorial', 'Videos', 'Online tutorial', 'Tutorial slides', "Tutorial/Extension recordings")
     ) %>% 
   kable_styling(bootstrap_options = "hover")
 
 ```
 
-<aside>
-
-<br>
-
-Links to slides and recordings will be posted here throughout the course
-
-</aside>
 
 
 <br>
