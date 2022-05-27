@@ -1,0 +1,125 @@
+---
+title: "HDAT9800 Chapter 1"
+description: |
+  Chapter 1 material for HDAT9800 Visualisation & Communication of Health Data
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(hexSticker)
+library(ggplot2)
+library(shiny)
+library(vembedr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+# Pre-recorded lectures for Chapter 1
+
+## Course overview including course aims and principles (Chapter 1 - Course Overview - Part 1)
+
+```{r ch1-part1-video, preview=TRUE}
+embed_url("https://youtu.be/Zqfj-kredzs")
+```
+
+## Introduction of chapter topics including R, dplyr, literate programming, git, ggplot2, collaborating with git, leaflet, shiny and the shiny group project (Chapter 1 - Course Overview - Part 2)
+
+```{r ch1-part2-video, preview=TRUE}
+embed_url("https://youtu.be/CCR5-RylUoY")
+```
+
+## Slide deck for Course Overview
+
+[Slide deck for Chapter 1 - Course Overview - Part 1 & 2](assets/HDAT9800-2022-T2-Chapter-1.pdf)
+
+
+## Using git for version control (Chapter 1 - Version control with git and GitHub - Part 1)
+
+```{r ch1-git-part1-video, preview=TRUE}
+embed_url("https://youtu.be/RSmu0P4jUgI")
+```
+
+## Setting up and configuring git, setting up git with RStudio, how to access the assessment repository and the chapter 1 assessment (Chapter 1 - Version control with git and GitHub - Part 2)
+
+```{r ch1-git-part2-video, preview=TRUE}
+embed_url("https://youtu.be/2rMQZDm2gXE")
+```
+
+## Slide deck for git and GitHub lecture
+
+[Slide deck for Chapter 1 - git and GitHub  - Part 1 & 2](assets/HDAT9800-Chapter-1-git.pdf)
+
+
+View the lecture videos, and download the lecture notes if you want to follow along with the presenter (or for revision later). 
+
+After you have viewed the lectures, please proceed to do the tutorials.
+
+# Tutorials for Chapter 1
+
+Please follow the instructions for installing the `cbdrhintro` tutorials package for R on the [course home page](index.html) and proceed to do the `dplyr` tutorial.
+
+If you are unfamiliar with R, you should also work through the six introduction to R tutorials that are also conained in and installed by that package.
+
+
+
+
+```{r, eval=FALSE, incude=FALSE}
+
+## Week 1. Directed Acyclic Graphs (DAGs)
+# ```{r}
+
+reading = c(
+      "Miguel A. Hernán, John Hsu & Brian Healy (2019) A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks, Chance, 32(1), 42-49",
+      "Austin, Anna E., Tania A. Desrosiers, and Meghan E. Shanahan. Directed Acyclic Graphs: An under-utilized tool for child maltreatment research. Child Abuse & Neglect 91 (2019): 78-87",
+      "Shmueli, Galit. To Explain or to Predict? Statist. Sci. 25 (2010), no. 3, 289-310",
+      "The importance of being clear about your question & using that to drive your methods, a tweetorial by epidemiologist Dr Ellie Murray from Boston University School of Public Health.",
+      "dagitty.net A great website explaining DAGs and related topics, with built-in applets to test your knowledge",
+      "An excellent YouTube video series on Causality and DAGs presented by Assistant Professor Nick Huntington-Klein from Seattle University. This is a series of 14 videos that starts from the very basics of causal thinking with DAGs"
+    )
+
+links <- c(
+  "<a class='fa fa-file-pdf' href='https://www.tandfonline.com/doi/full/10.1080/09332480.2019.1579578' target='_blank'></a>",
+  "<a class='fa fa-file-pdf' href='https://doi.org/10.1016/j.chiabu.2019.02.011' target='_blank'></a>",
+  "<a class='fa fa-file-pdf' href='https://www.galitshmueli.com/system/files/Stat%20Science%20published.pdf' target='_blank'></a> <a class='fab fa-youtube' href='https://www.youtube.com/watch?v=vWH_HNfQVRI&t=1s' target='_blank'></a>",
+  "<a class='fa fa-twitter' fill = 'lightblue' href='https://twitter.com/EpiEllie/status/1214641734900224003' target='_blank'></a>",
+  "<a class='fa fa-laptop' href='dagitty.net' target='_blank'></a>",
+  "<a class='fab fa-youtube' href='https://www.youtube.com/playlist?list=PLcTBLulJV_AKmUTH-nUsxxFyRQoWnUzxU' target='_blank'></a>"
+)
+
+
+df <- data.frame(
+  reading = reading,
+  links = links
+)
+
+
+kbl(df, escape = FALSE,
+    align = c('l', 'c'),
+    col.names = NULL) %>%
+  kable_styling(bootstrap_options = "hover") %>% 
+    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings") %>% 
+    kableExtra::group_rows(start_row = 3, end_row = 6, group_label = "Other resources") 
+
+# ```
+
+<aside>
+
+<br>
+
+You should prioritise the core readings each week.  
+
+Note that some of the links below will require you to be logged in to your UNSW library account to access. 
+
+</aside>
+'''
+
+
+
+
+

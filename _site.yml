@@ -1,7 +1,7 @@
 name: "cbdrh-hdat9800"
 title: "HDAT9800 Health Data Visualisation and Communication"
 description: |
-  HDAT9800 Health Data Visualisation and Communication
+  HDAT9800 Visualisation and Communication of Health data
 base_url: https://cbdrh-hdat9800.github.io
 preview: images/wallpaperflare-cropped.jpeg
 output_dir: "docs"

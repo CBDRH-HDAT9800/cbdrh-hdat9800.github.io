@@ -21,15 +21,29 @@ library(dplyr)
 library(hexSticker)
 library(ggplot2)
 library(shiny)
+library(vembedr)
 
 options(kableExtra.html.bsTable = T)
 ```
 
 
-```{r, preview=TRUE}
+```{r course-logo, preview=TRUE}
 knitr::include_graphics("images/hdat9800.gif")
 ```
 
+# About the HDAT9800 course
+
+Health Data Scientists need to present information to audiences across a range of backgrounds and spanning a spectrum from naïve or non-practitioners of a discipline to highly informed and expert audiences. Effective communication across different media types is essential. Appropriate data visualisation techniques can greatly enhance communication and increase the effectiveness of communication. Data visualisation is an essential part of every data analysis. Increasingly the scientific community has become aware of problems regarding lack of transparency and reproducibility, and the use of fully reproducible methods of working are now essential.
+
+This course takes a toolbox approach to creating appropriate, reproducible and transparent analyses and visualisations, and communicating them via various channels and modes, including informal and formal written communication, online communication and via interactive applications. In the context of R, it presents useful best-practice data science analysis and visualisation techniques with a focus on different types of data visualisations.
+
+This course was originally developed in 2018 by Dr James Farrow and Dr Tim Churches. It was presented by James in 2018 and 2019, and co-presented by James and Tim in entirely online form in 2020, and by Tim and Andy Blance in 2021. Although the core material for the course remains substantially unchanged, a great deal of additional material was added in 2021, and for 2022 some further topics will be covered.
+
+The original course introduction recorded by Dr James Farrow appears below, and is still valid - we have not removed anything from the core curriculum, although quite a lot of the material has been updated or supplemented to reflect recent developments. The additional material added in 2021 and 2022 will be covered in the interactive sessions on Thursday afternoons/evenings in the Term 2 2022 running of the course.
+
+```{r intro-video, preview=TRUE}
+embed_url("https://www.youtube.com/watch?v=JOmHpaSOGeE")
+```
 
 # Course Schedule Term 2 2022
 
@@ -37,11 +51,11 @@ knitr::include_graphics("images/hdat9800.gif")
 
 <br>
 
-Links to slides and recordings will be posted here throughout the course
+Links to slides and recordings will be posted on the page for each (weekly) chapter throughout the course.
 
 </aside>
 
-```{r}
+```{r schedule}
 
 firstDay <- as.Date("20220530", format = "%Y%m%d")
 startDays <- format(firstDay + seq(0,69, 7), "%a %d %B")
@@ -73,30 +87,22 @@ extension <- c(
 )
 
 
-tutorial <- c(
-"2-5pm, Thur 2 Jun",
-"2-5pm, Thur 9 Jun",
-"2-5pm, Thur 16 Jun",
-"2-5pm, Thur 23 Jun",
-"2-5pm, Thur 30 Jun",
+tutorials <- c(
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 2 Jun",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 9 Jun",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 16 Jun",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 23 Jun",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 30 Jun",
 "Study period T2, no tutorial",
-"2-5pm, Thur 14 Jul",
-"2-5pm, Thur 21 Jul",
-"2-5pm, Thur 28 Jul",
-"2-5pm, Thur 4 Aug"
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 14 Jul",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 21 Jul",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 28 Jul",
+"2-4:30pm (F2F) & 5:30-8pm (online), Thur 4 Aug"
 )
 
 learnrLinks <- c(
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/dags/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/matching/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/multilevel-modelling-i/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/multilevel-modelling-ii/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/growth-curve-modelling/' target='_blank'></a>",
-  "",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/time-series-analysis/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/interrupted-time-series/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/multiple-imputation/' target='_blank'></a>",
-  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/presenting-results/' target='_blank'></a>"
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/dplyr/' target='_blank'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
 )
 
 videos <- c(
@@ -121,23 +127,28 @@ recordings <- c(
   rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 10)
 )
 
+
+chapterPages <- c(
+  "<a class='fa fa-book' href='chapter1.html' target='_self'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
+)
+
 df <-
   data.frame(
     Week = paste("Week", 1:10),
-    Start <- startDays,
+    Start = startDays,
     Topic = topic,
+    learnrLinks = learnrLinks,
     Extension = extension,
-    Link = learnrLinks,
-    videos=videos,
-    tutorial = tutorial,
-    slides = slides,
-    recordings = recordings
+    Tutorial = tutorials,
+    chapterPage = chapterPages,
+    Recording = recordings
   )
 
 kbl(df, 
     escape = FALSE,
     align = c('l', 'l', 'l', 'l', 'c', 'c', 'l', 'c', 'c'),
-    col.names = c("Week", "Week starting", "Core topic(s)", "Extension material", 'learnr tutorial', 'Videos', 'Online tutorial', 'Tutorial slides', "Tutorial/Extension recordings")
+    col.names = c("Week", "Week starting", "Core topic(s)", "learnr tutorial link", "Additional topic(s)", 'Tutorial', 'Chapter web page', "Tutorial recordings")
     ) %>% 
   kable_styling(bootstrap_options = "hover")
 
@@ -149,18 +160,20 @@ kbl(df,
 
 # Teams Space 
 
-Discussions, questions and online tutorials will be hosted in the course Teams Space which you can access [here](https://teams.microsoft.com/l/team/19%3an4iVLn4TeivKMF2Z2gUdDt-qsnscsMJNceiQEOoTHdw1%40thread.tacv2/conversations?groupId=6708e76d-b760-4844-9006-7c87e96be920&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3).
+Discussions, questions and online tutorials will be hosted in the course Teams Space which you can access [here](https://teams.microsoft.com/l/team/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/conversations?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3).
 
 <br>
 
-# The turorials R package
+# The tutorials R packages
 
-The learnr tutorials for this course can be accessed throught the links above but it is ideal to have a local copy that you can work on in the RStudio environment without the need for internet access. 
+Online, hosted versions of the learnr tutorials for this course can be accessed through the links in the Course Schedule table above, but it is better to use a local copy that you can work on in the RStudio environment without the need for internet access. 
 
-The tutorials are shipped in the package `hdat9700tutorials`. To install this package you can enter the following code at the console:
+Once installed, the tutorials can be accessed via the **Tutorial** tab in the upper righthand pane of the RStudio application.
 
-```{r, eval = FALSE, echo = TRUE}
-devtools::install_github("CBDRH/hdat9700")
+The tutorials for Chapter 1 are shipped in the package `cbdrhintro`. To install this package you can enter the following code at the console:
+
+```{r tute-packages-install, eval = FALSE, echo = TRUE}
+devtools::install_github("CBDRH/cbdrhintro")
 ```
 
 You may get prompted to update some packages. You can chose to ignore this by selecting option 3 (None).
@@ -170,6 +183,10 @@ You may get prompted to update some packages. You can chose to ignore this by se
 If you choose to update packages, you may subsequently be asked if you want to install binary or source versions. Source versions require special tools to compile which you may not have configured, so you should choose to install the binary version, i.e. if prompted _Do you want to install from sources the packages which need compilation?_ enter n for 'No'.
 
 The package installation can occasionally fail, usually if there is a dependency that is not installed or has an outdated version. If you get an error message relating to a package, try installing that package first and then try again. If there are still issues, don't worry, just [drop an email to the course convenor](contact.html).
+
+**Please note:** if you have installed the `cbdrhintro` previously, you will need to re-install it again because we have added a tutorial for `dplyr` required for Chapter 1 of this course. 
+
+Instructions for installing the R tutorials package for Chapter 2 to 9 of the HDAT9800 course will appear here in the near future.
 
 <aside>
 
@@ -181,18 +198,66 @@ The package installation can occasionally fail, usually if there is a dependency
 
 <br>
 
-# Assessment
+# Assessments
 
-```{r}
+## Weekly core curriculum assessments
+
+There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to -- the exact dates for each are shown in the table below.
+
+## Additional curriculum assessments
+
+There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below.
+
+<aside>
+
+<br>
+
+In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn't have time to do the additional asessments justice. Therefore we have reduced the number of these additional assessments to just two this year.
+
+</aside>
+
+## Group assessment
+
+In week 6 of the course, you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 4 of the course. Each group will be required to present their group project in the Thursday sessions in week 10, and then submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.
+
+```{r assessments}
 
 df <- data.frame(
   
-  task <- c("Assessment 1A", "Assessment 1B", "Assessment 1C", "Assessment 2"),
-  topic <- c("DAGs and Matching", "Multilevel modelling", "Time series analysis", "Short report"), 
-  weight <- c("50%/3", "50%/3", "50%/3", "50%"),
-  due <- c("9am, Mon 27 Jun", "9am, Mon 11 Jul", "9am, Mon 1 Aug", "9am, Mon 15 Aug"),
+  task <- c("Chapter 1 assessment", 
+            "Chapter 2 assessment", 
+            "Additional assessment A", 
+            "Chapter 3 assessment", 
+            "Chapter 4 assessment", 
+            "Chapter 5 assessment", 
+            "Additional assessment B", 
+            "Chapter 6 assessment", 
+            "Chapter 7 assessment", 
+            "Group assessment"),
+  weight <- c("8%",
+              "8%",
+              "7%",
+              "8%",
+              "8%",
+              "8%",
+              "7%",
+              "8%",
+              "8%",
+              "30%" ),
+  
+  due <- c("9am, Mon 20 Jun",
+           "9am, Mon 27 Jun",
+           "9am, Thur 14 Jul",
+           "9am, Mon 4 Jul",
+           "9am, Mon 11 Jul",
+           "9am, Mon 18 Jul",
+           "9am, Thur 4 Aug",
+           "9am, Mon 25 Jul",
+           "9am, Mon 1 Aug",
+           "9am, Mon 7 Aug"
+           ),
   link <- c(
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 4)
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 10)
   )
   
 )
@@ -200,7 +265,7 @@ df <- data.frame(
 kbl(df, 
     escape = FALSE,
     align = c('l', 'l', 'l', 'l', 'c'),
-    col.names = c("Assessment", "Topic", "Weight", "Due date", "Repo link")
+    col.names = c("Assessment",  "Weight", "Due date", "Repo link")
     ) %>% 
   kable_styling(bootstrap_options = "hover")  
   
@@ -220,375 +285,5 @@ Click the link to clone a personal copy of the GitHub repo for each assessment. 
 
 # Readings and resources
 
+There are links to readings and additional resources on the page for each chapter of the course. You should prioritise the core readings each week.
 
-## Week 1. Directed Acyclic Graphs (DAGs)
-```{r}
-
-reading = c(
-      "Miguel A. Hernán, John Hsu & Brian Healy (2019) A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks, Chance, 32(1), 42-49",
-      "Austin, Anna E., Tania A. Desrosiers, and Meghan E. Shanahan. Directed Acyclic Graphs: An under-utilized tool for child maltreatment research. Child Abuse & Neglect 91 (2019): 78-87",
-      "Shmueli, Galit. To Explain or to Predict? Statist. Sci. 25 (2010), no. 3, 289-310",
-      "The importance of being clear about your question & using that to drive your methods, a tweetorial by epidemiologist Dr Ellie Murray from Boston University School of Public Health.",
-      "dagitty.net A great website explaining DAGs and related topics, with built-in applets to test your knowledge",
-      "An excellent YouTube video series on Causality and DAGs presented by Assistant Professor Nick Huntington-Klein from Seattle University. This is a series of 14 videos that starts from the very basics of causal thinking with DAGs"
-    )
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://www.tandfonline.com/doi/full/10.1080/09332480.2019.1579578' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://doi.org/10.1016/j.chiabu.2019.02.011' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.galitshmueli.com/system/files/Stat%20Science%20published.pdf' target='_blank'></a> <a class='fab fa-youtube' href='https://www.youtube.com/watch?v=vWH_HNfQVRI&t=1s' target='_blank'></a>",
-  "<a class='fa fa-twitter' fill = 'lightblue' href='https://twitter.com/EpiEllie/status/1214641734900224003' target='_blank'></a>",
-  "<a class='fa fa-laptop' href='dagitty.net' target='_blank'></a>",
-  "<a class='fab fa-youtube' href='https://www.youtube.com/playlist?list=PLcTBLulJV_AKmUTH-nUsxxFyRQoWnUzxU' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = "hover") %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 3, end_row = 6, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-You should prioritise the core readings each week.  
-
-Note that some of the links below will require you to be logged in to your UNSW library account to access. 
-
-</aside>
-
-
-## Week 2. Matching for causal inference from observational data
-```{r}
-
-reading = c(
-    "Why Propensity Scores Should Not Be Used For Matching presented by Professor Gary King from Harvard University",
-    "Daniel Ho, Kosuke Imai, Gary King and Elizabeth Stuart (2007) Matching as Nonparametric Preprocessing for Reducing Model Dependence in Parametric Causal Inference Political Analysis 15 199-236",
-    "MatchIt: Nonparametric Preprocessing for Parametric Causal Inference by Daniel E. Ho, Kosuke Imai, Gary King and Elizabeth A. Stuart, Journal of Statistical Software (2011) 42(8), 1-28. pdf",
-    "Does obesity shorten life? The importance of well-defined interventions to answer causal questions by MA Hernán amd SL Taubman, International Journal of Obesity (2008) Volume 32, pages S8–S14",
-    "Causal Inference: What If by Miguel A. Hernán, James M. Robins, Boca Raton: Chapman & Hall/CRC (1st Edition 2020) (Chapter 15 discusses Propensity Score appliactions)"
-    )
-
-links <- c(
-  "<a class='fa fa-youtube' href='https://youtu.be/rBv39pK1iEs?t=87' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://gking.harvard.edu/files/matchp.pdf' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.jstatsoft.org/index.php/jss/article/view/v042i08/505' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.nature.com/articles/ijo200882' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://cdn1.sph.harvard.edu/wp-content/uploads/sites/1268/2021/03/ciwhatif_hernanrobins_30mar21.pdf' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 1, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 2, end_row = 5, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-## Week 3. Multilevel modelling I (Introduction)
-```{r}
-
-reading = c(
-    "Murder, muddled thinking and multilevel modelling by Martin Cartwright, Gemma Traviss and Andrew Blance, The Psychologist (2012) Vol 25 No 9", 
-    "A Primer on Using Multilevel Models in Clinical and Experimental Psychopathology Research by Andy Field and Daniel Wright, Journal of Experimental Psychopathology (2011) 2(2)",
-    "A visual explanation of multilevel modelling by Michael Freeman, a faculty member at the University of Washington Information School",
-    "Blance (2012) Chapter 5 Multilevel Modelling in Modern Methods for Epidemiology by Yu-Kang and Greenwood (eds) (also available in hard copy and e-Book format through the UNSW library)", 
-    "Centre for Multilvel Modelling, University of Bristol explanatory videos", 
-    "Centre for Multilvel Modelling, University of Bristol online course"
-    )
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://thepsychologist.bps.org.uk/getfile/910' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://journals.sagepub.com/doi/abs/10.5127/jep.013711' target='_blank'></a>",
-  "<a class='fa fa-laptop' href='http://mfviz.com/hierarchical-models/' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://link.springer.com/chapter/10.1007/978-94-007-3024-3_5' target='_blank'></a>",
-  "<a class='fa fa-youtube' href='http://www.bristol.ac.uk/cmm/learning/videos/' target='_blank'></a>",
-  "<a class='fa fa-laptop' href='http://www.bristol.ac.uk/cmm/learning/online-course/' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 3, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 4, end_row = 6, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-## Week 4. Multilevel Modelling II (Beyond the basics)
-```{r}
-
-reading = c(
-      "Hanly, Savva, Clifford & Whelan (2014). Variation in Incentive Effects across Neighbourhoods. Survey Research Methods, 8(1)",
-      "Andy Field, Jeremy Miles, Zoë Field (2012) Discovering statistics using R, Chapter 19 (also available in hardcopy through the UNSW library)"
-    )
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://ojs.ub.uni-konstanz.de/srm/article/view/5485/5336' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://nyu-cdsc.github.io/learningr/assets/discoveringstatistics.pdf' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings")
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-## Week 5. Multilevel modelling III (Repeated measures analysis)
-```{r}
-
-reading = c(
-      "Curran, Obeidat, and Losardo (2010) Twelve Frequently Asked Questions About Growth Curve Modeling J Cogn Dev 11(2)", 
-      "Galecki, AT., Burzykowski, T. (2013) Linear Mixed-Effects Models Using R: A Step-By-Step Approach. Springer",
-      "Magnusson, K. Using R and lme/lmer to fit different two- and three-level longitudinal models",
-      "University of Twente. Growth Modeling. Slide presentation"
-    )
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://ojs.ub.uni-konstanz.de/srm/article/view/5485/5336' target='_blank'></a>",
-  "",
-  "<a class='fa fa-laptop' href='http://rpsychologist.com/r-guide-longitudinal-lme-lmer' target='_blank'></a>",
-  "<a class='fa fa-laptop' href='https://slideplayer.com/slide/13828326/' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 1, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 2, end_row = 4, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-## Week 7. Time Series Analysis
-```{r}
-
-reading = c(
-    "Zeger et al. On Time Series Analysis of Public Health and Biomedical Data. Annuals Reviews of Public Health 2005",
-    "Bhaskaran et al. Time series regression studies in environmental epidemiology. International Journal of Epidemiology 2013",
-    "Time series analysis and its applications: with R examples (Chapters 1-3) by Robert H Shumway and David S Stoffer online (or through the UNSW library).",
-    "Rob J Hyndman and George Athanasopoulos (Monash University), Forecasting: Principles and Practice")
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://www.annualreviews.org/doi/full/10.1146/annurev.publhealth.26.021304.144517' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://academic.oup.com/ije/article/42/4/1187/657875' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.stat.pitt.edu/stoffer/tsa4/' target='_blank'></a>",
-  "<a class='fa fa-laptop' href='https://otexts.com/fpp2/' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 3, end_row = 4, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-## Week 8. Interrupted Time Series Analysis
-```{r}
-
-reading = c(
-  "Bernal et al. Interrupted time series regression for the evaluation of public health interventions: a tutorial. International Journal of Epidemiology 2016",
-  "Schaffer et al. Interrupted time series analysis using autoregressive integrated moving average (ARIMA) models: a guide for evaluating large-scale health interventions BMC Medical Research Methodology 2021",
-  "Soumerai et al. How Do You Know Which Health Care Effectiveness Research You Can Trust? A Guide to Study Design for the Perplexed. Prev Chronic Dis 2015; 12:150187",
-  "Jandoc et al. Interrupted time series analysis in drug utilization research is increasing: systematic review and recommendations. J Clin Epidemiol 2015;68(8):950-6. (This article has useful guidance for the reporting of interrupted time series analysis methods.)",
-  "Lopez Bernal et al. A methodological framework for model selection in interrupted time series studies. J Clin Epidemiol 2018; 103:82-91", "Lopez Bernal et al. The use of controls in interrupted time series studies of public health interventions. Int J Epidemiol 2018; 0(0):1-12", "Lagarde. How to do (or not to do): Assessing the impact of a policy change with routine longitudinal data. Health Policy Planning 2012; 27(1):76-83")
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://doi.org/10.1093/ije/dyw098' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01235-8' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='http://dx.doi.org/10.5888/pcd12.150187' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.sciencedirect.com/science/article/pii/S0895435615001237' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.sciencedirect.com/science/article/abs/pii/S0895435617314117' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://academic.oup.com/ije/article/47/6/2082/5049576' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://doi.org/10.1093/heapol/czr004' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 3, end_row = 7, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-## Week 9. Missing Data and Multiple Imputation
-```{r}
-
-reading = c(
-  "Multiple imputation for missing data in epidemiological and clinical research: potential and pitfalls, Jonathan AC Sterne, Ian R White, John B Carlin, Michael Spratt, Patrick Royston, Michael G Kenward, Angela M Wood, James R Carpenter BMJ 2009", 
-  "Flexible Imputation of Missing Data by Stef Van Buuren"
-  )
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://doi.org/10.1136/bmj.b2393' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://stefvanbuuren.name/fimd/' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 1, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 2, end_row = 2, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
-
-
-## Week 10. Presenting and summarising model results
-```{r}
-
-reading = c(
-  "Rothman, K. J. (2014). Six persistent research misconceptions. Journal of General Internal Medicine, 29 (7), 1060-1064.",
-  "Interpreting and presenting statistical results, video lecture form Professor Gary King online (Check out from the start until about 11m 30s)"  
-  )
-
-links <- c(
-  "<a class='fa fa-file-pdf' href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4061362/' target='_blank'></a>",
-  "<a class='fa fa-youtube' href='https://www.youtube.com/watch?v=gbokhfMdfE8&list=PLmpS1iNDaUFtat0QiqXZhlsAgseWtJ1Kk&index=11&t=0s' target='_blank'></a>"
-)
-
-
-df <- data.frame(
-  reading = reading,
-  links = links
-)
-
-
-kbl(df, escape = FALSE,
-    align = c('l', 'c'),
-    col.names = NULL) %>%
-  kable_styling(bootstrap_options = c("hover")) %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 1, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 2, end_row = 2, group_label = "Other resources") 
-
-```
-
-<aside>
-
-<br>
-
-<aside>  <br>  [Back to the top `r fontawesome::fa("arrow-up")`](index.html)   </aside> 
-
-</aside>
