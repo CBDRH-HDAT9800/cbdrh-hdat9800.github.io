@@ -122,7 +122,17 @@ If you are unfamiliar with R, you should also work through the six introduction 
 
 ![](images/dplyr_wrangling.png){width="75%"}
 
-**Note**: 
+In the first interactive tutorial for the course, we will start off with introductions. Your course instructors will introduce themselves and then each student will be requested to briefly talk about themselves (where you are from, what is your work/educational background, how much experience you have had working with health or other data).
+
+We would also like you to briefly present a data visualisation (by someone else) that you have found interesting, or persuasive, or even just beautiful. You only need to describe it for 30 seconds and tell us what about it interests you. It does not need to be health-related. Don't spend too much time looking for something, it is not a marked exercise, and if you don't have time to find something for this week, don't worry, we can show the visualisation you chose in later weeks. Be ready to show it on your computer screen. We will create a page on the course web site to feature each of these as a lasting record.
+
+After these introductions, there will be an opportunity to ask questions about the course, the assessments and the content for Chapter 1. We will repeat this every week, and you can ask questions about earlier chapters at any time, of course.
+
+Then we will cover some additional material: there will be a brief talk by Tim Churches on computer architecture, databases and  big data, and then we will work through a hands-on exercise using the 'dplyr' and 'dbplyr' packages for R to access data in an SQL database.
+
+You need to bring (or be using) your laptop, have R and RStudio installed, and have the `dplyr` package installed (or better, the entire `tidyverse` meta-package).
+
+Further instructions will appear here in advance of the sessions.
 
 
 # Chapter 1 assessment exercise
