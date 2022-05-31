@@ -37,7 +37,7 @@ Health Data Scientists need to present information to audiences across a range o
 
 This course takes a toolbox approach to creating appropriate, reproducible and transparent analyses and visualisations, and communicating them via various channels and modes, including informal and formal written communication, online communication and via interactive applications. In the context of R, it presents useful best-practice data science analysis and visualisation techniques with a focus on different types of data visualisations.
 
-This course was originally developed in 2018 by Dr James Farrow and Dr Tim Churches. It was presented by James in 2018 and 2019, and co-presented by James and Tim in entirely online form in 2020, and by Tim and Andy Blance in 2021. Although the core material for the course remains substantially unchanged, a great deal of additional material was added in 2021, and for 2022 some further topics will be covered.
+This course was originally developed in 2018 by Dr James Farrow and Dr Tim Churches. It was co-presented by James and Tim in 2018 and 2019, and co-presented by James and Tim in entirely online form in 2020, and by Tim and Andy Blance in 2021. Although the core material for the course remains substantially unchanged, a great deal of additional material was added in 2021, and for 2022 some further topics will be covered.
 
 The original course introduction recorded by Dr James Farrow appears below, and is still valid - we have not removed anything from the core curriculum, although quite a lot of the material has been updated or supplemented to reflect recent developments. The additional material added in 2021 and 2022 will be covered in the interactive sessions on Thursday afternoons/evenings in the Term 2 2022 running of the course.
 
@@ -54,6 +54,10 @@ embed_url("https://www.youtube.com/watch?v=JOmHpaSOGeE")
 Links to slides and recordings will be posted on the page for each (weekly) chapter throughout the course.
 
 </aside>
+
+For Term 2 2022, the course is provided in both blended (hydrid) and online formats. Each Chapter, which corresponds to a week in the ten week course, comprises pre-recorded lectures, interactive tutorials which student work through themselves, and a weekly interactive tutorial session. These tutorial sessions are provided in both online and face-to-face form (on teh UNSW Kensington campus).
+
+There is a web page for each chapter (week) of the course, setting out exactly what you need to do each week (see links in the Course Schedule table below).
 
 ```{r schedule}
 
@@ -86,18 +90,30 @@ extension <- c(
 'Visualising higher dimensions -- uses and misuses of 3D graphics; dimensionality reduction techniques, including guest presentation by Dr Meg Stevens on visualising NLP models'
 )
 
+online_tutorials <- c(
+"6:00pm-8:30pm (online), Wed 1 Jun",
+"6:00pm-8:30pm (online), Wed 8 Jun",
+"6:00pm-8:30pm (online), Wed 15 Jun",
+"6:00pm-8:30pm (online), Wed 22 Jun",
+"6:00pm-8:30pm (online), Wed 29 Jun",
+"6:00pm-8:30pm (online), Wed 6 Jul",
+"6:00pm-8:30pm (online), Wed 13 Jul",
+"6:00pm-8:30pm (online), Wed 20 Jul",
+"6:00pm-8:30pm (online), Wed 27 Jul",
+"6:00pm-8:30pm (online), Wed 3 Aug"
+)
 
-tutorials <- c(
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 2 Jun",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 9 Jun",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 16 Jun",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 23 Jun",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 30 Jun",
-"Study period T2, no tutorial",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 14 Jul",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 21 Jul",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 28 Jul",
-"2-4:30pm (F2F) & 5:30-8pm (online), Thur 4 Aug"
+f2f_tutorials <- c(
+"2:00pm-4:30pm (F2F), Thur 2 Jun",
+"2:00pm-4:30pm (F2F), Thur 9 Jun",
+"2:00pm-4:30pm (F2F), Thur 16 Jun",
+"2:00pm-4:30pm (F2F), Thur 23 Jun",
+"2:00pm-4:30pm (F2F), Thur 30 Jun",
+"2:00pm-4:30pm (F2F), Thur 7 Jul",
+"2:00pm-4:30pm (F2F), Thur 14 Jul",
+"2:00pm-4:30pm (F2F), Thur 21 Jul",
+"2:00pm-4:30pm (F2F), Thur 28 Jul",
+"2:00pm-4:30pm (F2F), Thur 4 Aug"
 )
 
 learnrLinks <- c(
@@ -138,17 +154,18 @@ df <-
     Week = paste("Week", 1:10),
     Start = startDays,
     Topic = topic,
-    learnrLinks = learnrLinks,
+    # learnrLinks = learnrLinks,
     Extension = extension,
-    Tutorial = tutorials,
+    Online_Tutorial = online_tutorials,
+    F2F_Tutorial = f2f_tutorials,
     chapterPage = chapterPages,
     Recording = recordings
   )
 
 kbl(df, 
     escape = FALSE,
-    align = c('l', 'l', 'l', 'l', 'c', 'c', 'l', 'c', 'c'),
-    col.names = c("Week", "Week starting", "Core topic(s)", "learnr tutorial link", "Additional topic(s)", 'Tutorial', 'Chapter web page', "Tutorial recordings")
+    align = c('l', 'l', 'l', 'l', 'c', 'c', 'l', 'c'),
+    col.names = c("Week", "Week starting", "Core topic(s)", "Additional topic(s)", 'Online Tutorial', 'Face-to-Face Tutorial',  'Chapter web page', "Tutorial recordings")
     ) %>% 
   kable_styling(bootstrap_options = "hover")
 
@@ -164,11 +181,24 @@ Discussions, questions and online tutorials will be hosted in the course Teams S
 
 <br>
 
+# Weekly interactive tutorials
+
+A weekly interactive tutorial session is offered, in both online and face-to-face formats. The material covered in both formats is identical. Each tutorial starts with a question-and-answer sessions on teh core curriculum material for that and previous weeks, and then goes on to cover additional material, usually a mixture of short lectures or presentations and a hands-on practical exercise. Some weeks feature a guest presenter (see details in the course schedule table below and on each course chapter page). 
+
+Attendance at tutorial sessions is optional but strongly encouraged. However, we recognise that some students may not be able to attend either the online or the face-to-face sessions due to work, family or other commitments. For those students, the online sessions will be recorded and available the next day for viewing at their convenience. 
+
+The online interactive tutorials will be held using Teams at 6pm (Sydney time) each Wednesday. The tutorial will usually last between 2 and 2.5 hours. You can join the tutorials using [this link](https://teams.microsoft.com/l/meetup-join/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/1653955762718?context=%7b%22Tid%22%3a%223ff6cfa4-e715-48db-b8e1-0867b9f9fba3%22%2c%22Oid%22%3a%2223d7a44f-1fca-4328-b0b5-9ff6befeb010%22%7d). These tutorials should also appear in your Teams calendar.
+
+The face-to-face interactive tutorials will be held on the UNSW Kensingtom campus in the Mathews 104 room (K-F23-104) starting at 2pm each Thursday. These tutorials will also usually last between 2 and 2.5 hours. It may not be possible for all guest presenters to attend these tutorials in person, in which case the presentations may be provided online or students may view the recorded online tutorial for those parts of the tutorial. Please bring your laptop to these tutorials.
+
+
 # The tutorials R packages
 
-Online, hosted versions of the learnr tutorials for this course can be accessed through the links in the Course Schedule table above, but it is better to use a local copy that you can work on in the RStudio environment without the need for internet access. 
+Online, hosted versions of the `learnr` tutorials for this course can be accessed through the links in the Course Schedule table above, but it is better to use a local copy that you can work on in the `RStudio` environment without the need for internet access. You will need a copy of R and RStudio running on your computer in order to participate in the interactive (face-to-face or online) tutorial sessions held each Thursday, and to complete and submit assignments.
 
-Once installed, the tutorials can be accessed via the **Tutorial** tab in the upper righthand pane of the RStudio application.
+If you do not already have R and RStudio installed, please follow the instructions on the [Installing R](installing_R.html) page. If you have any problems or questions please contact the course convenor Tim Churches on teams of by email at [timothy.churches@unsw.edu.au](mailto:timothy.churches@unsw.edu.au).
+
+Once installed, the tutorials can be accessed via the **Tutorial** tab in the upper right-hand pane of the RStudio application window.
 
 The tutorials for Chapter 1 are shipped in the package `cbdrhintro`. To install this package you can enter the following code at the console:
 
@@ -202,23 +232,25 @@ Instructions for installing the R tutorials package for Chapter 2 to 9 of the HD
 
 ## Weekly core curriculum assessments
 
-There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to -- the exact dates for each are shown in the table below.
+There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to -- the exact dates for each are shown in the table below. However, you are encouraged to submit the core curriculum assignments early, if possible, to allow more time for the additional assignments (see below). The course instructors will endeavour to mark and return assignments submitted before the due date as quickly as possible, so that you can get feedback and assurance on your progress and understanding of the course material.
 
-## Additional curriculum assessments
+## Additional assessments
 
-There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below.
+There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below. These assignments will be marked promptly after the due date for each.
 
 <aside>
 
 <br>
 
-In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn't have time to do the additional asessments justice. Therefore we have reduced the number of these additional assessments to just two this year.
+In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn't have time to do the additional assessments justice. Therefore we have reduced the number of these additional assessments to just two this year.
 
 </aside>
 
 ## Group assessment
 
 In week 6 of the course, you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 4 of the course. Each group will be required to present their group project in the Thursday sessions in week 10, and then submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.
+
+## Assessment exercises timetable
 
 ```{r assessments}
 
@@ -256,8 +288,10 @@ df <- data.frame(
            "9am, Mon 1 Aug",
            "9am, Mon 7 Aug"
            ),
+  
   link <- c(
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 10)
+    "<a class='fa fa-link' href='https://classroom.github.com/a/4J9wKhgK' target='_blank'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
   )
   
 )
@@ -276,7 +310,7 @@ kbl(df,
 
 <br>
 
-Click the link to clone a personal copy of the GitHub repo for each assessment. You will complete your assessment as an RMarkdown document, pushing to GitHub when you are ready to submit.
+Click the link to clone a personal copy of the GitHub repo for each assessment. You will complete your assessment as an RMarkdown document, pushing it back to GitHub when you are ready to submit.
 
 </aside>
 

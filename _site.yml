@@ -11,6 +11,10 @@ navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "Chapters"
+      menu:
+        - text: "Chapter 1"
+          href: chapter1.html
     - text: "Recordings"
       href: recordings.html
     - text: "Contact us"

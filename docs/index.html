@@ -2461,6 +2461,16 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Chapters
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="chapter1.html">Chapter 1</a>
+</div>
+</div>
 <a href="recordings.html">Recordings</a>
 <a href="contact.html">Contact us</a>
 <a href="https://github.com/CBDRH-HDAT9800/cbdrh-hdat9800.github.io">
@@ -2490,12 +2500,14 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <li><a href="#about-the-hdat9800-course">About the HDAT9800 course</a></li>
 <li><a href="#course-schedule-term-2-2022">Course Schedule Term 2 2022</a></li>
 <li><a href="#teams-space">Teams Space</a></li>
+<li><a href="#weekly-interactive-tutorials">Weekly interactive tutorials</a></li>
 <li><a href="#the-tutorials-r-packages">The tutorials R packages</a></li>
 <li><a href="#assessments">Assessments</a>
 <ul>
 <li><a href="#weekly-core-curriculum-assessments">Weekly core curriculum assessments</a></li>
-<li><a href="#additional-curriculum-assessments">Additional curriculum assessments</a></li>
+<li><a href="#additional-assessments">Additional assessments</a></li>
 <li><a href="#group-assessment">Group assessment</a></li>
+<li><a href="#assessment-exercises-timetable">Assessment exercises timetable</a></li>
 </ul></li>
 <li><a href="#readings-and-resources">Readings and resources</a></li>
 </ul>
@@ -2507,7 +2519,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <h1 id="about-the-hdat9800-course">About the HDAT9800 course</h1>
 <p>Health Data Scientists need to present information to audiences across a range of backgrounds and spanning a spectrum from naïve or non-practitioners of a discipline to highly informed and expert audiences. Effective communication across different media types is essential. Appropriate data visualisation techniques can greatly enhance communication and increase the effectiveness of communication. Data visualisation is an essential part of every data analysis. Increasingly the scientific community has become aware of problems regarding lack of transparency and reproducibility, and the use of fully reproducible methods of working are now essential.</p>
 <p>This course takes a toolbox approach to creating appropriate, reproducible and transparent analyses and visualisations, and communicating them via various channels and modes, including informal and formal written communication, online communication and via interactive applications. In the context of R, it presents useful best-practice data science analysis and visualisation techniques with a focus on different types of data visualisations.</p>
-<p>This course was originally developed in 2018 by Dr James Farrow and Dr Tim Churches. It was presented by James in 2018 and 2019, and co-presented by James and Tim in entirely online form in 2020, and by Tim and Andy Blance in 2021. Although the core material for the course remains substantially unchanged, a great deal of additional material was added in 2021, and for 2022 some further topics will be covered.</p>
+<p>This course was originally developed in 2018 by Dr James Farrow and Dr Tim Churches. It was co-presented by James and Tim in 2018 and 2019, and co-presented by James and Tim in entirely online form in 2020, and by Tim and Andy Blance in 2021. Although the core material for the course remains substantially unchanged, a great deal of additional material was added in 2021, and for 2022 some further topics will be covered.</p>
 <p>The original course introduction recorded by Dr James Farrow appears below, and is still valid - we have not removed anything from the core curriculum, although quite a lot of the material has been updated or supplemented to reflect recent developments. The additional material added in 2021 and 2022 will be covered in the interactive sessions on Thursday afternoons/evenings in the Term 2 2022 running of the course.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="vembedr">
@@ -2521,6 +2533,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p><br></p>
 <p>Links to slides and recordings will be posted on the page for each (weekly) chapter throughout the course.</p>
 </aside>
+<p>For Term 2 2022, the course is provided in both blended (hydrid) and online formats. Each Chapter, which corresponds to a week in the ten week course, comprises pre-recorded lectures, interactive tutorials which student work through themselves, and a weekly interactive tutorial session. These tutorial sessions are provided in both online and face-to-face form (on teh UNSW Kensington campus).</p>
+<p>There is a web page for each chapter (week) of the course, setting out exactly what you need to do each week (see links in the Course Schedule table below).</p>
 <div class="layout-chunk" data-layout="l-body">
 <table class="table table-hover" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -2535,13 +2549,13 @@ Week starting
 Core topic(s)
 </th>
 <th style="text-align:left;">
-learnr tutorial link
-</th>
-<th style="text-align:center;">
 Additional topic(s)
 </th>
 <th style="text-align:center;">
-Tutorial
+Online Tutorial
+</th>
+<th style="text-align:center;">
+Face-to-Face Tutorial
 </th>
 <th style="text-align:left;">
 Chapter web page
@@ -2563,13 +2577,13 @@ Mon 30 May
 Course Introduction; What is Data Visualisation; Introduction to R; Introduction to git
 </td>
 <td style="text-align:left;">
-<a class="fa fa-code" href="https://cbdrh.shinyapps.io/dplyr/" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Introductions; dplyr and the R tidyverse; computer architecture, databases, SQL and accessing databases from R; hands-on exercise
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 2 Jun
+6:00pm-8:30pm (online), Wed 1 Jun
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 2 Jun
 </td>
 <td style="text-align:left;">
 <a class="fa fa-book" href="chapter1.html" target="_self"></a>
@@ -2589,13 +2603,13 @@ Mon 06 June
 Introduction to Literate Programming
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Presentations by program code; communication by self-publishing; hands-on setting up your own health data science blog; a visualisation I am proud of (guest presentation)
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 9 Jun
+6:00pm-8:30pm (online), Wed 8 Jun
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 9 Jun
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2615,13 +2629,13 @@ Mon 13 June
 Constructing Charts using ggplot
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Some more visualisation theory; more on data visualisation using ggplot2
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 16 Jun
+6:00pm-8:30pm (online), Wed 15 Jun
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 16 Jun
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2641,13 +2655,13 @@ Mon 20 June
 Collaborative Report Writing (including tables)
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Visualisation with Python – guest tutorial by Dr Georgina Kennedy
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 23 Jun
+6:00pm-8:30pm (online), Wed 22 Jun
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 23 Jun
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2667,13 +2681,13 @@ Mon 27 June
 Visualisation and Mapping part 1
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Theories of Visual Perception – guest tutorial by Andy Blance; a visualisation I am proud of (guest presentation)
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 30 Jun
+6:00pm-8:30pm (online), Wed 29 Jun
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 30 Jun
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2693,13 +2707,13 @@ Mon 04 July
 Building Interactive Data-driven Web Apps using Shiny part 1
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Visualisation and exploratory data analysis; visualisation of statistical models
 </td>
 <td style="text-align:center;">
-Study period T2, no tutorial
+6:00pm-8:30pm (online), Wed 6 Jul
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 7 Jul
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2719,13 +2733,13 @@ Mon 11 July
 Visualisation and Mapping part 2
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Incorporating time – uses and misuses of animation in data visualisation; accessibility aspects of visualisation
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 14 Jul
+6:00pm-8:30pm (online), Wed 13 Jul
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 14 Jul
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2745,13 +2759,13 @@ Mon 18 July
 Building Interactive Data-driven Web Apps using Shiny part 2
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Visualisation of categorical data; visualising big data; a visualisation I am proud of (guest presentation)
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 21 Jul
+6:00pm-8:30pm (online), Wed 20 Jul
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 21 Jul
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2771,13 +2785,13 @@ Mon 25 July
 Building Interactive Data-driven Web Apps using Shiny part 3
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Communicating COVID-19 models through Markdown documents, web sites, pre-print papers and Shiny apps – guest presentation by Dr Mark Hanly
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 28 Jul
+6:00pm-8:30pm (online), Wed 27 Jul
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 28 Jul
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2797,13 +2811,13 @@ Mon 01 August
 Course Review and Group Project Presentations
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
-</td>
-<td style="text-align:center;">
 Visualising higher dimensions – uses and misuses of 3D graphics; dimensionality reduction techniques, including guest presentation by Dr Meg Stevens on visualising NLP models
 </td>
 <td style="text-align:center;">
-2-4:30pm (F2F) &amp; 5:30-8pm (online), Thur 4 Aug
+6:00pm-8:30pm (online), Wed 3 Aug
+</td>
+<td style="text-align:center;">
+2:00pm-4:30pm (F2F), Thur 4 Aug
 </td>
 <td style="text-align:left;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2819,9 +2833,15 @@ Visualising higher dimensions – uses and misuses of 3D graphics; dimensionalit
 <h1 id="teams-space">Teams Space</h1>
 <p>Discussions, questions and online tutorials will be hosted in the course Teams Space which you can access <a href="https://teams.microsoft.com/l/team/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/conversations?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&amp;tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3">here</a>.</p>
 <p><br></p>
+<h1 id="weekly-interactive-tutorials">Weekly interactive tutorials</h1>
+<p>A weekly interactive tutorial session is offered, in both online and face-to-face formats. The material covered in both formats is identical. Each tutorial starts with a question-and-answer sessions on teh core curriculum material for that and previous weeks, and then goes on to cover additional material, usually a mixture of short lectures or presentations and a hands-on practical exercise. Some weeks feature a guest presenter (see details in the course schedule table below and on each course chapter page).</p>
+<p>Attendance at tutorial sessions is optional but strongly encouraged. However, we recognise that some students may not be able to attend either the online or the face-to-face sessions due to work, family or other commitments. For those students, the online sessions will be recorded and available the next day for viewing at their convenience.</p>
+<p>The online interactive tutorials will be held using Teams at 6pm (Sydney time) each Wednesday. The tutorial will usually last between 2 and 2.5 hours. You can join the tutorials using <a href="https://teams.microsoft.com/l/meetup-join/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/1653955762718?context=%7b%22Tid%22%3a%223ff6cfa4-e715-48db-b8e1-0867b9f9fba3%22%2c%22Oid%22%3a%2223d7a44f-1fca-4328-b0b5-9ff6befeb010%22%7d">this link</a>. These tutorials should also appear in your Teams calendar.</p>
+<p>The face-to-face interactive tutorials will be held on the UNSW Kensingtom campus in the Mathews 104 room (K-F23-104) starting at 2pm each Thursday. These tutorials will also usually last between 2 and 2.5 hours. It may not be possible for all guest presenters to attend these tutorials in person, in which case the presentations may be provided online or students may view the recorded online tutorial for those parts of the tutorial. Please bring your laptop to these tutorials.</p>
 <h1 id="the-tutorials-r-packages">The tutorials R packages</h1>
-<p>Online, hosted versions of the learnr tutorials for this course can be accessed through the links in the Course Schedule table above, but it is better to use a local copy that you can work on in the RStudio environment without the need for internet access.</p>
-<p>Once installed, the tutorials can be accessed via the <strong>Tutorial</strong> tab in the upper righthand pane of the RStudio application.</p>
+<p>Online, hosted versions of the <code>learnr</code> tutorials for this course can be accessed through the links in the Course Schedule table above, but it is better to use a local copy that you can work on in the <code>RStudio</code> environment without the need for internet access. You will need a copy of R and RStudio running on your computer in order to participate in the interactive (face-to-face or online) tutorial sessions held each Thursday, and to complete and submit assignments.</p>
+<p>If you do not already have R and RStudio installed, please follow the instructions on the <a href="installing_R.html">Installing R</a> page. If you have any problems or questions please contact the course convenor Tim Churches on teams of by email at <a href="mailto:timothy.churches@unsw.edu.au">timothy.churches@unsw.edu.au</a>.</p>
+<p>Once installed, the tutorials can be accessed via the <strong>Tutorial</strong> tab in the upper right-hand pane of the RStudio application window.</p>
 <p>The tutorials for Chapter 1 are shipped in the package <code>cbdrhintro</code>. To install this package you can enter the following code at the console:</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2844,15 +2864,16 @@ Visualising higher dimensions – uses and misuses of 3D graphics; dimensionalit
 <p><br></p>
 <h1 id="assessments">Assessments</h1>
 <h2 id="weekly-core-curriculum-assessments">Weekly core curriculum assessments</h2>
-<p>There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to – the exact dates for each are shown in the table below.</p>
-<h2 id="additional-curriculum-assessments">Additional curriculum assessments</h2>
-<p>There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below.</p>
+<p>There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to – the exact dates for each are shown in the table below. However, you are encouraged to submit the core curriculum assignments early, if possible, to allow more time for the additional assignments (see below). The course instructors will endeavour to mark and return assignments submitted before the due date as quickly as possible, so that you can get feedback and assurance on your progress and understanding of the course material.</p>
+<h2 id="additional-assessments">Additional assessments</h2>
+<p>There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below. These assignments will be marked promptly after the due date for each.</p>
 <aside>
 <p><br></p>
-<p>In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn’t have time to do the additional asessments justice. Therefore we have reduced the number of these additional assessments to just two this year.</p>
+<p>In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn’t have time to do the additional assessments justice. Therefore we have reduced the number of these additional assessments to just two this year.</p>
 </aside>
 <h2 id="group-assessment">Group assessment</h2>
 <p>In week 6 of the course, you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 4 of the course. Each group will be required to present their group project in the Thursday sessions in week 10, and then submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.</p>
+<h2 id="assessment-exercises-timetable">Assessment exercises timetable</h2>
 <div class="layout-chunk" data-layout="l-body">
 <table class="table table-hover" style="margin-left: auto; margin-right: auto;">
 <thead>
@@ -2883,7 +2904,7 @@ Chapter 1 assessment
 9am, Mon 20 Jun
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
+<a class="fa fa-link" href="https://classroom.github.com/a/4J9wKhgK" target="_blank"></a>
 </td>
 </tr>
 <tr>
@@ -3017,7 +3038,7 @@ Group assessment
 </div>
 <aside>
 <p><br></p>
-<p>Click the link to clone a personal copy of the GitHub repo for each assessment. You will complete your assessment as an RMarkdown document, pushing to GitHub when you are ready to submit.</p>
+<p>Click the link to clone a personal copy of the GitHub repo for each assessment. You will complete your assessment as an RMarkdown document, pushing it back to GitHub when you are ready to submit.</p>
 </aside>
 <p><br></p>
 <h1 id="readings-and-resources">Readings and resources</h1>

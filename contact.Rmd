@@ -10,14 +10,14 @@ Class or assessment related questions can be posted to the Teams space [here](ht
 # Your lecturers
 
 Dr Tim Churches \
-Senior research Fellow and course convenor
+Senior Research Fellow and Course Convenor
  \
-School of Clinical Medicine, Faculty of medicine & Health, UNSW Sydney \
+School of Clinical Medicine, Faculty of Medicine & Health, UNSW Sydney \
 E: timothy.churches@unsw.edu.au \
 
 
 <br>
 
-# Errors or omissions on this webside
+# Errors or omissions on this website
 
 _This website was built using [Distill for R Markdown](https://rstudio.github.io/distill/){target="_blank"}. The source code is available online at [https://github.com/CBDRH-HDAT9800/cbdrh-hdat9800.github.io](https://github.com/CBDRH-HDAT9800/cbdrh-hdat9800.github.io){target="_blank"}. Errors or omissions on this website can be logged using GitHub issues [here](https://github.com/CBDRH-HDAT9800/cbdrh-hdat9800.github.io/issues){target="_blank"}._

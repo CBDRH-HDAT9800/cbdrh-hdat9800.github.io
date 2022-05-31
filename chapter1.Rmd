@@ -20,53 +20,126 @@ options(kableExtra.html.bsTable = T)
 
 ```
 
+```{r course-logo, preview=TRUE}
+knitr::include_graphics("images/r_first_then.png")
+```
+
+Graphic by [Alison Horst](https://github.com/allisonhorst/stats-illustrations), used under CC-BY license.
+
+# What's in the lectures and tutorials for this Chapter?
+
+This chapter provides a course overview, including course aims and principles, as well as a brief review of the history of data visualisation (Chapter 1 - Course Overview - Part 1). It also provides 
+an introduction to the core curriculum material for each of the chapter topics including an introduction to R, dplyr, literate programming, git, ggplot2, collaborating with git, using leaflet for mapping, using shiny for interactive applications, and the shiny group project (Chapter 1 - Course Overview - Part 2).
+
+There is also an introduction to using git for version control (Chapter 1 - Version control with git and GitHub - Part 1), and how to set up and configure git with RStudio, how to access the assessment repository and the chapter 1 assessment (Chapter 1 - Version control with git and GitHub - Part 2).
+
+View the lecture videos, and download the lecture notes if you want to follow along with the presenter (or for revision later). 
+
+After you have viewed the lectures, please proceed to do the `learnr` tutorials on git.
+
+There is also an interactive `learnr` tutorial covering data manipulation using `dplyr` in R. This is also foundational material for later chapters, which will require the use of `dplyr` and related packages to manipulate and shape data for visualation and reporting.
+
+The interactive tutorial session for Chapter 1 will start with a get-to-know-you session, in which we each introduce ourselves, and talk about our favourite data visualisation or chart (see below). There will be an opportunity for questions and answers (Q&A) about the core course material, and then a hands-on session in which we use the `dplyr` package in R to access and manipulate data in databases, along with a discussion of some fundamental concepts of computer architecture and operations which are important to understand when working with "big data".
+
+Links and further instructions for each component are provided in the sections below.
+
 # Pre-recorded lectures for Chapter 1
 
-## Course overview including course aims and principles (Chapter 1 - Course Overview - Part 1)
+View the lecture videos below, and download the lecture notes if you want to follow along with the presenter (or for revision later). 
+
+After you have viewed the lectures, please proceed to do the related git tutorials (see below).
+
+* **Course overview including course aims and principles (Chapter 1 - Course Overview - Part 1)**
 
 ```{r ch1-part1-video, preview=TRUE}
 embed_url("https://youtu.be/Zqfj-kredzs")
 ```
 
-## Introduction of chapter topics including R, dplyr, literate programming, git, ggplot2, collaborating with git, leaflet, shiny and the shiny group project (Chapter 1 - Course Overview - Part 2)
+* **Introduction of chapter topics including `R`, `dplyr`, literate programming, `git`, `ggplot2`, collaborating with `git`, `leaflet`, `shiny` and the shiny group project (Chapter 1 - Course Overview - Part 2)**
 
 ```{r ch1-part2-video, preview=TRUE}
 embed_url("https://youtu.be/CCR5-RylUoY")
 ```
 
-## Slide deck for Course Overview
-
-[Slide deck for Chapter 1 - Course Overview - Part 1 & 2](assets/HDAT9800-2022-T2-Chapter-1.pdf)
+[**Slide deck for Chapter 1 - Course Overview - Parst 1 & 2**](assets/HDAT9800-2022-T2-Chapter-1.pdf)
 
 
-## Using git for version control (Chapter 1 - Version control with git and GitHub - Part 1)
+* **Using `git` for version control (Chapter 1 - Version control with `git` and `GitHub` - Part 1)**
 
 ```{r ch1-git-part1-video, preview=TRUE}
 embed_url("https://youtu.be/RSmu0P4jUgI")
 ```
 
-## Setting up and configuring git, setting up git with RStudio, how to access the assessment repository and the chapter 1 assessment (Chapter 1 - Version control with git and GitHub - Part 2)
+* **Setting up and configuring `git`, setting up `git` with `RStudio`, how to access the assessment repository and the chapter 1 assessment (Chapter 1 - Version control with `git` and `GitHub` - Part 2)**
 
 ```{r ch1-git-part2-video, preview=TRUE}
 embed_url("https://youtu.be/2rMQZDm2gXE")
 ```
 
-## Slide deck for git and GitHub lecture
 
-[Slide deck for Chapter 1 - git and GitHub  - Part 1 & 2](assets/HDAT9800-Chapter-1-git.pdf)
-
-
-View the lecture videos, and download the lecture notes if you want to follow along with the presenter (or for revision later). 
-
-After you have viewed the lectures, please proceed to do the tutorials.
+[**Slide deck for Chapter 1 - git and GitHub  - Parts 1 & 2**](assets/HDAT9800-Chapter-1-git.pdf)
 
 # Tutorials for Chapter 1
 
-Please follow the instructions for installing the `cbdrhintro` tutorials package for R on the [course home page](index.html) and proceed to do the `dplyr` tutorial.
+Every chapter includes one or more interactive tutorials/practicals, which consists of introductory concepts, readings and exercises, generally provided as an R package of `learnr` tutorials. `learnr` is a package which allows interactive tutorials about `R` (or related topics) to be written in `R`. 
 
-If you are unfamiliar with R, you should also work through the six introduction to R tutorials that are also conained in and installed by that package.
+You should download and install the `cbdrhintro` tutorials package for `R` by following the instructions provided on the home page. Intructions for installing `R` and `RStudio` are provided [here][installing_r.html).
+
+The Chapter 1 tutorials have three parts:
+
+* Introduction to `R` tutorials (proficient `R` users can quickly run through or skip these tutorials, see the more detailed description of these tutorials below)
+* Introduction to `git` and `GitHub`
+* Introduction to `dplyr`
+
+Please work through the content in the tutorials after you have watched the prerecorded lecture for this chapter. 
+
+If you have any questions about the tutorials, or if you want to share any useful resources or post insights, please post in the [Teams space](https://teams.microsoft.com/l/team/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/conversations?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3) for the course, in the channel for Chapter 1.
+
+## Introduction to R Tutorials for Beginners 
+
+`R` is fast becoming the industry standard programming language for statistical data analysis. If this is your first exposure to `R`, we have created some beginner `R` modules to introduce you to the `R` language and to help you build some basic programming skills. 
+
+The modules are delivered as 6 `learnr` tutorials as a `R` package called `cbdrhintro`. Each module consists of explanatory text and coding examples. The tutorials are interactive so you can write and run code to see how it works, then check your code against the provided solutions. The coding tasks in these tutorial modules are not marked assessments, so don't worry if you make mistakes. Each module is organised into several subtopics, which are bookmarked making it easy to pause and return at a later time.  
+
+* Module 1: Introduction to R, variable types and operators
+* Module 2: Vectors
+* Module 3: Matrices, matrix arithmetic and lists
+* Module 4: Data frames and Factors
+* Module 5: Functions
+* Module 6: Control structures and control-like structures
+
+### Who should complete the Introduction to R modules?
+
+`R` programming is a major component of many of the UNSW Health Data Science courses. Some of the `R` dependent courses will include these same `learnr` tutorials as part of the course content. If you have already worked through them, there is no need to do them again (unless you wish to for revision purposes). However if you are completely new to programming or new to `R`, we recommend spending some time reviewing and practising the lessons of these modules during the first few weeks of the HDAT9800 course. 
+
+For some students, this will be a lot of material to cover. Don't panic! The course (and the assessment due dates) are paced so that there is plenty of time to get to grips with the fundamentals of `R` programming. If you would like additional interactive tutorials covering the Introduction to R material or the opportunity to ask questions about it individually or in small groups, please let me know on Teams or at [timothy.churches@unsw.edu.au](mailto:timothy.churches@unsw.edu.au).
+
+Please follow the instructions for installing the `cbdrhintro` tutorials package for R on the [course home page](index.html) and proceed to do the `dplyr` tutorial. We will revisit and revise the use of `dply` in the interactive session, and examine how it can be used to access "big data" contained in databases, in the context of modern computing architecture and operation. 
+
+If you are unfamiliar with R, you should also work through the six introduction to R tutorials that are also contained in and installed by that package. 
+
+# Interactive sessions for Chapter 1
+
+![](images/dplyr_wrangling.png){width="75%"}
+
+**Note**: 
 
 
+# Chapter 1 assessment exercise
+
+For chapter 1, the assessment exercise is very easy, and is designed to get you used to completing assessments using `git` and `GitHub`.
+
+Make sure you have installed `git` on your computer and that you have a `GitHub` account, as explained in the pre-recorded lectures and tutorials on `git` (see above), and that `git` is configured in `RStudio`.
+
+Then you can click on this link to the Chapter 1 assessment GitHub Classroom repository:  [https://classroom.github.com/a/4J9wKhgK](https://classroom.github.com/a/4J9wKhgK)
+
+This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
+
+You should then clone this assignemnt repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
+
+You may revise you assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
+
+Procedures for requesting early marking of your assignement (before the due date) will appear here shortly.
 
 
 ```{r, eval=FALSE, incude=FALSE}
