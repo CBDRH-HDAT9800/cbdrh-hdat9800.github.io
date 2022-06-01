@@ -183,9 +183,13 @@ Discussions, questions and online tutorials will be hosted in the course Teams S
 
 # Weekly interactive tutorials
 
-A weekly interactive tutorial session is offered, in both online and face-to-face formats. The material covered in both formats is identical. Each tutorial starts with a question-and-answer sessions on teh core curriculum material for that and previous weeks, and then goes on to cover additional material, usually a mixture of short lectures or presentations and a hands-on practical exercise. Some weeks feature a guest presenter (see details in the course schedule table below and on each course chapter page). 
+A weekly interactive tutorial session is offered, in both online and face-to-face formats. The material covered in both formats is identical. Each tutorial starts with a question-and-answer sessions on the core curriculum material for that and previous weeks, and then goes on to cover additional material, usually a mixture of short lectures or presentations and a hands-on practical exercise. Some weeks feature a guest presenter (see details in the course schedule table below and on each course chapter page). 
 
 Attendance at tutorial sessions is optional but strongly encouraged. However, we recognise that some students may not be able to attend either the online or the face-to-face sessions due to work, family or other commitments. For those students, the online sessions will be recorded and available the next day for viewing at their convenience. 
+
+<aside>
+International students who have enrolled in the course for blended/hybrid delivery and who are on a student visa, **are** required to attend at least 3 hours per week of face-to-face classes on campus for each course to meet your visa requirements. Such students should make every effort to attend the face-to-face classes. If you are such a student, but you can't make it to one of the face-to-face sessions, please just let me know by email at timothy.churches@unsw.edu.au so I can keep a record of why.
+</aside>
 
 The online interactive tutorials will be held using Teams at 6pm (Sydney time) each Wednesday. The tutorial will usually last between 2 and 2.5 hours. You can join the tutorials using [this link](https://teams.microsoft.com/l/meetup-join/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/1653955762718?context=%7b%22Tid%22%3a%223ff6cfa4-e715-48db-b8e1-0867b9f9fba3%22%2c%22Oid%22%3a%2223d7a44f-1fca-4328-b0b5-9ff6befeb010%22%7d). These tutorials should also appear in your Teams calendar.
 

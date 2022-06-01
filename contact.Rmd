@@ -5,7 +5,7 @@ description: "Contact details for HDAT9800"
 
 # Questions and discussion
 
-Class or assessment related questions can be posted to the Teams space [here](https://teams.microsoft.com/l/team/19%3an4iVLn4TeivKMF2Z2gUdDt-qsnscsMJNceiQEOoTHdw1%40thread.tacv2/conversations?groupId=6708e76d-b760-4844-9006-7c87e96be920&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3). 
+Class or assessment related questions can be posted to Assessments channel in the course Teams space [here](https://teams.microsoft.com/l/team/19%3an4iVLn4TeivKMF2Z2gUdDt-qsnscsMJNceiQEOoTHdw1%40thread.tacv2/conversations?groupId=6708e76d-b760-4844-9006-7c87e96be920&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3). 
 
 # Your lecturers
 
@@ -15,7 +15,10 @@ Senior Research Fellow and Course Convenor
 School of Clinical Medicine, Faculty of Medicine & Health, UNSW Sydney \
 E: timothy.churches@unsw.edu.au \
 
-
+Dr Dami Sotade
+Research Officer
+Centre for Big Data Research in Health, Faculty of Medicine & Health, UNSW Sydney 
+E: o.sotade@unsw.edu.au
 <br>
 
 # Errors or omissions on this website

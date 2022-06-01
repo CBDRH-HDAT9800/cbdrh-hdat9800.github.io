@@ -132,8 +132,13 @@ Then we will cover some additional material: there will be a brief talk by Tim C
 
 You need to bring (or be using) your laptop, have R and RStudio installed, and have the `dplyr` package installed (or better, the entire `tidyverse` meta-package).
 
-Further instructions will appear here in advance of the sessions.
+### Further instructions for the hands-on session
 
+In the hands-on session, we wil be running the following code in this `gist`. Don't run it yet! You will need to create a new project in RStudio, access the code in the `gist` and coy-and-paste it into a new R code window in RStudio. We will then step through it section by section.
+
+[Code gist for Chapter 1 hands-on session](https://gist.githubusercontent.com/timchurches/23b20344c28844e4efd17a19bd389c72/raw/2df9975e820af5edacfacd791f1e7c52d91edda7/R_and_databases.R)
+
+The slide deck for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-1-dplyr-databases/HDAT9800-Chapter-1-dplyr-databases.html' target='_blank'> here</a>.
 
 # Chapter 1 assessment exercise
 
@@ -147,32 +152,25 @@ This will create a new GitHub repository for you, just for this assignment. Only
 
 You should then clone this assignemnt repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
 
-You may revise you assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
+You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 
 Procedures for requesting early marking of your assignement (before the due date) will appear here shortly.
 
 
-```{r, eval=FALSE, incude=FALSE}
+# Readings and Resources for Chapter 1
 
-## Week 1. Directed Acyclic Graphs (DAGs)
-# ```{r}
+```{r, eval=TRUE, include=TRUE}
 
 reading = c(
-      "Miguel A. Hernán, John Hsu & Brian Healy (2019) A Second Chance to Get Causal Inference Right: A Classification of Data Science Tasks, Chance, 32(1), 42-49",
-      "Austin, Anna E., Tania A. Desrosiers, and Meghan E. Shanahan. Directed Acyclic Graphs: An under-utilized tool for child maltreatment research. Child Abuse & Neglect 91 (2019): 78-87",
-      "Shmueli, Galit. To Explain or to Predict? Statist. Sci. 25 (2010), no. 3, 289-310",
-      "The importance of being clear about your question & using that to drive your methods, a tweetorial by epidemiologist Dr Ellie Murray from Boston University School of Public Health.",
-      "dagitty.net A great website explaining DAGs and related topics, with built-in applets to test your knowledge",
-      "An excellent YouTube video series on Causality and DAGs presented by Assistant Professor Nick Huntington-Klein from Seattle University. This is a series of 14 videos that starts from the very basics of causal thinking with DAGs"
+      "Jennifer Bryan (2018) Excuse Me, Do You Have a Moment to Talk About Version Control?, The American Statistician, 72:1, 20-27",
+      "An excellent presentation on git and GitHub by Dr Mark Hanly, with a set of exercises on using git on the command line starting at slide 40",
+      "Tutorial provided by RStudio on using dplyr with external databases"
     )
 
 links <- c(
-  "<a class='fa fa-file-pdf' href='https://www.tandfonline.com/doi/full/10.1080/09332480.2019.1579578' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://doi.org/10.1016/j.chiabu.2019.02.011' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://www.galitshmueli.com/system/files/Stat%20Science%20published.pdf' target='_blank'></a> <a class='fab fa-youtube' href='https://www.youtube.com/watch?v=vWH_HNfQVRI&t=1s' target='_blank'></a>",
-  "<a class='fa fa-twitter' fill = 'lightblue' href='https://twitter.com/EpiEllie/status/1214641734900224003' target='_blank'></a>",
-  "<a class='fa fa-laptop' href='dagitty.net' target='_blank'></a>",
-  "<a class='fab fa-youtube' href='https://www.youtube.com/playlist?list=PLcTBLulJV_AKmUTH-nUsxxFyRQoWnUzxU' target='_blank'></a>"
+  "<a class='fa fa-file-pdf' href='https://www.tandfonline.com/doi/pdf/10.1080/00031305.2017.1399928?needAccess=true' target='_blank'></a>",
+  "<a class='fa fa-file-powerpoint' href='https://getting-started-with-git-and-github.netlify.app' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://db.rstudio.com/r-packages/dplyr/' target='_blank'></a>"
 )
 
 
@@ -186,10 +184,10 @@ kbl(df, escape = FALSE,
     align = c('l', 'c'),
     col.names = NULL) %>%
   kable_styling(bootstrap_options = "hover") %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings") %>% 
-    kableExtra::group_rows(start_row = 3, end_row = 6, group_label = "Other resources") 
+    kableExtra::group_rows(start_row = 1, end_row = 1, group_label = "Core readings") %>% 
+    kableExtra::group_rows(start_row = 2, end_row = 3, group_label = "Other resources") 
 
-# ```
+```
 
 <aside>
 
@@ -197,10 +195,8 @@ kbl(df, escape = FALSE,
 
 You should prioritise the core readings each week.  
 
-Note that some of the links below will require you to be logged in to your UNSW library account to access. 
-
 </aside>
-'''
+
 
 
 
