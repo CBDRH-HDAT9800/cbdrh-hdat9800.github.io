@@ -1,0 +1,17 @@
+---
+title: "Favourite visualisations"
+description: |
+  HDAT9800 participants' favourite visualisation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Favourite visualisations
+
+## Tim Churches
+
+![Beautful Evidence](images/tufte_beautiful_evidence.png)
+
+![Beautful Evidence](images/tufte_sparklines.png)
