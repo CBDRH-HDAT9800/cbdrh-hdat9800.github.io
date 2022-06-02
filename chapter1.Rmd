@@ -138,7 +138,13 @@ In the hands-on session, we wil be running the following code in this `gist`. Do
 
 [Code gist for Chapter 1 hands-on session](https://gist.githubusercontent.com/timchurches/23b20344c28844e4efd17a19bd389c72/raw/2df9975e820af5edacfacd791f1e7c52d91edda7/R_and_databases.R)
 
-The slide deck for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-1-dplyr-databases/HDAT9800-Chapter-1-dplyr-databases.html' target='_blank'> here</a>.
+<aside>
+
+The HTML slide deck which was made using teh Xaringan package for R was rendered to PDF using the method documented [here](https://www.garrickadenbuie.com/blog/print-xaringan-chromote/)
+
+</aside>
+
+The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-1-dplyr-databases/HDAT9800-Chapter-1-dplyr-databases.html' target='_blank'> here</a> (or as a <a class='fa fa-file-pdf' href='assets/HDAT9800-Chapter-1-dplyr-databases.pdf' target='_blank'> PDF</a>).
 
 # Chapter 1 assessment exercise
 
@@ -150,11 +156,11 @@ Then you can click on this link to the Chapter 1 assessment GitHub Classroom rep
 
 This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
 
-You should then clone this assignemnt repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
+You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
 
 You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 
-Procedures for requesting early marking of your assignement (before the due date) will appear here shortly.
+Procedures for requesting early marking of your assignment (before the due date) will appear here shortly.
 
 
 # Readings and Resources for Chapter 1
@@ -163,13 +169,13 @@ Procedures for requesting early marking of your assignement (before the due date
 
 reading = c(
       "Jennifer Bryan (2018) Excuse Me, Do You Have a Moment to Talk About Version Control?, The American Statistician, 72:1, 20-27",
-      "An excellent presentation on git and GitHub by Dr Mark Hanly, with a set of exercises on using git on the command line starting at slide 40",
+      "An excellent presentation on git and GitHub by Dr Mark Hanly, with a set of exercises on using git on the command line starting at slide 40 (HTML and PDF versions)",
       "Tutorial provided by RStudio on using dplyr with external databases"
     )
 
 links <- c(
   "<a class='fa fa-file-pdf' href='https://www.tandfonline.com/doi/pdf/10.1080/00031305.2017.1399928?needAccess=true' target='_blank'></a>",
-  "<a class='fa fa-file-powerpoint' href='https://getting-started-with-git-and-github.netlify.app' target='_blank'></a>",
+  "<a class='fa fa-file-powerpoint' href='https://getting-started-with-git-and-github.netlify.app' target='_blank'></a> <br> <a class='fa fa-file-pdf' href='assets/getting-started-with-git-and-github.netlify.pdf' target='_blank'></a>",
   "<a class='fa fa-globe' href='https://db.rstudio.com/r-packages/dplyr/' target='_blank'></a>"
 )
 
