@@ -118,7 +118,8 @@ f2f_tutorials <- c(
 
 learnrLinks <- c(
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/dplyr/' target='_blank'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch2-knitr/' target='_blank'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 8)
 )
 
 videos <- c(
@@ -146,7 +147,8 @@ recordings <- c(
 
 chapterPages <- c(
   "<a class='fa fa-book' href='chapter1.html' target='_self'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
+  "<a class='fa fa-book' href='chapter2.html' target='_self'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 8)
 )
 
 df <-
@@ -220,7 +222,13 @@ The package installation can occasionally fail, usually if there is a dependency
 
 **Please note:** if you have installed the `cbdrhintro` previously, you will need to re-install it again because we have added a tutorial for `dplyr` required for Chapter 1 of this course. 
 
-Instructions for installing the R tutorials package for Chapter 2 to 9 of the HDAT9800 course will appear here in the near future.
+The tutorials for Chapters 2 onwards are shipped in the package `hdat9800tutorials`. To install this package you can enter the following code at the console:
+
+```{r hdat9800-tute-packages-install, eval = FALSE, echo = TRUE}
+devtools::install_github("CBDRH/hdat9800")
+```
+
+You may need to re-install this package from time to time as instructed to receive updates to the tutorials.
 
 <aside>
 

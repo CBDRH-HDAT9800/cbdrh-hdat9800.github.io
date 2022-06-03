@@ -61,7 +61,7 @@ embed_url("https://youtu.be/Zqfj-kredzs")
 embed_url("https://youtu.be/CCR5-RylUoY")
 ```
 
-[**Slide deck for Chapter 1 - Course Overview - Parst 1 & 2**](assets/HDAT9800-2022-T2-Chapter-1.pdf)
+[**Slide deck for Chapter 1 - Course Overview - Parts 1 & 2**](assets/HDAT9800-2022-T2-Chapter-1.pdf)
 
 
 * **Using `git` for version control (Chapter 1 - Version control with `git` and `GitHub` - Part 1)**
@@ -83,7 +83,7 @@ embed_url("https://youtu.be/2rMQZDm2gXE")
 
 Every chapter includes one or more interactive tutorials/practicals, which consists of introductory concepts, readings and exercises, generally provided as an R package of `learnr` tutorials. `learnr` is a package which allows interactive tutorials about `R` (or related topics) to be written in `R`. 
 
-You should download and install the `cbdrhintro` tutorials package for `R` by following the instructions provided on the home page. Intructions for installing `R` and `RStudio` are provided [here][installing_r.html).
+You should download and install the `cbdrhintro` tutorials package for `R` by following the instructions provided on the home page. Instructions for installing `R` and `RStudio` are provided [here](installing_r.html).
 
 The Chapter 1 tutorials have three parts:
 

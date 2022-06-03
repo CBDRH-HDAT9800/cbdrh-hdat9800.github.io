@@ -2469,6 +2469,7 @@ Chapters
 </button>
 <div class="nav-dropdown-content">
 <a href="chapter1.html">Chapter 1</a>
+<a href="chapter2.html">Chapter 2</a>
 <a href="favourite_visualisations.html">Favourite visualisations</a>
 </div>
 </div>
@@ -2617,7 +2618,7 @@ Presentations by program code; communication by self-publishing; hands-on settin
 2:00pm-4:30pm (F2F), Thur 9 Jun
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
+<a class="fa fa-book" href="chapter2.html" target="_self"></a>
 </td>
 <td style="text-align:center;">
 <a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
@@ -2862,7 +2863,14 @@ International students who have enrolled in the course for blended/hybrid delive
 <p>If you choose to update packages, you may subsequently be asked if you want to install binary or source versions. Source versions require special tools to compile which you may not have configured, so you should choose to install the binary version, i.e. if prompted <em>Do you want to install from sources the packages which need compilation?</em> enter n for ‘No’.</p>
 <p>The package installation can occasionally fail, usually if there is a dependency that is not installed or has an outdated version. If you get an error message relating to a package, try installing that package first and then try again. If there are still issues, don’t worry, just <a href="contact.html">drop an email to the course convenor</a>.</p>
 <p><strong>Please note:</strong> if you have installed the <code>cbdrhintro</code> previously, you will need to re-install it again because we have added a tutorial for <code>dplyr</code> required for Chapter 1 of this course.</p>
-<p>Instructions for installing the R tutorials package for Chapter 2 to 9 of the HDAT9800 course will appear here in the near future.</p>
+<p>The tutorials for Chapters 2 onwards are shipped in the package <code>hdat9800tutorials</code>. To install this package you can enter the following code at the console:</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>devtools</span><span class='fu'>::</span><span class='fu'><a href='https://devtools.r-lib.org/reference/remote-reexports.html'>install_github</a></span><span class='op'>(</span><span class='st'>"CBDRH/hdat9800"</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>You may need to re-install this package from time to time as instructed to receive updates to the tutorials.</p>
 <aside>
 <p><br></p>
 <aside>
