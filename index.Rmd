@@ -156,8 +156,8 @@ df <-
     Week = paste("Week", 1:10),
     Start = startDays,
     Topic = topic,
-    # learnrLinks = learnrLinks,
     Extension = extension,
+    learnrLinks = learnrLinks,
     Online_Tutorial = online_tutorials,
     F2F_Tutorial = f2f_tutorials,
     chapterPage = chapterPages,
@@ -166,8 +166,8 @@ df <-
 
 kbl(df, 
     escape = FALSE,
-    align = c('l', 'l', 'l', 'l', 'c', 'c', 'l', 'c'),
-    col.names = c("Week", "Week starting", "Core topic(s)", "Additional topic(s)", 'Online Tutorial', 'Face-to-Face Tutorial',  'Chapter web page', "Tutorial recordings")
+    align = c('l', 'l', 'l', 'l', 'l', 'c', 'c', 'l', 'c'),
+    col.names = c("Week", "Week starting", "Core topic(s)", "Additional topic(s)", "learnr tutorial", 'Online Tutorial', 'Face-to-Face Tutorial',  'Chapter web page', "Tutorial recordings")
     ) %>% 
   kable_styling(bootstrap_options = "hover")
 
