@@ -2439,8 +2439,77 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
   <script src="site_libs/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
+  <style type="text/css">
+  .distill-site-nav {
+    color: rgba(0, 0, 0, 0.8);
+    background-color: #ffdc00;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .distill-site-nav a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .distill-site-nav a:hover {
+    color: green;
+  }
+
+  .nav-dropdown .nav-dropbtn {
+    color: rgba(0, 0, 0, 0.8);
+    background-color: #ffdc00;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .nav-dropbtn a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .nav-dropdown:hover .nav-dropbtn:hover {
+    color: green;
+  }
+
+  .distill-site-header {
+  }
+
+  .distill-site-footer {
+  }
+
+  .distill-site-header .logo img {
+    max-height: 40px;
+    width: auto;
+    margin-bottom: -16px;
+  }
+
+  a.href-button {
+    background-color: #ffdc00;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color: black;
+    padding: 20px 34px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+
+  @media print {
+    .distill-site-nav {
+      display: none;
+    }
+  }
+
+  </style>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -2457,7 +2526,13 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="https://cbdrh.med.unsw.edu.au">
+<img src="images/unsw_logo.png" alt="Logo"/>
+</a>
 <a href="index.html" class="title">HDAT9800 Health Data Visualisation and Communication</a>
+<a href="index.html">
+<i class="fa fa-home" aria-hidden="true"></i>
+</a>
 </div>
 <div class="nav-right">
 <a href="index.html">Home</a>
@@ -2506,7 +2581,10 @@ Chapters
 <li><a href="#the-tutorials-r-packages">The tutorials R packages</a></li>
 <li><a href="#assessments">Assessments</a>
 <ul>
-<li><a href="#weekly-core-curriculum-assessments">Weekly core curriculum assessments</a></li>
+<li><a href="#weekly-core-curriculum-assessments">Weekly core curriculum assessments</a>
+<ul>
+<li><a href="#requesting-early-marking">Requesting early marking</a></li>
+</ul></li>
 <li><a href="#additional-assessments">Additional assessments</a></li>
 <li><a href="#group-assessment">Group assessment</a></li>
 <li><a href="#assessment-exercises-timetable">Assessment exercises timetable</a></li>
@@ -2914,6 +2992,8 @@ International students who have enrolled in the course for blended/hybrid delive
 <h1 id="assessments">Assessments</h1>
 <h2 id="weekly-core-curriculum-assessments">Weekly core curriculum assessments</h2>
 <p>There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to – the exact dates for each are shown in the table below. However, you are encouraged to submit the core curriculum assignments early, if possible, to allow more time for the additional assignments (see below). The course instructors will endeavour to mark and return assignments submitted before the due date as quickly as possible, so that you can get feedback and assurance on your progress and understanding of the course material.</p>
+<h3 id="requesting-early-marking">Requesting early marking</h3>
+<p>You may request early marking of your submitted core curriculum assessments by following the steps outlined <a href="requesting_early_marking.html">here</a>.</p>
 <h2 id="additional-assessments">Additional assessments</h2>
 <p>There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below. These assignments will be marked promptly after the due date for each.</p>
 <aside>
@@ -2967,7 +3047,7 @@ Chapter 2 assessment
 9am, Mon 27 Jun
 </td>
 <td style="text-align:left;">
-<a class="fa fa-clock" href="https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif" target="_blank"></a>
+<a class="fa fa-link" href="https://classroom.github.com/a/tOV9OQvh" target="_blank"></a>
 </td>
 </tr>
 <tr>

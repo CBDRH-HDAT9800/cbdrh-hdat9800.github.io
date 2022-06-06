@@ -1,0 +1,35 @@
+---
+title: "HDAT9800 Request early marking for assessments"
+description: |
+  Procedure to request early marking for submitted assessments
+---
+
+For the Term 2 2022 running of teh HDAT9800 course, we are offering early marking of core assignments (those for Chapters 1 to 7). This enables students to work at their own pace through the core curriculum material and the corresponding assessments, potentially leaving more time to work on the two additional assessments, the group assessment and otherwise engage with the additional material offered in each Chapter.
+
+If you have complete a chapter assessment and submitted a final version of your solution to git, and pushed that to your assessment repo on GitHub (the repo that was automatically created for you when you clicked on the assignment link), then yo can request early marking (before the assessment due date) by carrying out the following steps:
+
+1. In your web browser, go to the repository for the assignment (GitHub will have sent you an email with a link to it, but it will also show up in your list of repositories if you log in to GitHub).
+
+2. Click on the Issues tab (highlighted in red in example screenshot below)
+
+![](images/GitHub-assessment-repo-home-page.png)
+
+3. You should be at the issue page for the repo. Click on the **new Issue** button.
+
+![](images/GitHub-assessment-repo-issues-page.png)
+
+4. This will open a new issue form. Fill it out as shown below in the red highlit ovals, with "Ready for marking" as the issue title, and `@timchuches @OSotade` as the boddy of the issue (that will make it show up in the course instructors open issues lists, see below). When you have filled those in, click the **Submit new issues** button as highlighted below.
+
+![](images/GitHub-assessment-repo-ready-issue.png)
+
+5. You should see an open issue for your assessment repository that looks like the screenshot below. That's all you need to do!
+
+![](images/GitHub-assessment-repo-ready-issue-submitted.png)
+
+The issue you just opened will show up in the open issues list in GitHub for the course instructors (see below). When your assessment has been marked, the instructors will close the issue with a comment that the assessment has been marked. You should receive an email notification about that automatically from GitHub.
+
+This workflow is exactly what you would use if working with collaborators via git and GitHub -- for example, on your group Assessment for this course!
+
+![](images/Course-instructors-open-issues-list.png)
+
+**Note:** Please don't share your marks or comments on your marked assignment with fellow students until **after** the submission deadline for that assessment.

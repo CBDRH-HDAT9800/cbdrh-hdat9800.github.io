@@ -246,6 +246,10 @@ You may need to re-install this package from time to time as instructed to recei
 
 There are weekly individual assessments for Chapters 1 to 7. Each of these assessments is worth 8% of the total marks for the course, thus 56% all together. These weekly assessments cover the core course material and should be fairly easy and will not take very long to complete if you have worked through the core curriculum material. The weekly assessments must be submitted for marking no later than three weeks after the opening date for the chapter they relate to -- the exact dates for each are shown in the table below. However, you are encouraged to submit the core curriculum assignments early, if possible, to allow more time for the additional assignments (see below). The course instructors will endeavour to mark and return assignments submitted before the due date as quickly as possible, so that you can get feedback and assurance on your progress and understanding of the course material.
 
+### Requesting early marking
+
+You may request early marking of your submitted core curriculum assessments by following the steps outlined [here](requesting_early_marking.html).
+
 ## Additional assessments
 
 There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below. These assignments will be marked promptly after the due date for each.
@@ -303,7 +307,8 @@ df <- data.frame(
   
   link <- c(
     "<a class='fa fa-link' href='https://classroom.github.com/a/4J9wKhgK' target='_blank'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
+    "<a class='fa fa-link' href='https://classroom.github.com/a/tOV9OQvh' target='_blank'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 8)
   )
   
 )

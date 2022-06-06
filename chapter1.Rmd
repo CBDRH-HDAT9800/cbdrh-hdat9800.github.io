@@ -174,8 +174,9 @@ You should then clone this assignment repository to your local computer, using R
 
 You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 
-Procedures for requesting early marking of your assignment (before the due date) will appear here shortly.
+## Requesting early marking
 
+You may request early marking of your submitted assessment by following the steps outlined [here](requesting_early_marking.html).
 
 # Readings and Resources for Chapter 1
 
