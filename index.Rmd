@@ -79,10 +79,10 @@ topic <- c(
 
 extension <- c(
 'Introductions; dplyr and the R tidyverse; computer architecture, databases, SQL and accessing databases from R; hands-on exercise',
-'Presentations by program code; communication by self-publishing; hands-on setting up your own health data science blog; a visualisation I am proud of (guest presentation)',
+'Presentations by program code; communication by self-publishing; hands-on setting up your own health data science blog',
 'Some more visualisation theory; more on data visualisation using ggplot2',
 'Visualisation with Python -- guest tutorial by Dr Georgina Kennedy',
-'Theories of Visual Perception -- guest tutorial by Andy Blance; a visualisation I am proud of (guest presentation)',
+'Theories of Visual Perception -- guest tutorial by Andy Blance; a visualisation I am proud of (Dr Malcolm Gillies)',
 'Visualisation and exploratory data analysis; visualisation of statistical models',
 'Incorporating time -- uses and misuses of animation in data visualisation; accessibility aspects of visualisation',
 'Visualisation of categorical data; visualising big data; a visualisation I am proud of (guest presentation)',
