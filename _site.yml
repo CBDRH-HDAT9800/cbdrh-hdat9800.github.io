@@ -23,6 +23,8 @@ navbar:
           href: chapter1.html
         - text: "Chapter 2"
           href: chapter2.html
+        - text: "Chapter 3"
+          href: chapter3.html
         - text: "Favourite visualisations"
           href: favourite_visualisations.html
     - text: "Recordings"

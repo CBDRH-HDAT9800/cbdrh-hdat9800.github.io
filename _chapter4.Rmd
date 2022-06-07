@@ -1,7 +1,7 @@
 ---
-title: "HDAT9800 Chapter 2"
+title: "HDAT9800 Chapter 4"
 description: |
-  Chapter 2 material for HDAT9800 Visualisation & Communication of Health Data
+  Chapter 4 material for HDAT9800 Visualisation & Communication of Health Data
 ---
 
 ```{r setup, include=FALSE}
@@ -25,6 +25,12 @@ knitr::include_graphics("images/rmarkdown_horst.jpeg")
 ```
 
 Graphic by [Alison Horst](https://github.com/allisonhorst/stats-illustrations), used under CC-BY license.
+
+# Introduction to the core curriculum content for this chapter (Dr James Farrow)
+
+```{r intro-video, preview=TRUE}
+embed_url("https://youtu.be/NZZnwKvb3BM")
+```
 
 # What's in the lectures and tutorials for this Chapter?
 
@@ -80,37 +86,44 @@ If you have any questions about the lectures or tutorials, or if you want to sha
 
 ## Optional practical exercises (not assessed or marked)
 
-## Part B (4 marks)
+* Practice creating some R markdown documents of different types (reports, presentations), add your own text, images and R code (any code you wish), and render (knit) them in different formats (HTML, PDF) and compare how they are rendered and behave.
 
-1. Use R (via RStudio) to create an R markdown presentation document. You can use any of the standard R markdown presentation types (ioslides, slidify or beamer) and the output format for each (ioslides and slidify are for an HTML slide deck, beamer creates PDF slide decks).
+* Install the `rticles` package in RStudio, and use it to create an R markdown manuscript document for one of the scholarly journals it supports (PLOS One or ArXiv are good choices).
 
-2. Give the presentation a title slide. 
-
-3. Visit the R Graph Gallery web site at 
-https://www.r-graph-gallery.com and choose three charts or plots from that site that you find interesting or potentially useful (you will not be marked on your choice of chart or plot from the, any will be OK). 
-
-4. Take the code for each of the three charts or plots from the R Graph Gallery web site and insert it into three code chunks in your presentation. Each code chunk should be on a separate slide. Note that you should choose charts or plots for which the code runs without problem, although it is fine if it relies on additional R packages or on data that is automatically downloaded from a web site (most of the R code on the R Graph gallery web site meets this criterion, but a few don't -- avoid those).
-
-5. After each chart, insert a new slide containing a brief discussion of why you like or value the chart, as a series of bullet points or equivalent point formatting. You will not be marked on teh quality of your discussion, so do not spend too much time on it, but it should at least make sense.
-
-6. Add a conclusion and acknowledgements slide in which you attribute the code you used to the R Graph Gallery web site.
-
-7. Test your slide deck file to ensure that it renders (knits) correctly and that the resulting slide deck displays correctly in your web browser or PDF viewer as appropriate.
-
-8. Commit the Rmd file for the presentation to the assignmeent git repository and push the repository back to GitHub.
-
-You can revise your assignment submissions at any time, and multiple times,  up to the assignment due date and time (see the course timetable on OpenLearning for when that is).
-
-You are welcome to ask for guidance from the course instructors and/or fellow students if you encounter problems or if there is anything you would like to clarify. However, this is an individual assignment and what you submit must be your own work and not copied from anyone or anywhere else (except for the permitted re-use of R code from the R Graph Gallery web site as described above).
-
+If you wish, post examples of your rendered (knitted) documents as HTML or PDF files attached to The Chapter 2 channel in teh course teams space.
 
 # Interactive sessions for Chapter 2
 
-Details will appear here shortly.
+![](images/rmarkdown_wizards.png)
+
+The Chapter 2 interactive sessions (online Wednesday at 6pm, face-to-face Thursday at 2pm) will cover the following topics:
+
+* Q&A on Chapter 2 (and Chapter 1) curriculum material
+* discussion of the core readings for this week (see below, please reading them before the section if possible, but we will be briefly recapping the main points)
+* a hands-on workshop on creating your own health data science blog site using the Distill literate programming framework for `R`, `Rmarkdown` and `knitr`.
+
+For the hands-on workshop, you will need your laptop with `R` and `RStudio` installed, and access to your GitHub account. The `distill` package for R (and its dependencies, which will automatically be installed too) will be needed. If possible, you should install that before the session.
+
+The session will not go as long as the Chapter 1 session, and we will take a break for 5 minutes every hour!
+
+A slide deck for the session will be provided here just before the nline session.
 
 # Chapter 2 assessment exercise
 
-Details will appear here shortly.
+For chapter 2, the assessment exercise is slightly more involved than Chapter 1, and is intended to give you some practice editing Rmarkdown documents. Access the assessment the same way as for Chapter 1, by clicking on this link to the Chapter 2 assessment GitHub Classroom repository:  [https://classroom.github.com/a/tOV9OQvh](https://classroom.github.com/a/tOV9OQvh)
+
+This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
+
+You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
+
+**Be sure that you can successfully knit the `Rmd` (R markdown) document that you will be working on in thos assessment, before you commit and push your final version. The instructors will be marking your `Rmd` file by re-rendering it (re-knitting it).**
+
+You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
+
+## Requesting early marking
+
+You may request early marking of your submitted assessment by following the steps outlined [here](requesting_early_marking.html).
+
 
 # Readings and Resources for Chapter 2
 

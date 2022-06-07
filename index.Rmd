@@ -67,7 +67,7 @@ startDays <- format(firstDay + seq(0,69, 7), "%a %d %B")
 topic <- c(
 'Course Introduction; What is Data Visualisation; Introduction to R; Introduction to git',
 'Introduction to Literate Programming',
-'Constructing Charts using ggplot',
+'Constructing Charts using ggplot2',
 'Collaborative Report Writing (including tables)',
 'Visualisation and Mapping part 1',
 'Building Interactive Data-driven Web Apps using Shiny part 1',
@@ -79,7 +79,7 @@ topic <- c(
 
 extension <- c(
 'Introductions; dplyr and the R tidyverse; computer architecture, databases, SQL and accessing databases from R; hands-on exercise',
-'Presentations by program code; communication by self-publishing; hands-on setting up your own health data science blog',
+'Communication by self-publishing; hands-on setting up your own health data science blog',
 'Some more visualisation theory; more on data visualisation using ggplot2',
 'Visualisation with Python -- guest tutorial by Dr Georgina Kennedy',
 'Theories of Visual Perception -- guest tutorial by Andy Blance; a visualisation I am proud of (Dr Malcolm Gillies)',
@@ -119,7 +119,8 @@ f2f_tutorials <- c(
 learnrLinks <- c(
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/dplyr/' target='_blank'></a>",
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch2-knitr/' target='_blank'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 8)
+  "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/ggplot2/' target='_blank'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 7)
 )
 
 videos <- c(
@@ -141,14 +142,16 @@ slides <- c(
 )
 
 recordings <- c(
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 10)
+  "<a class='fa fa-video' href='recordings.html#chapter-1'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
 )
 
 
 chapterPages <- c(
   "<a class='fa fa-book' href='chapter1.html' target='_self'></a>",
   "<a class='fa fa-book' href='chapter2.html' target='_self'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 8)
+  "<a class='fa fa-book' href='chapter3.html' target='_self'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 7)
 )
 
 df <-

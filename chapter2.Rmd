@@ -26,6 +26,12 @@ knitr::include_graphics("images/rmarkdown_horst.jpeg")
 
 Graphic by [Alison Horst](https://github.com/allisonhorst/stats-illustrations), used under CC-BY license.
 
+# Introduction to the core curriculum content for this chapter (Dr James Farrow)
+
+```{r intro-video, preview=TRUE}
+embed_url("https://youtu.be/Yi_Pp3KztKI")
+```
+
 # What's in the lectures and tutorials for this Chapter?
 
 * Part 1
@@ -35,8 +41,6 @@ Graphic by [Alison Horst](https://github.com/allisonhorst/stats-illustrations), 
   * a quick look at some additional output formats for knitr
 
 View the lecture videos (below), and download the lecture notes (available for Part A only, there is no slide deck for part B) if you want to follow along with the presenter (or for revision later). 
-
-After you have viewed the lectures, please proceed to the tutorials.
 
 There is also an interactive `learnr` tutorial covering literate programming using `knitr`. This covers much of the same material as the Part 1 lecture for Chapter 2, but goes into a bit more detail. 
 
@@ -87,6 +91,8 @@ If you have any questions about the lectures or tutorials, or if you want to sha
 If you wish, post examples of your rendered (knitted) documents as HTML or PDF files attached to The Chapter 2 channel in teh course teams space.
 
 # Interactive sessions for Chapter 2
+
+![](images/rmarkdown_wizards.png)
 
 The Chapter 2 interactive sessions (online Wednesday at 6pm, face-to-face Thursday at 2pm) will cover the following topics:
 

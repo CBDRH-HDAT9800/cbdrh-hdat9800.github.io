@@ -1,0 +1,144 @@
+---
+title: "HDAT9800 Chapter 3"
+description: |
+  Chapter 3 material for HDAT9800 Visualisation & Communication of Health Data
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(hexSticker)
+library(ggplot2)
+library(shiny)
+library(vembedr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+```{r course-logo, preview=TRUE}
+knitr::include_graphics("images/ggplot2_masterpiece.png")
+```
+
+Graphic by [Alison Horst](https://github.com/allisonhorst/stats-illustrations), used under CC-BY license.
+
+# Introduction to the core curriculum content for this chapter (Dr James Farrow)
+
+```{r intro-video, preview=TRUE}
+embed_url("https://youtu.be/a_QTBabjEwY")
+```
+
+# What's in the lectures and tutorials for this Chapter?
+
+The pre-recorded lecture covers: 
+
+* pragmatic focus on how to create data visualisations in R
+* with a little bit of underlying theory
+* quick overview of the `base R` graphics and `lattice` graphics systems
+* then focus on `ggplot2`
+  * in subsequent chapters we’ll look at add-ons and extensions to the `ggplot2` framework
+  * as well as a bit more theory on good visualisation practice
+
+After viewing the prerecorded lecture below (the slide deck for it is available below the video), you should go through the interactive learnr tutorial available from the Tutorial page for this chapter. 
+
+There is just one `learnr` tutorial for Chapter 3. In this tutorial you will be introduced to the `ggplot2` R library, learn how to create elegant graphics for your data and get some interactive hands on play using ggplot2. 
+
+After you have viewed the lectures, please proceed to the tutorials.
+
+There is also an interactive `learnr` tutorial covering the use of the `ggplot2` library for R. This covers much of the same material as the lecture for Chapter 3, but in a lot more detail, and includes a worked example of a statistical analysis of a dataset facilitated by visualisation using `ggplot2`. 
+
+Links and further instructions for each component are provided in the sections below.
+
+# Pre-recorded lecture for Chapter 3
+
+View the lecture video below, and download the lecture notes (separated into part A and part B if you want to follow along with the presenter (or for revision later). 
+
+```{r ch3-video, preview=TRUE}
+embed_url("https://youtu.be/GUTVgU2SflE")
+```
+
+[**Slide deck for Chapter 3 - part A**](assets/HDAT9800-2022-T2-Chapter-3-part-A.pdf)
+
+[**Slide deck for Chapter 3 - part B**](assets/HDAT9800-2022-T2-Chapter-3-part-B.pdf)
+
+
+After you have viewed the lecture, please proceed to do the related `ggplot2` tutorial (see below).
+
+# `learnr` tutorial for Chapter 3
+
+You should download and install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Intructions for installing `R` and `RStudio` are provided [here](installing_r.html).
+
+The tutorial is also available online via the link from the course schedule table on the course home page.
+
+The tutorial covers much of the same `ggplot2` material as in the pre-recorded lecture, but goes into quite a lot more detail. 
+
+If you have any questions about the lectures or tutorials, or if you want to share any useful resources or post insights, please post in the [Teams space](https://teams.microsoft.com/l/channel/19%3a7ce6b5565a284b51b0e85c20ad2bcc2a%40thread.tacv2/Chapter%25202?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3) for the course, in the channel for Chapter 3.
+
+# Interactive sessions for Chapter 3
+
+Details will appear here soon.
+
+# Chapter 3 assessment exercise
+
+Details will appear here soon.
+
+## Requesting early marking
+
+You may request early marking of your submitted assessment by following the steps outlined [here](requesting_early_marking.html).
+
+
+# Readings and Resources for Chapter 3
+
+```{r, eval=TRUE, include=TRUE}
+
+reading = c(
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 1 - Introduction",
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 2 - Mapping data onto aesthetics",
+      "RStudio Inc. Cheat Sheets (available directly in RStudio)",
+      "Xie Y. 15 Tips on Making Better Use of R Markdown. RStudio, 2019. (Yihui Xie is the creator of knitr for R and has a great sense of humour...)",
+      "Cullen B., Hill A., Velasquez I. R Markdown Lesser-Known Tips & Tricks #2: Cleaning Up Your Code. RStudio blog post, 6 Jan 2022.",
+      "McNulty K. Ten awesome R Markdown tricks. Towards Data Science (blog),  9 Dec 2022."
+    )
+
+links <- c(
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/introduction.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/aesthetic-mapping.html' target='_blank'></a>",
+  "<a class='fa fa-file-pdf' href='https://rmarkdown.rstudio.com/lesson-15.HTML' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://slides.yihui.org/2019-dahshu-rmarkdown#1' target='_blank'></a><br><a class='fa fa-youtube' href='https://www.youtube.com/watch?v=L5yTrtRdeCI' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://www.rstudio.com/blog/r-markdown-tips-tricks-2-cleaning-up-your-code/' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://towardsdatascience.com/ten-awesome-r-markdown-tricks-56ef6d41098' target='_blank'></a>"
+)
+
+
+df <- data.frame(
+  reading = reading,
+  links = links
+)
+
+
+kbl(df, escape = FALSE,
+    align = c('l', 'c'),
+    col.names = NULL) %>%
+  kable_styling(bootstrap_options = "hover") %>% 
+    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings")  %>% 
+    kableExtra::group_rows(start_row = 3, end_row = 6, group_label = "Other resources") 
+
+```
+
+<aside>
+
+<br>
+
+You should prioritise the core readings each week.  
+
+</aside>
+
+
+
+
+
+
