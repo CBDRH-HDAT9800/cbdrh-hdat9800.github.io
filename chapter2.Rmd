@@ -88,7 +88,17 @@ If you wish, post examples of your rendered (knitted) documents as HTML or PDF f
 
 # Interactive sessions for Chapter 2
 
-Details will appear here shortly.
+The Chapter 2 interactive sessions (online Wednesday at 6pm, face-to-face Thursday at 2pm) will cover the following topics:
+
+* Q&A on Chapter 2 (and Chapter 1) curriculum material
+* discussion of the core readings for this week (see below, please reading them before the section if possible, but we will be briefly recapping the main points)
+* a hands-on workshop on creating your own health data science blog site using the Distill literate programming framework for `R`, `Rmarkdown` and `knitr`.
+
+For the hands-on workshop, you will need your laptop with `R` and `RStudio` installed, and access to your GitHub account. The `distill` package for R (and its dependencies, which will automatically be installed too) will be needed. If possible, you should install that before the session.
+
+The session will not go as long as the Chapter 1 session, and we will take a break for 5 minutes every hour!
+
+A slide deck for the session will be provided here just before the nline session.
 
 # Chapter 2 assessment exercise
 

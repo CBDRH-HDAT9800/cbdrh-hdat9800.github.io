@@ -3,16 +3,11 @@ title: "HDAT9800 Tutorial Recordings"
 description: "Recordings of the weekly online tutorials for HDAT9800"
 ---
 
-Links to recordings will appear here each week. 
+**Note:** Access to these videos requires logging in to the UNSW Teams environment as an enrolled student.
 
-```{r, eval=FALSE, include=FALSE}
-Chapter 4 - James https://youtu.be/JxUGgqYEQ0k
-Chapter 5 - https://youtu.be/7ki559mCHKA
-Chapter 6 - https://youtu.be/VzDkIpvDDxU
-Chapter 7 - https://youtu.be/bu9vd14MhTM
-Chapter 8 - https://youtu.be/6lMhwtylLlU
-Chapter 9 - https://youtu.be/hDCHs7FqX2I
-```
+# Chapter 1
+
+[Week 1 online session video](https://unsw.sharepoint.com/sites/CLS-HDAT9800_T2_5226_Combined/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220601_180439-Meeting%20Recording.mp4?web=1)
 
 <aside>
 

@@ -1,0 +1,9 @@
+
+```{r, eval=FALSE, include=FALSE}
+Chapter 4 - James https://youtu.be/JxUGgqYEQ0k
+Chapter 5 - https://youtu.be/7ki559mCHKA
+Chapter 6 - https://youtu.be/VzDkIpvDDxU
+Chapter 7 - https://youtu.be/bu9vd14MhTM
+Chapter 8 - https://youtu.be/6lMhwtylLlU
+Chapter 9 - https://youtu.be/hDCHs7FqX2I
+```
