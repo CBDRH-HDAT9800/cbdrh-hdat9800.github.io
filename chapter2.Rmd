@@ -104,7 +104,7 @@ For the hands-on workshop, you will need your laptop with `R` and `RStudio` inst
 
 The session will not go as long as the Chapter 1 session, and we will take a break for 5 minutes every hour!
 
-A slide deck for the session will be provided here just before the nline session.
+The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-2-distill/HDAT9800-Chapter-2-distill.html' target='_blank'> here</a> (or as a <a class='fa fa-file-pdf' href='assets/HDAT9800-Chapter-2-distill.pdf' target='_blank'> PDF</a>).
 
 # Chapter 2 assessment exercise
 
