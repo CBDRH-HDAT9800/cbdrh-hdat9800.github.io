@@ -359,7 +359,7 @@ xaringanExtra::use_animate_css()
 
 # Maintaining your own blog site
 
-- further customisation of your blog site
+- further customisation of youg site
 - modify an existing blog post
 - add one or more new blog posts
 
