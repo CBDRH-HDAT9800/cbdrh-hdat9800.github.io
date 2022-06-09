@@ -106,6 +106,12 @@ The session will not go as long as the Chapter 1 session, and we will take a bre
 
 The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-2-distill/HDAT9800-Chapter-2-distill.html' target='_blank'> here</a> (or as a <a class='fa fa-file-pdf' href='assets/HDAT9800-Chapter-2-distill.pdf' target='_blank'> PDF</a>).
 
+There is an additional video which illustrates each of the steps in creating a blog site:
+
+```{r distill-video, echo=FALSE, preview=TRUE}
+vembedr::embed_url("https://youtu.be/unur6FBh_x0")
+```
+
 # Chapter 2 assessment exercise
 
 For chapter 2, the assessment exercise is slightly more involved than Chapter 1, and is intended to give you some practice editing Rmarkdown documents. Access the assessment the same way as for Chapter 1, by clicking on this link to the Chapter 2 assessment GitHub Classroom repository:  [https://classroom.github.com/a/tOV9OQvh](https://classroom.github.com/a/tOV9OQvh)

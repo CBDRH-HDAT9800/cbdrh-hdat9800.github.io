@@ -25,7 +25,7 @@ background-size: cover
 ## Chapter 2 Interactive Tutorial - blogging with `distill` 
 #### Tim Churches<br>
 #### UNSW Medicine
-#### 10th May 2022
+#### 8th June 2022
 
 
 ```{r setup, include=FALSE, purl=FALSE}
@@ -58,6 +58,7 @@ library(xaringanthemer)
 style_duo_accent(
   primary_color = "#000000",
   secondary_color = "#ffdc00",
+  link_color = "#00bfff",
   header_font_google = google_font("Rubik"),
   text_font_google   = google_font("Roboto", "300", "300i"),
   code_font_google   = google_font("Roboto Mono")
@@ -165,7 +166,7 @@ xaringanExtra::use_animate_css()
 # Chapter 1 recap, cont'd
 
 - `dplyr` and related packages (`tidyr`, `purrr`) worth learning
-  - we'll cover `tidyr` and `purrr` briefly in a later intercative session 
+  - we'll cover `tidyr` and `purrr` briefly in a later interactive session 
   - learning SQL - a good idea, but not necessary for this course
 - `dplyr`/`dbplyr` challenge solutions (to be posted in Teams)
 
@@ -208,7 +209,7 @@ xaringanExtra::use_animate_css()
   - most important thing is to accurately communicate the data without distortion or bias (the science)
   - but do so in an aesthetically pleasing way (the art)
 - scientists tend to be good at the science but are often aesthetically challenged
-- artists and designers tend to be good at preparing beuatiful or pleasing visualsiations, but care less about the accuracy of what they are presenting
+- artists and designers tend to be good at preparing beautiful or pleasing visualisations, but care less about the accuracy of what they are presenting
 - three parts:
   - from data to visualisation
   - principles of figure/chart design
@@ -221,7 +222,7 @@ xaringanExtra::use_animate_css()
 - good and bad examples, using the same data
   - **ugly** - a chart with aesthetics problems (a matter of taste) but otherwise clear, informative and accurate
   - **bad** - a chart with perceptual problems, making it unclear, confusing, too complicated or possibly deceiving
-  - **wrong** - a chart with objective, mathematical errors, undisputably incorrect
+  - **wrong** - a chart with objective, mathematical errors, indisputably incorrect
   
 ---
 
@@ -246,7 +247,7 @@ xaringanExtra::use_animate_css()
 
 # Aesthetics and data types
 
-- aethetics describe every aspect of a particular graphical element
+- aesthetics describe every aspect of a particular graphical element
   - for example, the _position_ of a point (described by _x_ and _y_ values in a 2D chart)
   - graphical elements have a _shape_, a _size_, a _colour_, a _line type_, a _line width_  etc
 
@@ -260,7 +261,7 @@ xaringanExtra::use_animate_css()
 
 ---
 
-# what are the data types in this table?
+# What are the data types in this table?
 
 ![](images/example_data_types.png)
 
@@ -309,7 +310,7 @@ xaringanExtra::use_animate_css()
 
 ---
 
-## Data science blogosphere
+# Data science blogosphere
 
 - very rich, and growing
 - a nice blog site is a great addition to your CV/resumé
@@ -342,12 +343,11 @@ xaringanExtra::use_animate_css()
 
 ---
 
-# Setting up you own blog site
+# Overview of steps in setting up you own blog site
 
 - create a repository (repo) for the blog under your personal GitHub account
-  - can be a public or private repository
-    - private can be made public later, not v-v
-- set up a new RStudio project and clone that repo to your computer
+  - should be a public repository
+- set up a new RStudio project and clone the blog repo to your computer
 - set up a new Distill blog site project in the same directory that you cloned the repo to
 - do some initial customisation of the blog site
 - rebuild the blog site
@@ -363,6 +363,16 @@ xaringanExtra::use_animate_css()
 - modify an existing blog post
 - add one or more new blog posts
 
+
+---
+
+# A video illustrating these steps 
+
+- the steps are described in subsequent slides
+
+```{r intro-video, echo=FALSE, preview=TRUE}
+vembedr::embed_url("https://youtu.be/unur6FBh_x0")
+```
 
 ---
 
@@ -385,7 +395,7 @@ install.packages("distill", dependencies = TRUE)
   - but put "blog" in the name
 - go to your GitHub home page
   - create a new repository
-  - public or private
+  - make it a public repository
   
 ---
 
@@ -404,15 +414,24 @@ create_blog(dir = ".", title = "My Blog")
 
 ---
 
+# Exit RStudio then re-open your blog project in RStudio
+
+- double click on the `.Rproj` file for yiur blog project to re-open the project in RStudio
+  - this is necessary so that RStudio detects that you are using `distill` so that a **Build** tab appears in the upper-right pane in RStudio
+  
+---
+
 # Set up GitHub Pages
 
-- change Pages directory to branch main, docs/ directory
+- change Pages branch and directory to:
+  - branch main
+  - directory docs/ 
 
 ---
 
-# Adjust _site.yml to suit
+# Make a `.nojekyll` file in your blog repo
 
-- make a `.nojekyll` file
+This tells Google Pages not to do any further transformation of web pages using something called `jekyll`
 
 ```{r create-nojekyll, eval=FALSE, echo=TRUE}
 
@@ -421,18 +440,24 @@ file.create(".nojekyll")
 
 ```
 
+---
+
+# Adjust _site.yml to suit
+
 - adjust the `output_dir` parameter to `docs`
 
 ---
 
 # Build the site
 
+- click on the **Build** tab in the upper-right pane in RStudio, then click **Build Website**
+
 ---
 
-# Commit to git then push to GitHub
+# Commit all modified files to git then push to GitHub
 
 - then wait a bit
-- check if published
+- check if published by accessing the URL for your GitHub Pages site provided in the Pages setup screen on GitHub
 
 ---
 
@@ -444,6 +469,10 @@ create_post("I love blogging")
 
 ```
 
+- then knit that post so it is rendered
+- rebuild the website (see above)
+- commit all changes to git and push to GitHub
+
 ---
 
 # Customise!
@@ -454,4 +483,3 @@ create_post("I love blogging")
 
 # Enough (for now)!
 
-We'll discuss answers to these challenges next week.

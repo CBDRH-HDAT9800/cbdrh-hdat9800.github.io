@@ -61,6 +61,7 @@ library(xaringanthemer)
 style_duo_accent(
   primary_color = "#000000",
   secondary_color = "#ffdc00",
+  link_color = "#00bfff",
   header_font_google = google_font("Rubik"),
   text_font_google   = google_font("Roboto", "300", "300i"),
   code_font_google   = google_font("Roboto Mono")

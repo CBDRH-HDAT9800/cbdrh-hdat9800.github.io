@@ -143,7 +143,8 @@ slides <- c(
 
 recordings <- c(
   "<a class='fa fa-video' href='recordings.html#chapter-1'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
+  "<a class='fa fa-video' href='recordings.html#chapter-2'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 8)
 )
 
 

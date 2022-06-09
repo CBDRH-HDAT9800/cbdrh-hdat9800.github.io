@@ -17,6 +17,18 @@ To watch the video in full-screen, first click play then choose Full screen.
 
 </aside>
 
+# Chapter 2
+
+**Note:** We have provided an additional video below which more clearly illustrates the steps required to set up a blog web site using `distill`. Therefore we recommend that you watch the video of the Chapter 2 online session, below, only up to the point at which creation of a blog site is demonstrated. At that point, watch the additional video below instead.
+
+[Week 2 online session video](https://unsw.sharepoint.com/sites/CLS-HDAT9800_T2_5226_Combined/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220608_181144-Meeting%20Recording.mp4?web=1)
+
+## Additional video illustrating blog site set-up
+
+```{r intro-video, echo=FALSE, preview=TRUE}
+vembedr::embed_url("https://youtu.be/unur6FBh_x0")
+```
+
 
 <aside>
 
