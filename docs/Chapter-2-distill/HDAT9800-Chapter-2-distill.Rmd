@@ -359,7 +359,7 @@ xaringanExtra::use_animate_css()
 
 # Maintaining your own blog site
 
-- further customisation of youg site
+- further customisation of your site
 - modify an existing blog post
 - add one or more new blog posts
 
@@ -481,5 +481,5 @@ create_post("I love blogging")
 
 ---
 
-# Enough (for now)!
+# Enough!
 

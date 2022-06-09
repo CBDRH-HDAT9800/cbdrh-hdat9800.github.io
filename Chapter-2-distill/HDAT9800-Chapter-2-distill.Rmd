@@ -481,5 +481,5 @@ create_post("I love blogging")
 
 ---
 
-# Enough (for now)!
+# Enough!
 
