@@ -55,7 +55,7 @@ Links to slides and recordings will be posted on the page for each (weekly) chap
 
 </aside>
 
-For Term 2 2022, the course is provided in both blended (hydrid) and online formats. Each Chapter, which corresponds to a week in the ten week course, comprises pre-recorded lectures, interactive tutorials which student work through themselves, and a weekly interactive tutorial session. These tutorial sessions are provided in both online and face-to-face form (on teh UNSW Kensington campus).
+For Term 2 2022, the course is provided in both blended (hybrid) and online formats. Each Chapter, which corresponds to a week in the ten week course, comprises pre-recorded lectures, interactive tutorials which student work through themselves, and a weekly interactive tutorial session. These tutorial sessions are provided in both online and face-to-face form (on the UNSW Kensington campus).
 
 There is a web page for each chapter (week) of the course, setting out exactly what you need to do each week (see links in the Course Schedule table below).
 
@@ -199,7 +199,7 @@ International students who have enrolled in the course for blended/hybrid delive
 
 The online interactive tutorials will be held using Teams at 6pm (Sydney time) each Wednesday. The tutorial will usually last between 2 and 2.5 hours. You can join the tutorials using [this link](https://teams.microsoft.com/l/meetup-join/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/1653955762718?context=%7b%22Tid%22%3a%223ff6cfa4-e715-48db-b8e1-0867b9f9fba3%22%2c%22Oid%22%3a%2223d7a44f-1fca-4328-b0b5-9ff6befeb010%22%7d). These tutorials should also appear in your Teams calendar.
 
-The face-to-face interactive tutorials will be held on the UNSW Kensingtom campus in the Mathews 104 room (K-F23-104) starting at 2pm each Thursday. These tutorials will also usually last between 2 and 2.5 hours. It may not be possible for all guest presenters to attend these tutorials in person, in which case the presentations may be provided online or students may view the recorded online tutorial for those parts of the tutorial. Please bring your laptop to these tutorials.
+The face-to-face interactive tutorials will be held on the UNSW Kensington campus in the Mathews 104 room (K-F23-104) starting at 2pm each Thursday. These tutorials will also usually last between 2 and 2.5 hours. It may not be possible for all guest presenters to attend these tutorials in person, in which case the presentations may be provided online or students may view the recorded online tutorial for those parts of the tutorial. Please bring your laptop to these tutorials.
 
 
 # The tutorials R packages
@@ -347,7 +347,7 @@ There are links to readings and additional resources on the page for each chapte
 ![](images/wilke_cover.png){width="60%"}
 
 
-**Claus O. Wilke. Fundamentals of Data Visualization. O'Reilly Media, Sebestopol, CA. 2019. ISBN 978-1-492-03108-6.** 
+**Claus O. Wilke. Fundamentals of Data Visualization. O'Reilly Media, Sebastopol, CA. 2019. ISBN 978-1-492-03108-6.** 
 
 This is a great introduction to data visualisation in the biological and biomedical sciences (the author is a biologist). Furthermore, it uses `R` throughout, and the entire text is itself written using literate programming methods in R! Best of all, it is available under a Creative Commons license and thus can be accessed and used without cost. By all means buy the published version (I have a copy), but you don't have to -- the full textbook can be [accessed online](https://clauswilke.com/dataviz/). You can even access the source code for it.
 

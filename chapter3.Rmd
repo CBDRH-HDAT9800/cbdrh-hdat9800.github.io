@@ -43,7 +43,7 @@ The pre-recorded lecture covers:
   * in subsequent chapters we’ll look at add-ons and extensions to the `ggplot2` framework
   * as well as a bit more theory on good visualisation practice
 
-After viewing the prerecorded lecture below (the slide deck for it is available below the video), you should go through the interactive learnr tutorial available from the Tutorial page for this chapter. 
+After viewing the pre-recorded lecture below (the slide deck for it is available below the video), you should go through the interactive learnr tutorial available from the Tutorial page for this chapter. 
 
 There is just one `learnr` tutorial for Chapter 3 covering the use of the `ggplot2` library for R. This covers much of the same material as the lecture for Chapter 3, but in a lot more detail, and includes a worked example of a statistical analysis of a dataset facilitated by visualisation using `ggplot2`. 
 

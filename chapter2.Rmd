@@ -72,7 +72,7 @@ After you have viewed the lectures, please proceed to do the related `knitr` tut
 
 # `learnr` tutorial for Chapter 2
 
-You should download and install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Intructions for installing `R` and `RStudio` are provided [here](installing_r.html).
+You should download and install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Instructions for installing `R` and `RStudio` are provided [here](installing_r.html).
 
 **Note*: Essentially the same tutorial is contained in the `cbdrhintro` tutorials package. However, you should do the one called "**Chapter 2: knitr**" because it is slightly more up-to-date. We will endeavour to fix this duplication of tutorials in the near future. However, it doesn't really matter which version of the `knitr` tutorial you do.
 
@@ -88,7 +88,7 @@ If you have any questions about the lectures or tutorials, or if you want to sha
 
 * Install the `rticles` package in RStudio, and use it to create an R markdown manuscript document for one of the scholarly journals it supports (PLOS One or ArXiv are good choices).
 
-If you wish, post examples of your rendered (knitted) documents as HTML or PDF files attached to The Chapter 2 channel in teh course teams space.
+If you wish, post examples of your rendered (knitted) documents as HTML or PDF files attached to The Chapter 2 channel in the course teams space.
 
 # Interactive sessions for Chapter 2
 
@@ -120,7 +120,7 @@ This will create a new GitHub repository for you, just for this assignment. Only
 
 You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
 
-**Be sure that you can successfully knit the `Rmd` (R markdown) document that you will be working on in thos assessment, before you commit and push your final version. The instructors will be marking your `Rmd` file by re-rendering it (re-knitting it).**
+**Be sure that you can successfully knit the `Rmd` (R markdown) document that you will be working on in those assessment, before you commit and push your final version. The instructors will be marking your `Rmd` file by re-rendering it (re-knitting it).**
 
 You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 

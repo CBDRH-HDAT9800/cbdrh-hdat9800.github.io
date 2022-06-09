@@ -37,7 +37,7 @@ View the lecture videos, and download the lecture notes if you want to follow al
 
 After you have viewed the lectures, please proceed to do the `learnr` tutorials on git.
 
-There is also an interactive `learnr` tutorial covering data manipulation using `dplyr` in R. This is also foundational material for later chapters, which will require the use of `dplyr` and related packages to manipulate and shape data for visualation and reporting.
+There is also an interactive `learnr` tutorial covering data manipulation using `dplyr` in R. This is also foundational material for later chapters, which will require the use of `dplyr` and related packages to manipulate and shape data for visualisation and reporting.
 
 The interactive tutorial session for Chapter 1 will start with a get-to-know-you session, in which we each introduce ourselves, and talk about our favourite data visualisation or chart (see below). There will be an opportunity for questions and answers (Q&A) about the core course material, and then a hands-on session in which we use the `dplyr` package in R to access and manipulate data in databases, along with a discussion of some fundamental concepts of computer architecture and operations which are important to understand when working with "big data".
 
@@ -91,7 +91,7 @@ The Chapter 1 tutorials have three parts:
 * Introduction to `git` and `GitHub`
 * Introduction to `dplyr`
 
-Please work through the content in the tutorials after you have watched the prerecorded lecture for this chapter. 
+Please work through the content in the tutorials after you have watched the pre-recorded lecture for this chapter. 
 
 If you have any questions about the tutorials, or if you want to share any useful resources or post insights, please post in the [Teams space](https://teams.microsoft.com/l/team/19%3aAzZ6eWc0Vd4Nx8NiQE3GrUnsF6rlDeg6qIIVpspPwK41%40thread.tacv2/conversations?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3) for the course, in the channel for Chapter 1.
 
@@ -148,7 +148,7 @@ You need to bring (or be using) your laptop, have R and RStudio installed, and h
 
 ### Further instructions for the hands-on session
 
-In the hands-on session, we wil be running the following code in this `gist`. Don't run it yet! You will need to create a new project in RStudio, access the code in the `gist` and coy-and-paste it into a new R code window in RStudio. We will then step through it section by section.
+In the hands-on session, we will be running the following code in this `gist`. Don't run it yet! You will need to create a new project in RStudio, access the code in the `gist` and coy-and-paste it into a new R code window in RStudio. We will then step through it section by section.
 
 [Code gist for Chapter 1 hands-on session](https://gist.githubusercontent.com/timchurches/23b20344c28844e4efd17a19bd389c72/raw/2df9975e820af5edacfacd791f1e7c52d91edda7/R_and_databases.R)
 
