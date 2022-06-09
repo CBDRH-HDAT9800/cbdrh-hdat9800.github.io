@@ -45,11 +45,7 @@ The pre-recorded lecture covers:
 
 After viewing the prerecorded lecture below (the slide deck for it is available below the video), you should go through the interactive learnr tutorial available from the Tutorial page for this chapter. 
 
-There is just one `learnr` tutorial for Chapter 3. In this tutorial you will be introduced to the `ggplot2` R library, learn how to create elegant graphics for your data and get some interactive hands on play using ggplot2. 
-
-After you have viewed the lectures, please proceed to the tutorials.
-
-There is also an interactive `learnr` tutorial covering the use of the `ggplot2` library for R. This covers much of the same material as the lecture for Chapter 3, but in a lot more detail, and includes a worked example of a statistical analysis of a dataset facilitated by visualisation using `ggplot2`. 
+There is just one `learnr` tutorial for Chapter 3 covering the use of the `ggplot2` library for R. This covers much of the same material as the lecture for Chapter 3, but in a lot more detail, and includes a worked example of a statistical analysis of a dataset facilitated by visualisation using `ggplot2`. 
 
 Links and further instructions for each component are provided in the sections below.
 
@@ -70,7 +66,7 @@ After you have viewed the lecture, please proceed to do the related `ggplot2` tu
 
 # `learnr` tutorial for Chapter 3
 
-You should download and install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Intructions for installing `R` and `RStudio` are provided [here](installing_r.html).
+You should download and install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Instructions for installing `R` and `RStudio` are provided [here](installing_r.html).
 
 The tutorial is also available online via the link from the course schedule table on the course home page.
 
@@ -96,21 +92,23 @@ You may request early marking of your submitted assessment by following the step
 ```{r, eval=TRUE, include=TRUE}
 
 reading = c(
-      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 1 - Introduction",
-      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 2 - Mapping data onto aesthetics",
-      "RStudio Inc. Cheat Sheets (available directly in RStudio)",
-      "Xie Y. 15 Tips on Making Better Use of R Markdown. RStudio, 2019. (Yihui Xie is the creator of knitr for R and has a great sense of humour...)",
-      "Cullen B., Hill A., Velasquez I. R Markdown Lesser-Known Tips & Tricks #2: Cleaning Up Your Code. RStudio blog post, 6 Jan 2022.",
-      "McNulty K. Ten awesome R Markdown tricks. Towards Data Science (blog),  9 Dec 2022."
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 3 - Cordinate systems and axes",
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 4 - Colour scales",
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 5 - Directory of visualisations",
+      "ggplot2 reference web site",
+      "Wickham H, Navarro D, Pedersen TL. ggplot2: elegant graphics for data analsysis. Springer, 2016 ISBN-13: 978-3319242750 (available for free online)",
+      "Chang W. R Graphics Cookbook. O'Reilly, 2019. (available online for free)",
+      "ggplot2 extensions gallery"
     )
 
 links <- c(
-  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/introduction.html' target='_blank'></a>",
-  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/aesthetic-mapping.html' target='_blank'></a>",
-  "<a class='fa fa-file-pdf' href='https://rmarkdown.rstudio.com/lesson-15.HTML' target='_blank'></a>",
-  "<a class='fa fa-globe' href='https://slides.yihui.org/2019-dahshu-rmarkdown#1' target='_blank'></a><br><a class='fa fa-youtube' href='https://www.youtube.com/watch?v=L5yTrtRdeCI' target='_blank'></a>",
-  "<a class='fa fa-globe' href='https://www.rstudio.com/blog/r-markdown-tips-tricks-2-cleaning-up-your-code/' target='_blank'></a>",
-  "<a class='fa fa-globe' href='https://towardsdatascience.com/ten-awesome-r-markdown-tricks-56ef6d41098' target='_blank'></a>"
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/coordinate-systems-axes.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/color-basics.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/directory-of-visualizations.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://ggplot2.tidyverse.org' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://ggplot2-book.org' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://r-graphics.org' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://exts.ggplot2.tidyverse.org/gallery/' target='_blank'></a>"
 )
 
 
@@ -124,8 +122,8 @@ kbl(df, escape = FALSE,
     align = c('l', 'c'),
     col.names = NULL) %>%
   kable_styling(bootstrap_options = "hover") %>% 
-    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings")  %>% 
-    kableExtra::group_rows(start_row = 3, end_row = 6, group_label = "Other resources") 
+    kableExtra::group_rows(start_row = 1, end_row = 3, group_label = "Core readings")  %>% 
+    kableExtra::group_rows(start_row = 4, end_row = 7, group_label = "Other resources") 
 
 ```
 
