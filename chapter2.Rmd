@@ -114,7 +114,7 @@ vembedr::embed_url("https://youtu.be/unur6FBh_x0")
 
 # Chapter 2 assessment exercise
 
-For chapter 2, the assessment exercise is slightly more involved than Chapter 1, and is intended to give you some practice editing Rmarkdown documents. Access the assessment the same way as for Chapter 1, by clicking on this link to the Chapter 2 assessment GitHub Classroom repository:  [https://classroom.github.com/a/tOV9OQvh](https://classroom.github.com/a/tOV9OQvh)
+For Chapter 2, the assessment exercise is slightly more involved than Chapter 1, and is intended to give you some practice editing Rmarkdown documents. Access the assessment the same way as for Chapter 1, by clicking on this link to the Chapter 2 assessment GitHub Classroom repository:  [https://classroom.github.com/a/tOV9OQvh](https://classroom.github.com/a/tOV9OQvh)
 
 This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
 

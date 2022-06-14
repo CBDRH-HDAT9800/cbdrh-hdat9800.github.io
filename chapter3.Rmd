@@ -80,7 +80,15 @@ Details will appear here soon.
 
 # Chapter 3 assessment exercise
 
-Details will appear here soon.
+For Chapter 2, the assessment exercise is intended to give you some practice modifying R code to create specific visualiastions using the `ggplot2` package, and embedding that code in an Rmarkdown documents. The framework for the Rmarkdown document you will be completing is supplied, and the coding tasks should be fairly straightforward if you have worked through the pre-recorded lecture and the `learnr` tutorial for Chapter 3. Access the assessment the same way as for previous chapters, by clicking on this link to the Chapter 3 assessment GitHub Classroom repository:  [https://classroom.github.com/a/QqP0VEjV](https://classroom.github.com/a/QqP0VEjV)
+
+This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
+
+You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
+
+**Be sure that you can successfully knit the `Rmd` (R markdown) document that you will be working on in those assessment, before you commit and push your final version. The instructors will be marking your `Rmd` file by re-rendering it (re-knitting it).**
+
+You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 
 ## Requesting early marking
 
