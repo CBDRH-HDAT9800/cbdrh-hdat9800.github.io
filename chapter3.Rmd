@@ -100,7 +100,7 @@ You may request early marking of your submitted assessment by following the step
 ```{r, eval=TRUE, include=TRUE}
 
 reading = c(
-      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 3 - Cordinate systems and axes",
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 3 - Coordinate systems and axes",
       "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 4 - Colour scales",
       "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 5 - Directory of visualisations",
       "ggplot2 reference web site",
