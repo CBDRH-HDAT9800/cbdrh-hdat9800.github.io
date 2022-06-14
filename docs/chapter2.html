@@ -2582,7 +2582,10 @@ Chapters
 <ul>
 <li><a href="#optional-practical-exercises-not-assessed-or-marked">Optional practical exercises (not assessed or marked)</a></li>
 </ul></li>
-<li><a href="#interactive-sessions-for-chapter-2">Interactive sessions for Chapter 2</a></li>
+<li><a href="#interactive-sessions-for-chapter-2">Interactive sessions for Chapter 2</a>
+<ul>
+<li><a href="#solving-problems-with-githib-access">Solving problems with GitHib access</a></li>
+</ul></li>
 <li><a href="#chapter-2-assessment-exercise">Chapter 2 assessment exercise</a>
 <ul>
 <li><a href="#requesting-early-marking">Requesting early marking</a></li>
@@ -2674,9 +2677,11 @@ Chapters
 </div>
 </div>
 </div>
+<h2 id="solving-problems-with-githib-access">Solving problems with GitHib access</h2>
+<p>When attempting to set up a blog site on GitHub, you may encounter errors relating to authenticating to GitHub. This is because GitHub now requires the use of <strong>PATs</strong> (personal access tokens) to authenticate to repositories, rather than passwords (you still need yout GitHub account password to access the GitHub website, so don’t lose that!). A PAT only needs to be set up once in RStudio to enable you to use the git and GitHub tools built into RStudio. To do this, follow the steps in sections 9.1, 9.3 and 9.4 of (this guide by Jenny Bryan)[<a href="https://happygitwithr.com/https-pat.html" class="uri">https://happygitwithr.com/https-pat.html</a>]. Section 9.2 contains additional details about HTTPS vs SSH authentication which you don’t need to detail with – just use HTTP). If you need additional help, please contact the course instructors via email or Teams, we are very happy to help.</p>
 <h1 id="chapter-2-assessment-exercise">Chapter 2 assessment exercise</h1>
 <p>For Chapter 2, the assessment exercise is slightly more involved than Chapter 1, and is intended to give you some practice editing Rmarkdown documents. Access the assessment the same way as for Chapter 1, by clicking on this link to the Chapter 2 assessment GitHub Classroom repository: <a href="https://classroom.github.com/a/tOV9OQvh">https://classroom.github.com/a/tOV9OQvh</a></p>
-<p>This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.</p>
+<p><strong>Note:</strong> Please ignore the mention of the creation of a Xaringan presentation as an additional assessment task, right at the end of the in the pre-recorded lecture for Chapter 2, This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.</p>
 <p>You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote <code>GitHub</code> repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).</p>
 <p><strong>Be sure that you can successfully knit the <code>Rmd</code> (R markdown) document that you will be working on in those assessment, before you commit and push your final version. The instructors will be marking your <code>Rmd</code> file by re-rendering it (re-knitting it).</strong></p>
 <p>You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date.</p>

@@ -112,10 +112,15 @@ There is an additional video which illustrates each of the steps in creating a b
 vembedr::embed_url("https://youtu.be/unur6FBh_x0")
 ```
 
+## Solving problems with GitHib access
+
+When attempting to set up a blog site on GitHub, you may encounter errors relating to authenticating to GitHub. This is because GitHub now requires the use of **PATs** (personal access tokens) to authenticate to repositories, rather than passwords (you still need yout GitHub account password to access the GitHub website, so don't lose that!). A PAT only needs to be set up once in RStudio to enable you to use the git and GitHub tools built into RStudio. To do this, follow the steps in sections 9.1, 9.3 and 9.4 of (this guide by Jenny Bryan)[https://happygitwithr.com/https-pat.html]. Section 9.2 contains additional details about HTTPS vs SSH authentication which you don't need to detail with -- just use HTTP). If you need additional help, please contact the course instructors via email or Teams, we are very happy to help.
+
 # Chapter 2 assessment exercise
 
 For Chapter 2, the assessment exercise is slightly more involved than Chapter 1, and is intended to give you some practice editing Rmarkdown documents. Access the assessment the same way as for Chapter 1, by clicking on this link to the Chapter 2 assessment GitHub Classroom repository:  [https://classroom.github.com/a/tOV9OQvh](https://classroom.github.com/a/tOV9OQvh)
 
+**Note:** Please ignore the  mention of the creation of a Xaringan presentation as an additional assessment task, right at the end of the in the pre-recorded lecture for Chapter 2, 
 This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
 
 You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
