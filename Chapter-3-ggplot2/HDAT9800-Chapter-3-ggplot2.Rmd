@@ -734,7 +734,7 @@ ggplot(data = diab3) +
 # More next week!
 
 - we'll have a regular `ggplot2` hands-on session almost every week from now on
-  - by the end of teh course you'll be wizards!
+  - by the end of the course you'll be wizards!
   
 
 
