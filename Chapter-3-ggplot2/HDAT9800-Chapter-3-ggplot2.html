@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>HDAT9800 Health Data Visualisation &amp; Communication</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tim Churches" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: middle, center, title-slide
+background-image: url("images/justblackbutwhy.png")
+background-size: cover
+
+#&lt;br&gt;&lt;br&gt;HDAT9800 Health Data Visualisation &amp; Communication&lt;br&gt;&lt;br&gt;
+## Chapter 3 Interactive Tutorial -- more on visualsiation with `ggplot2` 
+#### Tim Churches&lt;br&gt;
+#### UNSW Medicine
+#### 8th June 2022
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+# for changing font size in code blocks
+.remark-slide-content {
+  font-size: 28px;
+  padding: 20px 80px 20px 80px;
+}
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+.remark-code {
+  font-size: 24px;
+}
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.smallcode .remark-code { /*Change made here*/
+  font-size: 80% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 66% !important;
+}
+&lt;/style&gt;
+
+---
+
+# Agenda for Chapter 3 interactive session
+
+  - Q &amp; A
+  - core readings (Wilke Chapters 3, 4 &amp; 5 recap )
+  - diving deeper into `ggplot2` with some hands-on coding
+    - a quick look at the `patchwork` package
+
+---
+
+![](images/eda_with_ggplot2.jpeg)
+
+---
+
+
+# Chapter 2
+
+- Q &amp; A
+
+---
+
+# Wilke Chapter 3 - coordinate systems and axes
+
+- position scales are needed to determine where on a chart different data values should be shown
+- for typical 2D charts, we need two position scales
+  - usually these scales correspond to the _x_ and _y_ coordinates of a plot
+  - the geometric arrangement of the scales also needs to be specified (even if implicitly)
+  - conventionally the _x_ axis is the horizontal axis and the _y_ axis is the vertical axis
+  - but it doesn't have to be so: the _y_ axis could, for example, run at some angle other than 90 degrees to the _x_ axis, or one axis could run in a circle and the other run radially to that circle
+  - the combination of a set of position scales and their relative geometric arrangement is known as a _coordinate system_
+  
+---
+
+# Wilke Chapter 3 - Cartesian coordinates
+
+- the most commonly used coordinate system 
+  - _x_ and _y_ axes are orthogonal (at 90 degrees to each other)
+  - represent continuous scales, can show both positive and negative values
+  - requires a range to be specified for each axis
+---
+
+![](images/Wilke-fig-3-1.png)
+
+---
+
+# Wilke Chapter 3 - Cartesian coordinates, cont'd
+
+- data values almost always have units:
+  - temperature in degrees Celsius
+  - distance in millimetres, metre, kilometres etc
+  - time in minutes, hours, days or dates, months, years
+- charts often use scales representing different units for each axis
+  - the drawing of axes may be expanded or contracted
+  - spacing of units doesn't need to be the same if the _x_ and _y_ units are different 
+  - Cleveland's principle of 45 degree "banking"
+  - [https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf}(https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf)
+  - [Banking slopes to 45 degrees with `ggthemes`](https://jrnold.github.io/ggthemes/reference/bank_slopes.html)
+  
+---
+
+![](images/Wilke-fig-3-2.png)
+
+---
+
+# Wilke Chapter 3 - same units on both axes
+
+- if the units for the _x_ and _y_ axes are the same, then the scale should map them to the chart with the same grid spacings
+- Cartesian coordinates are invariant under linear transformations (such as "centring")
+
+![](images/Wilke-fig-3-3.png)
+
+---
+
+# Wilke Chapter 3 - nonlinear axes
+
+- Cartesian coordinate systems are linear: grid lines and tick marks are spaced evenly
+- but with a nonlinear scale, even spacing in data units corresponds to uneven spacing in the visualisation, or even spacing in the visualisation corresponds to unequal spacing in the underlying data units
+- _logarithmic_ scales are the most commonly used type of nonlinear scale
+  - they are _multiplicative_, meaning they are linear in multiplication
+  - need to log-transform the underlying data values and exponentiate the numbers shown on the chart
+  - or leave the data values as they are and use a log scale on the chart
+  - mathematically, there is no difference between plotting the log-transformed data on a linear scale or plotting the original data on a logarithmic scale
+  - the only difference lies in the labelling for the individual axis ticks and for the axis as a whole
+
+---
+
+![](images/Wilke-fig-3-4.png)
+
+---
+
+# Wilke Chapter 3 - plotting ratios
+
+- multiplication on a log scale looks like addition on a linear scale
+  - thus log scales are useful for data that have been obtained by multiplication or division, especially ratios
+
+---
+
+![](images/Wilke-fig-3-6.png)
+
+---
+
+![](images/Wilke-fig-3-5.png)
+
+---
+
+# Wilke Chapter 3 - plotting ratios
+
+- what are some commonly visualised ratios in health data science?
+
+---
+
+# Plotting odds ratios
+
+
+```r
+library(finalfit)
+explanatory &lt;- c( "differ.factor", "age", "sex.factor", 
+                "extent.factor", "obstruct.factor", 
+                "nodes")
+dependent &lt;- "mort_5yr"
+table2 &lt;- colon_s %&gt;% 
+  finalfit(dependent, explanatory, 
+           dependent_label_prefix = "")
+```
+
+---
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Mortality 5 year &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Alive &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Died &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; OR (univariable) &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; OR (multivariable) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Differentiation &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Well &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 52 (56.5) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 40 (43.5) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Moderate &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 382 (58.7) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 269 (41.3) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.92 (0.59-1.43, p=0.694) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.62 (0.38-1.01, p=0.054) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Poor &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 63 (42.3) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 86 (57.7) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.77 (1.05-3.01, p=0.032) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.00 (0.56-1.78, p=0.988) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Age (years) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean (SD) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 59.8 (11.4) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 59.9 (12.5) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.00 (0.99-1.01, p=0.986) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.01 (1.00-1.02, p=0.098) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sex &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Female &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 243 (55.6) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 194 (44.4) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 13 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Male &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 268 (56.1) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 210 (43.9) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.98 (0.76-1.27, p=0.889) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0.97 (0.73-1.30, p=0.858) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 8 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Extent of spread &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Submucosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16 (80.0) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 (20.0) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Muscle &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 78 (75.7) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25 (24.3) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.28 (0.42-4.79, p=0.681) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.25 (0.36-5.87, p=0.742) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Serosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 401 (53.5) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 349 (46.5) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.48 (1.26-12.24, p=0.027) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.03 (0.96-13.36, p=0.087) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Adjacent structures &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 16 (38.1) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 26 (61.9) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.50 (1.98-25.93, p=0.004) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6.80 (1.75-34.55, p=0.010) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Obstruction &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; No &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 408 (56.7) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 312 (43.3) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 11 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Yes &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 89 (51.1) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 85 (48.9) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.25 (0.90-1.74, p=0.189) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.26 (0.88-1.82, p=0.206) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 9 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; nodes &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mean (SD) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.7 (2.4) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4.9 (4.4) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.24 (1.18-1.30, p&amp;lt;0.001) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1.24 (1.18-1.31, p&amp;lt;0.001) &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+
+```r
+colon_s %&gt;% 
+  or_plot(dependent, explanatory, 
+          breaks = c(0.5, 1, 5, 10, 20, 30),
+          table_text_size = 3.5)
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="864" /&gt;
+
+---
+
+# Wilke Chapter 3 - curved axes
+
+- _polar_ coordinates specify the _x_ axis as an angle around a central point and the _y_ axis as a radial distance 
+
+![](images/Wilke-fig-3-9.png)
+
+---
+
+# Wilke Chapter 3 - periodic polar axes
+
+![](images/Wilke-fig-3-10.png)
+
+---
+
+# A polar polar plot!
+
+[https://www.tylermw.com/polar-ice-data-in-r-with-rayrender/](https://www.tylermw.com/polar-ice-data-in-r-with-rayrender/)
+
+---
+
+# Wilke Chapter 3 - geographic projections
+
+![](images/Wilke-fig-3-11.png)
+
+---
+
+# Wilke Chapter 4 - colour scales
+
+- three main use cases for colour in data visualisations
+  - to distinguish groups from each other
+  - to represent data values
+  - to highlight particular data points
+  
+---
+
+# Wilke Chapter 4 - colour to distinguish groups
+
+- qualitative colour scales
+  - groups have no intrinsˆc order or ranking
+  - colours should look distinct from each other
+  - no particular colours should stand out
+  - colours should not convey the impression of an order
+  
+---
+
+# Wilke Chapter 4 - colour to distinguish groups
+
+![](images/Wilke-fig-4-1.png)
+
+---
+
+![](images/Wilke-fig-4-2.png)
+
+---
+
+# Wilke Chapter 4 - colour to represent data values
+
+- we use _sequential_ colours to represent values on a data scale
+- _sequential_ colours need to clearly indicate which colours represent larger values and which colours represent smaller values
+  - ideally these representations need to be perceived uniformly across the colour scale
+  - that is difficult to achieve
+  - there are individual and cultural differences
+- _sequential colours scales_ can be based on a single hue (eg light blue to dark blue)
+- or on multiple hues (eg dark red to light yellow)
+  - multi-hue scales tend to mimic the natural world eg dark red to light yellow
+    - dark yellow to light red looks wrong
+
+---
+
+# Wilke Chapter 4 - colour to represent data values
+
+![](images/Wilke-fig-4-3.png)
+
+---
+
+# Wilke Chapter 4 - sequential colour scales on choropleth maps
+
+![](images/Wilke-fig-4-4.png)
+
+---
+
+# Wilke Chapter 4 - divergent colour scales
+
+- sometimes we want to show divergence from some central or neutral value in both positive and negative directions
+  - an OR (odds ratio) chart is an example, where the neutral point is OR=1.0
+- a _divergent_ colour scale is used
+  - just two _sequential_ colour scales stitched together
+  - need to be balanced (difficult!)
+  - saturation of colour is often used, as well as hue
+  - we'll cover HLS and other colour models later
+  
+---
+
+# Wilke Chapter 4 - divergent colour scales
+
+![](images/Wilke-fig-4-5.png)
+
+---
+
+# Wilke Chapter 4 - divergent colour scale on a choropleth map
+
+![](images/Wilke-fig-4-6.png)
+
+---
+
+
+# Wilke Chapter 4 - colour to highlight values
+
+- colour can be used to highlight specific data values or groups of values
+  - usually to emphasise some aspect of a story you want to tell
+  - beware of personal bias!
+- we use an _accent_ colour scale for highlighting
+  - contain both subdued colours and stronger colours
+  - the baseline colours shouldn't compete with the highlight colour
+
+---
+
+![](images/Wilke-fig-4-7.png)
+
+---
+
+![](images/Wilke-fig-4-8.png)
+
+---
+
+![](images/Wilke-fig-4-9.png)
+
+---
+
+# Wilke Chapter 5 - directory of visualisations
+
+[https://clauswilke.com/dataviz/directory-of-visualizations.html](https://clauswilke.com/dataviz/directory-of-visualizations.html)
+
+---
+
+# Hands-on: more on `ggplot2`
+
+- based on Chapter 3 of _R for Data Science_ by Hadley Wickham and Garret Grolemund
+  - available at [https://r4ds.had.co.nz/index.html](https://r4ds.had.co.nz/index.html)
+  
+---
+
+# Pre-requisites
+
+- install the `ggplot2` package
+  - or better, the `tidyverse` meta-package
+  
+- install a fork of the `medicaldata` package from GitHub
+
+
+```r
+remotes::install_github("cbdrh-hdat9800/medicaldata")
+```
+
+```
+## Skipping install of 'medicaldata' from a github remote, the SHA1 (be27ec88) has not changed since last install.
+##   Use `force = TRUE` to force installation
+```
+
+- load the libraries
+
+
+```r
+library(tidyverse)
+library(medicaldata)
+```
+
+---
+
+# the `diabetes` dataset
+
+- at the R Console, type `?diabetes`
+
+- examine the data with `head(dibetes)`
+  - or `glimpse(diabetes)`
+
+---
+
+# Create a ggplot
+
+- using the `diabetes` dataset, write code to create a scatter plot of `age` versus `bmi`
+
+---
+
+
+```r
+ggplot(data = diabetes, aes(x = age, y = bmi)) + 
+  geom_point()
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="504" /&gt;
+
+---
+
+
+```r
+ggplot(data = diabetes) + 
+  geom_point(mapping = aes(x = age, y = bmi))
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-8-1.png" width="504" /&gt;
+
+---
+
+# A graphing template
+
+
+```r
+ggplot(data = &lt;DATA&gt;) + 
+  &lt;GEOM_FUNCTION&gt;(mapping = aes(&lt;MAPPINGS&gt;))
+```
+
+---
+
+# Exercise 1
+
+- make a scatter plot of `bmi` versus `glucose_mg-dl`
+
+---
+
+
+```r
+ggplot(data = diabetes, aes(x = bmi, y = glucose_mg-dl)) + 
+  geom_point()
+```
+
+---
+
+# We need to rename that column!
+
+```
+diab &lt;- diabetes %&gt;%
+          rename(glucose_mg-dl = glucose_mg_dl)
+```
+
+--- 
+
+---
+
+# A better way
+
+
+```r
+library(janitor)
+```
+
+```
+## 
+## Attaching package: 'janitor'
+```
+
+```
+## The following objects are masked from 'package:stats':
+## 
+##     chisq.test, fisher.test
+```
+
+```r
+diab &lt;- clean_names(diabetes)
+
+glimpse(diab)
+```
+
+```
+## Rows: 768
+## Columns: 9
+## $ pregnancy_num      &lt;dbl&gt; 6, 1, 8, 1, 0, 5, 3, 10, 2, 8, 4, 10, 10, 1, 5, 7, …
+## $ glucose_mg_dl      &lt;dbl&gt; 148, 85, 183, 89, 137, 116, 78, 115, 197, 125, 110,…
+## $ dbp_mm_hg          &lt;dbl&gt; 72, 66, 64, 66, 40, 74, 50, NA, 70, 96, 92, 74, 80,…
+## $ triceps_mm         &lt;dbl&gt; 35, 29, NA, 23, 35, NA, 32, NA, 45, NA, NA, NA, NA,…
+## $ insulin_microiu_ml &lt;dbl&gt; NA, NA, NA, 94, 168, NA, 88, NA, 543, NA, NA, NA, N…
+## $ bmi                &lt;dbl&gt; 33.6, 26.6, 23.3, 28.1, 43.1, 25.6, 31.0, 35.3, 30.…
+## $ pedigree           &lt;dbl&gt; 0.627, 0.351, 0.672, 0.167, 2.288, 0.201, 0.248, 0.…
+## $ age                &lt;dbl&gt; 50, 31, 32, 21, 33, 30, 26, 29, 53, 54, 30, 34, 57,…
+## $ diabetes_5y        &lt;fct&gt; pos, neg, pos, neg, pos, neg, pos, neg, pos, pos, n…
+```
+
+---
+
+
+```r
+ggplot(data = diab, aes(x = bmi, y = glucose_mg_dl)) + 
+  geom_point()
+```
+
+```
+## Warning: Removed 16 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="504" /&gt;
+
+---
+
+# Exercise 2
+
+- make a scatter plot of `bmi` versus `diabetes_5y`
+- why is it not very useful?
+
+---
+ 
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = bmi, y = diabetes_5y))
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="504" /&gt;
+
+---
+
+# Add further aesthetic mappings
+
+- start with our earlier plot of `age` vs `bmi`
+- add a additional aesthetic mapping of `diabetes_5y` to the `colour` aesthetic
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi, colour = diabetes_5y))
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
+
+---
+
+# Experiment 3
+
+- what happens if we map `diabetes_5y` to the `size` aesthetic instead of the `colour` aesthetic?
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi, size = diabetes_5y))
+```
+
+```
+## Warning: Using size for a discrete variable is not advised.
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="504" /&gt;
+
+---
+
+# Warning: Using size for a discrete variable is not advised.
+
+- repeat that but mapping `diabetes_5y` to the `alpha` aesthetic and then to the `shape` aesthetic
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi, alpha = diabetes_5y))
+```
+
+```
+## Warning: Using alpha for a discrete variable is not advised.
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi, shape = diabetes_5y))
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
+
+---
+
+# Manually setting an aesthetic
+
+- how would you make the colour of all the points green?
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi), colour = "green")
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
+
+---
+
+# Why does this happen?
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi, colour = "green"))
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
+
+---
+
+# Experiment 4
+
+- write some code to see what the `stroke` aesthetic does, using `age` for the x-axis, `bmi` for the y-axis and `pedigree` for the `stroke` aesthetic mapping
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi, stroke = pedigree))
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-20-1.png" width="504" /&gt;
+
+---
+
+# Facets
+
+- an alternative to mapping additional variables to aesthetics
+- create lots of smaller plots broken down (conditioned on) additional variables instead
+- Tufte's "small multiples"
+
+---
+
+# Add a one-dimensional facetting
+
+- write some code to add faceting by the `diabetes_5y` variable to a scatter plot of `age` for the x-axis and `bmi` for the y-axis
+
+- hint: look at `facet_wrap()` in `ggplot2`
+  - use `?facet_wrap` at the Console prompt of visit the ggplot2 documentation web site
+  
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi)) +
+  facet_wrap(~ diabetes_5y)
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
+
+---
+
+# Adjust the number of facetting rows (or columns)
+
+- add `nrow = 2` as an additional argument to the `facet_wrap()` function
+
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi)) +
+  facet_wrap(~ diabetes_5y, nrow = 2)
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-22-1.png" width="504" /&gt;
+
+---
+
+# Facet by two variables
+
+- facet the plot by both `diabetes_5y` and `pregnancy_num`
+  - hint: see `?facet_grid` at the Console prompt or on the `ggplot2` web site
+  
+---
+
+
+```r
+ggplot(data = diab) + 
+  geom_point(mapping = aes(x = age, y = bmi)) +
+  facet_grid(pregnancy_num ~ diabetes_5y)
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-23-1.png" width="504" /&gt;
+
+---
+
+# Too many facets!
+
+- we need to reduce the number of categories for `pregnancy_num`
+- many ways to do that, but here's one way
+  - make a new column called `preg_group`
+  
+
+```r
+diab2 &lt;- diab %&gt;%
+          mutate(preg_group = case_when(pregnancy_num == 0 ~ "None",
+                                        pregnancy_num &gt;= 1 &amp; pregnancy_num &lt;= 3 ~ "1 to 3",
+                                        pregnancy_num &gt;= 4 &amp; pregnancy_num &lt;= 7 ~ "4 to 7",
+                                        pregnancy_num &gt;= 8 ~ "8 or more",
+                                        TRUE ~ "other"))
+```
+
+---
+
+
+```r
+ggplot(data = diab2) + 
+  geom_point(mapping = aes(x = age, y = bmi)) +
+  facet_grid(preg_group ~ diabetes_5y)
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-25-1.png" width="504" /&gt;
+
+---
+
+# How can we fix the ordering of the `preg_group` facet?
+
+---
+
+
+```r
+diab3 &lt;- diab2 %&gt;%
+          mutate(preg_group = ordered(preg_group, 
+                                      levels = c("None", "1 to 3", "4 to 7", "8 or more")))
+                                                 
+ggplot(data = diab3) + 
+  geom_point(mapping = aes(x = age, y = bmi)) +
+  facet_grid(preg_group ~ diabetes_5y)
+```
+
+```
+## Warning: Removed 11 rows containing missing values (geom_point).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-26-1.png" width="504" /&gt;
+
+---
+
+# Exploring geometric objects (geoms)
+
+- how are these two plots similar?
+
+---
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-27-1.png" width="504" /&gt;
+
+---
+
+
+```
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-28-1.png" width="504" /&gt;
+
+---
+
+# Exploring geometric objects (geoms)
+
+- how are these two plot similar?
+
+
+```r
+ggplot(data = diab3) + 
+  geom_point(mapping = aes(x = age, y = bmi)) 
+
+ggplot(data = diab3) + 
+  geom_smooth(mapping = aes(x = age, y = bmi)) 
+```
+
+---
+
+# Add an additional aesthetic mapping to `geom_smooth()`
+
+- map `diabetes_5y` to the `linetype` aesthetic
+
+---
+
+
+```r
+ggplot(data = diab3) + 
+  geom_smooth(mapping = aes(x = age, y = bmi, linetype = diabetes_5y)) 
+```
+
+```
+## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
+```
+
+```
+## Warning: Removed 11 rows containing non-finite values (stat_smooth).
+```
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-30-1.png" width="504" /&gt;
+
+---
+
+
+# More next week!
+
+- we'll have a regular `ggplot2` hands-on session almost every week from now on
+  - by the end of teh course you'll be wizards!
+  
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

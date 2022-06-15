@@ -76,11 +76,21 @@ If you have any questions about the lectures or tutorials, or if you want to sha
 
 # Interactive sessions for Chapter 3
 
-Details will appear here soon.
+The Chapter 3 interactive sessions (online Wednesday at 6pm, face-to-face Thursday at 2pm) will cover the following topics:
+
+* Q&A on Chapter 2 (and previous chapters) curriculum material
+* discussion of the core readings for this week (see below, please reading them before the section if possible, but we will be briefly recapping the main points)
+* a hands-on workshop on exploring aspects of the `ggplot2` package 
+
+For the hands-on workshop, you will need your laptop with `R` and `RStudio` installed You need to have installed the `dplyr` and `ggplot2` packages. The easiest way to do that is to just install the `tidyverse` meta-package, if you have not already done so. We'll be installing a few other packages during the session.
+
+**Please DO NOT look at the slide deck before the session!**
+
+The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-3-ggplot2/HDAT9800-Chapter-3-ggplot2.html' target='_blank'> here</a> (a PDF version will be provided later)).
 
 # Chapter 3 assessment exercise
 
-For Chapter 2, the assessment exercise is intended to give you some practice modifying R code to create specific visualiastions using the `ggplot2` package, and embedding that code in an Rmarkdown documents. The framework for the Rmarkdown document you will be completing is supplied, and the coding tasks should be fairly straightforward if you have worked through the pre-recorded lecture and the `learnr` tutorial for Chapter 3. Access the assessment the same way as for previous chapters, by clicking on this link to the Chapter 3 assessment GitHub Classroom repository:  [https://classroom.github.com/a/QqP0VEjV](https://classroom.github.com/a/QqP0VEjV)
+For Chapter 3, the assessment exercise is intended to give you some practice modifying R code to create specific visualisations using the `ggplot2` package, and embedding that code in an Rmarkdown documents. The framework for the Rmarkdown document you will be completing is supplied, and the coding tasks should be fairly straightforward if you have worked through the pre-recorded lecture and the `learnr` tutorial for Chapter 3. Access the assessment the same way as for previous chapters, by clicking on this link to the Chapter 3 assessment GitHub Classroom repository:  [https://classroom.github.com/a/QqP0VEjV](https://classroom.github.com/a/QqP0VEjV)
 
 This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
 
