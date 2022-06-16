@@ -112,9 +112,9 @@ There is an additional video which illustrates each of the steps in creating a b
 vembedr::embed_url("https://youtu.be/unur6FBh_x0")
 ```
 
-## Solving problems with GitHib access
+## Solving problems with GitHub access
 
-When attempting to set up a blog site on GitHub, you may encounter errors relating to authenticating to GitHub. This is because GitHub now requires the use of **PATs** (personal access tokens) to authenticate to repositories, rather than passwords (you still need yout GitHub account password to access the GitHub website, so don't lose that!). A PAT only needs to be set up once in RStudio to enable you to use the git and GitHub tools built into RStudio. To do this, follow the steps in sections 9.1, 9.3 and 9.4 of (this guide by Jenny Bryan)[https://happygitwithr.com/https-pat.html]. Section 9.2 contains additional details about HTTPS vs SSH authentication which you don't need to detail with -- just use HTTP). If you need additional help, please contact the course instructors via email or Teams, we are very happy to help.
+When attempting to set up a blog site on GitHub, you may encounter errors relating to authenticating to GitHub. This is because GitHub now requires the use of **PATs** (personal access tokens) to authenticate to repositories, rather than passwords (you still need your GitHub account password to access the GitHub website, so don't lose that!). A PAT only needs to be set up once in RStudio to enable you to use the git and GitHub tools built into RStudio. To do this, follow the steps in sections 9.1, 9.3 and 9.4 of (this guide by Jenny Bryan)[https://happygitwithr.com/https-pat.html]. Section 9.2 contains additional details about HTTPS vs SSH authentication which you don't need to detail with -- just use HTTPS. If you need additional help, please contact the course instructors via email or Teams, we are very happy to help.
 
 # Chapter 2 assessment exercise
 
