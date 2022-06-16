@@ -162,12 +162,117 @@ xaringanExtra::use_animate_css()
   - the drawing of axes may be expanded or contracted
   - spacing of units doesn't need to be the same if the _x_ and _y_ units are different 
   - Cleveland's principle of 45 degree "banking"
-  - [https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf}(https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf)
+  - [https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf](https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf)
   - [Banking slopes to 45 degrees with `ggthemes`](https://jrnold.github.io/ggthemes/reference/bank_slopes.html)
   
 ---
 
 ![](images/Wilke-fig-3-2.png)
+
+---
+
+# Example of 45 degree banking
+
+- use the `PBS` dataset of the Australian Pharmaceutical Benefits Scheme therapeutic drug supplies by type of drug by month
+  - contained in the [`tsibbledata` package](https://github.com/tidyverts/tsibbledata/)
+  - a [`tsibble`](https://tsibble.tidyverts.org/index.html) is a special type of R data frame (tibble) optimised for time series analysis
+- default plot of two years of prescriptions filled for "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC"
+
+```{r, echo=TRUE, eval=FALSE}
+library(tidyverse)
+library(tsibbledata)
+library(tsibble)
+library(ggthemes)
+
+PBS %>% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month > make_yearmonth(year = 1999L, month = 12L), 
+         Month <= make_yearmonth(year = 2002L, month = 12L)) %>% 
+  ggplot(aes(x=Month, y=Scripts)) + geom_line() + scale_x_yearmonth()
+```
+
+---
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE}
+library(tidyverse)
+library(tsibbledata)
+library(tsibble)
+library(ggthemes)
+
+PBS %>% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month > make_yearmonth(year = 1999L, month = 12L), 
+         Month <= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %>% 
+  ggplot(aes(x=Month, y=Scripts)) + 
+  geom_line() + 
+  scale_x_yearmonth() +
+  ggtitle("PBS anti-itch creams co-payments by month")
+```
+
+---
+
+# Add 45 degree banking
+
+- using the `bank_slopes()` function in `ggthemes`
+
+```{r, echo=TRUE, eval=FALSE, message=FALSE}
+anti_itch <- PBS %>% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month > make_yearmonth(year = 1999L, month = 12L), 
+         Month <= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %>% 
+  arrange(Month) %>%
+  mutate(Row = row_number()) %>%
+  select(Row, Scripts)
+
+aspect_ratio  <- bank_slopes(anti_itch$Row, anti_itch$Scripts) 
+```
+
+---
+
+# Add 45 degree banking
+
+- using the `bank_slopes()` function in `ggthemes`
+
+```{r, echo=TRUE, eval=FALSE, message=FALSE}
+PBS %>% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month > make_yearmonth(year = 1999L, month = 12L), 
+         Month <= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %>% 
+  ggplot(aes(x=Month, y=Scripts)) +
+  geom_line() + 
+  scale_x_yearmonth() +
+  ggtitle("PBS anti-itch creams co-payments by month") +
+  coord_fixed(ratio = aspect_ratio)
+```
+
+---
+
+```{r, echo=FALSE, eval=TRUE, message=FALSE}
+anti_itch <- PBS %>% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month > make_yearmonth(year = 1999L, month = 12L), 
+         Month <= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %>% 
+  arrange(Month) %>%
+  mutate(Row = row_number()) %>%
+  select(Row, Scripts)
+
+aspect_ratio  <- bank_slopes(anti_itch$Row, anti_itch$Scripts) 
+
+PBS %>% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month > make_yearmonth(year = 1999L, month = 12L), 
+         Month <= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %>% 
+  ggplot(aes(x=Month, y=Scripts)) +
+  geom_line() + 
+  scale_x_yearmonth() +
+  ggtitle("PBS anti-itch creams co-payments by month") +
+  coord_fixed(ratio = aspect_ratio)
+```
 
 ---
 

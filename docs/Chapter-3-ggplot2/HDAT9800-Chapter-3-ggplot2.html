@@ -117,12 +117,83 @@ background-size: cover
   - the drawing of axes may be expanded or contracted
   - spacing of units doesn't need to be the same if the _x_ and _y_ units are different 
   - Cleveland's principle of 45 degree "banking"
-  - [https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf}(https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf)
+  - [https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf](https://idl.cs.washington.edu/files/2006-Banking-InfoVis.pdf)
   - [Banking slopes to 45 degrees with `ggthemes`](https://jrnold.github.io/ggthemes/reference/bank_slopes.html)
   
 ---
 
 ![](images/Wilke-fig-3-2.png)
+
+---
+
+# Example of 45 degree banking
+
+- use the `PBS` dataset of the Australian Pharmaceutical Benefits Scheme therapeutic drug supplies by type of drug by month
+  - contained in the [`tsibbledata` package](https://github.com/tidyverts/tsibbledata/)
+  - a [`tsibble`](https://tsibble.tidyverts.org/index.html) is a special type of R data frame (tibble) optimised for time series analysis
+- default plot of two years of prescriptions filled for "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC"
+
+
+```r
+library(tidyverse)
+library(tsibbledata)
+library(tsibble)
+library(ggthemes)
+
+PBS %&gt;% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month &gt; make_yearmonth(year = 1999L, month = 12L), 
+         Month &lt;= make_yearmonth(year = 2002L, month = 12L)) %&gt;% 
+  ggplot(aes(x=Month, y=Scripts)) + geom_line() + scale_x_yearmonth()
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-3-1.png" width="504" /&gt;
+
+---
+
+# Add 45 degree banking
+
+- using the `bank_slopes()` function in `ggthemes`
+
+
+```r
+anti_itch &lt;- PBS %&gt;% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month &gt; make_yearmonth(year = 1999L, month = 12L), 
+         Month &lt;= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %&gt;% 
+  arrange(Month) %&gt;%
+  mutate(Row = row_number()) %&gt;%
+  select(Row, Scripts)
+
+aspect_ratio  &lt;- bank_slopes(anti_itch$Row, anti_itch$Scripts) 
+```
+
+---
+
+# Add 45 degree banking
+
+- using the `bank_slopes()` function in `ggthemes`
+
+
+```r
+PBS %&gt;% 
+  filter(ATC2_desc == "ANTIPRURITICS,INCL ANTIHIST,ANESTHET,ETC", 
+         Month &gt; make_yearmonth(year = 1999L, month = 12L), 
+         Month &lt;= make_yearmonth(year = 2002L, month = 12L),
+         Type == "Co-payments") %&gt;% 
+  ggplot(aes(x=Month, y=Scripts)) +
+  geom_line() + 
+  scale_x_yearmonth() +
+  ggtitle("PBS anti-itch creams co-payments by month") +
+  coord_fixed(ratio = aspect_ratio)
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="504" /&gt;
 
 ---
 
@@ -332,7 +403,7 @@ colon_s %&gt;%
           table_text_size = 3.5)
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="864" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-9-1.png" width="864" /&gt;
 
 ---
 
@@ -530,7 +601,7 @@ ggplot(data = diabetes, aes(x = age, y = bmi)) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-7-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="504" /&gt;
 
 ---
 
@@ -544,7 +615,7 @@ ggplot(data = diabetes) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-8-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="504" /&gt;
 
 ---
 
@@ -633,7 +704,7 @@ ggplot(data = diab, aes(x = bmi, y = glucose_mg_dl)) +
 ## Warning: Removed 16 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
 
 ---
 
@@ -654,7 +725,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-13-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
 
 ---
 
@@ -675,7 +746,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
 
 ---
 
@@ -699,7 +770,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-15-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-20-1.png" width="504" /&gt;
 
 ---
 
@@ -723,7 +794,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
 
 ---
 
@@ -737,7 +808,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-22-1.png" width="504" /&gt;
 
 ---
 
@@ -757,7 +828,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-18-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-23-1.png" width="504" /&gt;
 
 ---
 
@@ -773,7 +844,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-24-1.png" width="504" /&gt;
 
 ---
 
@@ -793,7 +864,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-20-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-25-1.png" width="504" /&gt;
 
 ---
 
@@ -825,7 +896,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-26-1.png" width="504" /&gt;
 
 ---
 
@@ -846,7 +917,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-22-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-27-1.png" width="504" /&gt;
 
 ---
 
@@ -868,7 +939,7 @@ ggplot(data = diab) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-23-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-28-1.png" width="504" /&gt;
 
 ---
 
@@ -901,7 +972,7 @@ ggplot(data = diab2) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-25-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-30-1.png" width="504" /&gt;
 
 ---
 
@@ -924,7 +995,7 @@ ggplot(data = diab3) +
 ## Warning: Removed 11 rows containing missing values (geom_point).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-26-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-31-1.png" width="504" /&gt;
 
 ---
 
@@ -934,7 +1005,7 @@ ggplot(data = diab3) +
 
 ---
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-27-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-32-1.png" width="504" /&gt;
 
 ---
 
@@ -943,7 +1014,7 @@ ggplot(data = diab3) +
 ## `geom_smooth()` using method = 'loess' and formula 'y ~ x'
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-28-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-33-1.png" width="504" /&gt;
 
 ---
 
@@ -982,7 +1053,7 @@ ggplot(data = diab3) +
 ## Warning: Removed 11 rows containing non-finite values (stat_smooth).
 ```
 
-&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-30-1.png" width="504" /&gt;
+&lt;img src="HDAT9800-Chapter-3-ggplot2_files/figure-html/unnamed-chunk-35-1.png" width="504" /&gt;
 
 ---
 
@@ -990,7 +1061,7 @@ ggplot(data = diab3) +
 # More next week!
 
 - we'll have a regular `ggplot2` hands-on session almost every week from now on
-  - by the end of teh course you'll be wizards!
+  - by the end of the course you'll be wizards!
   
 
 
