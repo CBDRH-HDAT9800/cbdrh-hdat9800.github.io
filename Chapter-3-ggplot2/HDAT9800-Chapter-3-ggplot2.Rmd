@@ -1,6 +1,6 @@
 ---
 title: "HDAT9800 Health Data Visualisation & Communication"
-subtitle: "Chapter 3 Interactive Tutorial - more on visualsiation with ggplot2"
+subtitle: "Chapter 3 Interactive Tutorial - more on visualisation with ggplot2"
 author: "Tim Churches"
 institute: "UNSW Sydney"
 date: "(updated: `r Sys.Date()`)"
@@ -22,7 +22,7 @@ background-image: url("images/justblackbutwhy.png")
 background-size: cover
 
 #<br><br>HDAT9800 Health Data Visualisation & Communication<br><br>
-## Chapter 3 Interactive Tutorial -- more on visualsiation with `ggplot2` 
+## Chapter 3 Interactive Tutorial -- more on visualisation with `ggplot2` 
 #### Tim Churches<br>
 #### UNSW Medicine
 #### 8th June 2022

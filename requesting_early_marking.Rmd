@@ -20,7 +20,7 @@ If you have completed a chapter assessment and submitted a final version of your
 
 ![](images/GitHub-assessment-repo-issues-page.png)
 
-4. This will open a new issue form. Fill it out as shown below in the red highlighted ovals, with "Ready for marking" as the issue title, and `@timchuches @OSotade` as the body of the issue (that will make it show up in the course instructors open issues lists, see below). When you have filled those in, click the **Submit new issue** button as highlighted below.
+4. This will open a new issue form. Fill it out as shown below in the red highlighted ovals, with "Ready for marking" as the issue title, and `@timchurches @OSotade` as the body of the issue (that will make it show up in the course instructors open issues lists, see below). When you have filled those in, click the **Submit new issue** button as highlighted below.
 
 ![](images/GitHub-assessment-repo-ready-issue.png)
 
