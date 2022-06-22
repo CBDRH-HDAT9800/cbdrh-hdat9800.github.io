@@ -68,14 +68,15 @@ The Chapter 4 interactive sessions (online Wednesday at 6pm, face-to-face Thursd
 
 * guest presentation by Dr Georgina Kennedy on data visualisation in python
 * Q&A on Chapter 3 (and previous chapters) curriculum material
-* discussion/recap of the core readings for this week (see below, please reading them before the section if possible, but we will be briefly recapping the main points)
-* a hands-on workshop on exploring more aspects of the `ggplot2` package 
+* if we have time (otherwise carried-over to week 5):
+  * discussion/recap of the core readings for this week (see below, please reading them before the section if possible, but we will be briefly recapping the main points)
+  * a hands-on workshop on exploring more aspects of the `ggplot2` package 
 
-For the hands-on workshop, you will need your laptop with `R` and `RStudio` installed You need to have installed the `dplyr` and `ggplot2` packages. The easiest way to do that is to just install the `tidyverse` meta-package, if you have not already done so. We'll be installing a few other packages during the session.
+For the hands-on workshop (if we have time), you will need your laptop with `R` and `RStudio` installed You need to have installed the `dplyr` and `ggplot2` packages. The easiest way to do that is to just install the `tidyverse` meta-package, if you have not already done so. We'll be installing a few other packages during the session.
 
-**Please DO NOT look at the slide deck before the session!**
+There is no slide deck for the textbook readings and `ggplot2` exercise this week, but there will be one for next week including this weeks readings.
 
-The side deck will appear here just prior to the tutorial.
+The slide deck for Dr Georgie Kennedy's talk on data viz in python will be posted here on Thurs afternoon 23 June.
 
 # Chapter 4 assessment exercise
 
