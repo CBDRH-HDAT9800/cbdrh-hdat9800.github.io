@@ -83,11 +83,11 @@ extension <- c(
 'Some more visualisation theory; more on data visualisation using ggplot2',
 'Visualisation with Python -- guest tutorial by Dr Georgina Kennedy',
 'Theories of Visual Perception -- guest tutorial by Andy Blance; a visualisation I am proud of (Dr Malcolm Gillies)',
-'Visualisation and exploratory data analysis; visualisation of statistical models',
+'Guest lecture by Prof Louisa Jorm on communicating with non-technical audiences; Visualisation and exploratory data analysis; visualisation of statistical models',
 'Incorporating time -- uses and misuses of animation in data visualisation; accessibility aspects of visualisation',
 'Visualisation of categorical data; visualising big data; a visualisation I am proud of (guest presentation)',
 'Communicating COVID-19 models through Markdown documents, web sites, pre-print papers and Shiny apps -- guest presentation by Dr Mark Hanly',
-'Visualising higher dimensions -- uses and misuses of 3D graphics; dimensionality reduction techniques, including guest presentation by Dr Meg Stevens on visualising NLP models'
+'Visualising higher dimensions -- uses and misuses of 3D graphics; dimensionality reduction techniques, including a guest presentation by Dr Nic Kuo on t-SNE dimensionality reduction for visualising NLP models'
 )
 
 online_tutorials <- c(
