@@ -86,7 +86,7 @@ For the hands-on workshop, you will need your laptop with `R` and `RStudio` inst
 
 **Please DO NOT look at the slide deck before the session!**
 
-The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-3-ggplot2/HDAT9800-Chapter-3-ggplot2.html' target='_blank'> here</a> (a PDF version will be provided later)).
+The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-3-ggplot2/HDAT9800-Chapter-3-ggplot2.html' target='_blank'> here</a> (or as a <a class='fa fa-file-pdf' href='assets/HDAT9800-Chapter-3-ggplot2.pdf' target='_blank'> PDF</a>).
 
 # Chapter 3 assessment exercise
 
