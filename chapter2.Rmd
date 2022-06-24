@@ -106,6 +106,10 @@ The session will not go as long as the Chapter 1 session, and we will take a bre
 
 The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-2-distill/HDAT9800-Chapter-2-distill.html' target='_blank'> here</a> (or as a <a class='fa fa-file-pdf' href='assets/HDAT9800-Chapter-2-distill.pdf' target='_blank'> PDF</a>).
 
+**Note:** We have provided an additional video below which more clearly illustrates the steps required to set up a blog web site using `distill`. Therefore we recommend that you watch the video of the Chapter 2 online session, below, only up to the point at which creation of a blog site is demonstrated. At that point, watch the additional video below instead.
+
+A recording of the Chapter 2 online session is available [here](https://unsw.sharepoint.com/sites/CLS-HDAT9800_T2_5226_Combined/Shared%20Documents/General/Recordings/Meeting%20in%20_General_-20220608_181144-Meeting%20Recording.mp4?web=1).
+
 There is an additional video which illustrates each of the steps in creating a blog site:
 
 ```{r distill-video, echo=FALSE, preview=TRUE}

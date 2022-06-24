@@ -1,7 +1,7 @@
 ---
-title: "HDAT9800 Chapter 4"
+title: "HDAT9800 Chapter 5"
 description: |
-  Chapter 4 material for HDAT9800 Visualisation & Communication of Health Data
+  Chapter 5 material for HDAT9800 Visualisation & Communication of Health Data
 ---
 
 ```{r setup, include=FALSE}
@@ -76,9 +76,7 @@ For the hands-on workshop (if we have time), you will need your laptop with `R` 
 
 There is no slide deck for the textbook readings and `ggplot2` exercise this week, but there will be one for next week including this weeks readings.
 
-The slide deck for Dr Georgie Kennedy's talk on data viz in python will be posted here shortly.
-
-A video recording of the Chapter 4 online session is available [here](https://unsw.sharepoint.com/:v:/s/CLS-HDAT9800_T2_5226_Combined/EWjmC_HS9gtGmtCIsg4zKmQBcjJIbcjO1Vr-itktDhnwZA?e=rmXewu).
+The slide deck for Dr Georgie Kennedy's talk on data viz in python will be posted here on Thurs afternoon 23 June.
 
 # Chapter 4 assessment exercise
 

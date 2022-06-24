@@ -88,6 +88,8 @@ For the hands-on workshop, you will need your laptop with `R` and `RStudio` inst
 
 The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-3-ggplot2/HDAT9800-Chapter-3-ggplot2.html' target='_blank'> here</a> (or as a <a class='fa fa-file-pdf' href='assets/HDAT9800-Chapter-3-ggplot2.pdf' target='_blank'> PDF</a>).
 
+A recording of the online Chapter 3 session is available [here](https://unsw.sharepoint.com/:v:/r/sites/CLS-HDAT9800_T2_5226_Combined/Shared%20Documents/General/Recordings/HDAT9800%20T2%202022%20weekly%20online%20interactive%20tutorials-20220615_181035-Meeting%20Recording.mp4?csf=1&web=1&e=vNiZ6G).
+
 # Chapter 3 assessment exercise
 
 For Chapter 3, the assessment exercise is intended to give you some practice modifying R code to create specific visualisations using the `ggplot2` package, and embedding that code in an Rmarkdown documents. The framework for the Rmarkdown document you will be completing is supplied, and the coding tasks should be fairly straightforward if you have worked through the pre-recorded lecture and the `learnr` tutorial for Chapter 3. Access the assessment the same way as for previous chapters, by clicking on this link to the Chapter 3 assessment GitHub Classroom repository:  [https://classroom.github.com/a/QqP0VEjV](https://classroom.github.com/a/QqP0VEjV)
