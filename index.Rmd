@@ -121,26 +121,10 @@ learnrLinks <- c(
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch2-knitr/' target='_blank'></a>",
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch3-ggplot2/' target='_blank'></a>",
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch4-git-conflicts/' target='_blank'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 6)
+  "<a class='fa fa-code' href='https://rstudio.github.io/leaflet/' target='_blank'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 5)
 )
 
-videos <- c(
-  "<a class='fa fa-youtube' href='recordings.html#week-1.-directed-acyclic-graphs-dags'></a>",
-  "<a class='fa fa-youtube' href='recordings.html#week-2.-matching-for-causal-inference-from-observational-data'></a>",
-  "<a class='fa fa-youtube' href='recordings.html#week-3.-multilevel-modelling-i-introduction'></a>",
-  "<a class='fa fa-youtube' href='recordings.html#week-4.-multilevel-modelling-ii-beyond-the-basics'></a>",
-  "",
-  "",
-  "<a class='fa fa-youtube' href='recordings.html#week-7.-time-series-analysis'></a>",
-  "<a class='fa fa-youtube' href='recordings.html#week-8.-interrupted-time-series-analysis'></a>",
-  "<a class='fa fa-youtube' href='recordings.html#week-9.-missing-data-and-multiple-imputation'></a>",
-  "<a class='fa fa-youtube' href='recordings.html#week-10.-presenting-and-summarising-model-results'></a>"
-)
-
-slides <- c(
-  "<a class='fa fa-file-powerpoint' href='assets/dags-tutorial.pptx' target='_blank'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 9)
-)
 
 recordings <- c(
   "<a class='fa fa-video' href='recordings.html#chapter-1'></a>",
@@ -155,7 +139,9 @@ chapterPages <- c(
   "<a class='fa fa-book' href='chapter1.html' target='_self'></a>",
   "<a class='fa fa-book' href='chapter2.html' target='_self'></a>",
   "<a class='fa fa-book' href='chapter3.html' target='_self'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 7)
+  "<a class='fa fa-book' href='chapter4.html' target='_self'></a>",
+  "<a class='fa fa-book' href='chapter5.html' target='_self'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 5)
 )
 
 df <-
@@ -257,15 +243,15 @@ There are weekly individual assessments for Chapters 1 to 7. Each of these asses
 
 You may request early marking of your submitted core curriculum assessments by following the steps outlined [here](requesting_early_marking.html).
 
-## Additional assessments
+## Additional assessment
 
-There are also two additional assignments. These relate to topics covered in the Thursday tutorial sessions, but require additional independent research and some creativity to complete. Each is worth 7% of the total course marks, thus 14% all together. The exact dates on which each these are due is also shown in the table below. These assignments will be marked promptly after the due date for each.
+There is also one additional assignments. This relates to topics covered in the Thursday tutorial sessions, but requires additional independent research and some creativity to complete. It is 14% of the total course marks. 
 
 <aside>
 
 <br>
 
-In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn't have time to do the additional assessments justice. Therefore we have reduced the number of these additional assessments to just two this year.
+In the 2021 running of this course we set these additional assessment tasks every week. However, feedback from students was that the assessment burden was too great and that they didn't have time to do the additional assessments justice. Therefore we have reduced the number of these additional assessments to just one this year, worth 14% of total marks.
 
 </aside>
 
@@ -281,28 +267,25 @@ df <- data.frame(
   
   task <- c("Chapter 1 assessment", 
             "Chapter 2 assessment", 
-            "Additional assessment A", 
             "Chapter 3 assessment", 
             "Chapter 4 assessment", 
             "Chapter 5 assessment", 
-            "Additional assessment B", 
+            "Additional assessment", 
             "Chapter 6 assessment", 
             "Chapter 7 assessment", 
             "Group assessment"),
   weight <- c("8%",
               "8%",
-              "7%",
               "8%",
               "8%",
               "8%",
-              "7%",
+              "14%",
               "8%",
               "8%",
               "30%" ),
   
   due <- c("9am, Mon 20 Jun",
            "9am, Mon 27 Jun",
-           "9am, Thur 14 Jul",
            "9am, Mon 4 Jul",
            "9am, Mon 11 Jul",
            "9am, Mon 18 Jul",
@@ -315,10 +298,10 @@ df <- data.frame(
   link <- c(
     "<a class='fa fa-link' href='https://classroom.github.com/a/4J9wKhgK' target='_blank'></a>",
     "<a class='fa fa-link' href='https://classroom.github.com/a/tOV9OQvh' target='_blank'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 1),
     "<a class='fa fa-link' href='https://classroom.github.com/a/QqP0VEjV' target='_blank'></a>",
     "<a class='fa fa-link' href='https://classroom.github.com/a/Tu9O8IFj' target='_blank'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 5)
+    "<a class='fa fa-link' href='https://classroom.github.com/a/XpclGgGm' target='_blank'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 4)
   )
   
 )
