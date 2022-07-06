@@ -74,7 +74,7 @@ The Chapter 4 interactive sessions (online Wednesday at 6pm, face-to-face Thursd
 
 For the hands-on workshop (if we have time), you will need your laptop with `R` and `RStudio` installed You need to have installed the `dplyr` and `ggplot2` packages. The easiest way to do that is to just install the `tidyverse` meta-package, if you have not already done so. We'll be installing a few other packages during the session.
 
-There is no slide deck for the textbook readings and `ggplot2` exercise this week, but there will be one for next week including this weeks readings.
+The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-4-ggplot2/HDAT9800-Chapter-4-ggplot2.html' target='_blank'> here</a> (a PDF version will be added here).
 
 The slide deck for Dr Georgie Kennedy's talk on data viz in python will be posted here shortly.
 

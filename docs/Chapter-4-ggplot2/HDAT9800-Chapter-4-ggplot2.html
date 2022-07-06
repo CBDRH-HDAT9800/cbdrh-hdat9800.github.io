@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>HDAT9800 Health Data Visualisation &amp; Communication</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tim Churches" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="fonts.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: middle, center, title-slide
+background-image: url("images/justblackbutwhy.png")
+background-size: cover
+
+#&lt;br&gt;&lt;br&gt;HDAT9800 Health Data Visualisation &amp; Communication&lt;br&gt;&lt;br&gt;
+## Chapter 4 Interactive Tutorial -- more on visualisation with `ggplot2` 
+#### Tim Churches&lt;br&gt;
+#### UNSW Medicine
+#### 22nd June 2022
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;style type="text/css"&gt;
+# for changing font size in code blocks
+.remark-slide-content {
+  font-size: 28px;
+  padding: 20px 80px 20px 80px;
+}
+.remark-code, .remark-inline-code {
+  background: #f0f0f0;
+}
+.remark-code {
+  font-size: 24px;
+}
+.huge .remark-code { /*Change made here*/
+  font-size: 200% !important;
+}
+.smallcode .remark-code { /*Change made here*/
+  font-size: 80% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 66% !important;
+}
+&lt;/style&gt;
+
+---
+
+# Agenda for Chapter 4 ggplot2 interactive session
+
+  - recap core readings (Wilke Chapters 6)
+  - reproduce and extend the example charts Wilke provides using different (medical) datasets
+  - a quick look at the `patchwork` package
+
+
+---
+
+# Wilke Chapter 6 - visualising amounts
+
+- let's use the `medicaldata` library again
+- if not installed:
+
+`remotes::install_github("CBDRH-HDAT9800/medicaldata")`
+  
+---
+
+# Wilke section 6.1 - Bar plots
+
+- write some R code using `ggplot2` to make a bar chart using the `esoph_ca` dataset in the `medicaldata` package to create a bar chart which shows:
+  - `nsubjects` on the y-axis (you'll need to add (sum)  `ncases` and `ncontrols` to create an `nsubjects` column using `dplyr`
+  - `alcgrp` on the x-axis
+- examine the `esoph_ca` dataset and its documentation (`?esoph_ca`) first!
+
+---
+
+
+```r
+library(tidyverse)
+library(medicaldata)
+
+esoph_ca %&gt;%
+  mutate(nsubjects = ncases + ncontrols) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_bar()
+```
+
+---
+
+# Why?
+
+![](images/bar_chart_backtrace.png)
+
+---
+
+![](images/stat_help.png)
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  mutate(nsubjects = ncases + ncontrols) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_bar(stat = "identity")
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-4-1.png" width="504" /&gt;
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  mutate(nsubjects = ncases + ncontrols) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_bar(stat = "identity", col = "cyan")
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-6-1.png" width="504" /&gt;
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  mutate(nsubjects = ncases + ncontrols) 
+```
+
+```
+##    agegp     alcgp    tobgp ncases ncontrols nsubjects
+## 1  25-34 0-39g/day 0-9g/day      0        40        40
+## 2  25-34 0-39g/day    10-19      0        10        10
+## 3  25-34 0-39g/day    20-29      0         6         6
+## 4  25-34 0-39g/day      30+      0         5         5
+## 5  25-34     40-79 0-9g/day      0        27        27
+## 6  25-34     40-79    10-19      0         7         7
+## 7  25-34     40-79    20-29      0         4         4
+## 8  25-34     40-79      30+      0         7         7
+## 9  25-34    80-119 0-9g/day      0         2         2
+## 10 25-34    80-119    10-19      0         1         1
+## 11 25-34    80-119      30+      0         2         2
+## 12 25-34      120+ 0-9g/day      0         1         1
+## 13 25-34      120+    10-19      1         1         2
+## 14 25-34      120+    20-29      0         1         1
+## 15 25-34      120+      30+      0         2         2
+## 16 35-44 0-39g/day 0-9g/day      0        60        60
+## 17 35-44 0-39g/day    10-19      1        14        15
+## 18 35-44 0-39g/day    20-29      0         7         7
+## 19 35-44 0-39g/day      30+      0         8         8
+## 20 35-44     40-79 0-9g/day      0        35        35
+## 21 35-44     40-79    10-19      3        23        26
+## 22 35-44     40-79    20-29      1        14        15
+## 23 35-44     40-79      30+      0         8         8
+## 24 35-44    80-119 0-9g/day      0        11        11
+## 25 35-44    80-119    10-19      0         6         6
+## 26 35-44    80-119    20-29      0         2         2
+## 27 35-44    80-119      30+      0         1         1
+## 28 35-44      120+ 0-9g/day      2         3         5
+## 29 35-44      120+    10-19      0         3         3
+## 30 35-44      120+    20-29      2         4         6
+## 31 45-54 0-39g/day 0-9g/day      1        46        47
+## 32 45-54 0-39g/day    10-19      0        18        18
+## 33 45-54 0-39g/day    20-29      0        10        10
+## 34 45-54 0-39g/day      30+      0         4         4
+## 35 45-54     40-79 0-9g/day      6        38        44
+## 36 45-54     40-79    10-19      4        21        25
+## 37 45-54     40-79    20-29      5        15        20
+## 38 45-54     40-79      30+      5         7        12
+## 39 45-54    80-119 0-9g/day      3        16        19
+## 40 45-54    80-119    10-19      6        14        20
+## 41 45-54    80-119    20-29      1         5         6
+## 42 45-54    80-119      30+      2         4         6
+## 43 45-54      120+ 0-9g/day      4         4         8
+## 44 45-54      120+    10-19      3         4         7
+## 45 45-54      120+    20-29      2         3         5
+## 46 45-54      120+      30+      4         4         8
+## 47 55-64 0-39g/day 0-9g/day      2        49        51
+## 48 55-64 0-39g/day    10-19      3        22        25
+## 49 55-64 0-39g/day    20-29      3        12        15
+## 50 55-64 0-39g/day      30+      4         6        10
+## 51 55-64     40-79 0-9g/day      9        40        49
+## 52 55-64     40-79    10-19      6        21        27
+## 53 55-64     40-79    20-29      4        17        21
+## 54 55-64     40-79      30+      3         6         9
+## 55 55-64    80-119 0-9g/day      9        18        27
+## 56 55-64    80-119    10-19      8        15        23
+## 57 55-64    80-119    20-29      3         6         9
+## 58 55-64    80-119      30+      4         4         8
+## 59 55-64      120+ 0-9g/day      5        10        15
+## 60 55-64      120+    10-19      6         7        13
+## 61 55-64      120+    20-29      2         3         5
+## 62 55-64      120+      30+      5         6        11
+## 63 65-74 0-39g/day 0-9g/day      5        48        53
+## 64 65-74 0-39g/day    10-19      4        14        18
+## 65 65-74 0-39g/day    20-29      2         7         9
+## 66 65-74 0-39g/day      30+      0         2         2
+## 67 65-74     40-79 0-9g/day     17        34        51
+## 68 65-74     40-79    10-19      3        10        13
+## 69 65-74     40-79    20-29      5         9        14
+## 70 65-74    80-119 0-9g/day      6        13        19
+## 71 65-74    80-119    10-19      4        12        16
+## 72 65-74    80-119    20-29      2         3         5
+## 73 65-74    80-119      30+      1         1         2
+## 74 65-74      120+ 0-9g/day      3         4         7
+## 75 65-74      120+    10-19      1         2         3
+## 76 65-74      120+    20-29      1         1         2
+## 77 65-74      120+      30+      1         1         2
+## 78   75+ 0-39g/day 0-9g/day      1        18        19
+## 79   75+ 0-39g/day    10-19      2         6         8
+## 80   75+ 0-39g/day      30+      1         3         4
+## 81   75+     40-79 0-9g/day      2         5         7
+## 82   75+     40-79    10-19      1         3         4
+## 83   75+     40-79    20-29      0         3         3
+## 84   75+     40-79      30+      1         1         2
+## 85   75+    80-119 0-9g/day      1         1         2
+## 86   75+    80-119    10-19      1         1         2
+## 87   75+      120+ 0-9g/day      2         2         4
+## 88   75+      120+    10-19      1         1         2
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  mutate(nsubjects = ncases + ncontrols) %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(nsubjects))
+```
+
+```
+## # A tibble: 4 × 2
+##   alcgp     nsubjects
+##   &lt;ord&gt;         &lt;dbl&gt;
+## 1 0-39g/day       444
+## 2 40-79           430
+## 3 80-119          189
+## 4 120+            112
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(ncases) + sum(ncontrols))
+```
+
+```
+## # A tibble: 4 × 2
+##   alcgp     nsubjects
+##   &lt;ord&gt;         &lt;dbl&gt;
+## 1 0-39g/day       444
+## 2 40-79           430
+## 3 80-119          189
+## 4 120+            112
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols))
+```
+
+```
+## # A tibble: 4 × 2
+##   alcgp     nsubjects
+##   &lt;ord&gt;         &lt;dbl&gt;
+## 1 0-39g/day       444
+## 2 40-79           430
+## 3 80-119          189
+## 4 120+            112
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_bar(stat = "identity", colour = "cyan")
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-12-1.png" width="504" /&gt;
+
+---
+
+# Make it prettier
+
+- add `theme_minimal()`
+- choose and set a fill colour for the bars
+- label the x-axis and y-axis better 
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_bar(stat = "identity", fill = "lightblue") +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-14-1.png" width="504" /&gt;
+
+---
+
+Return to Wilke section 6.1
+
+---
+
+# Flip the coordinates
+
+---
+
+
+```r
+p &lt;- esoph_ca %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_bar(stat = "identity", fill = "lightblue") +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()
+
+p + coord_flip()
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-16-1.png" width="504" /&gt;
+
+---
+
+# Substitute `agegp` for the x-axis
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-17-1.png" width="504" /&gt;
+
+---
+
+# Re-order the x-axis by descending number of subjects
+
+- bad!
+  - `agegrp` has a natural order, we shouldn't mess with it
+  - but just as an exercise...
+- note that `agegp` is a factor variable
+  - hint: see `fct_reorder()` in the `forcats` package (part of `tidyverse` meta-package)
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(agegp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = fct_reorder(agegp, desc(nsubjects)),
+             y = nsubjects)) +
+    geom_col(fill = "lightblue") +
+    labs(x="Age group", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    coord_flip() +
+    theme_minimal()
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-19-1.png" width="504" /&gt;
+
+---
+
+# Section 6.2 - grouped and stacked bars
+
+---
+
+# Grouped bars
+
+- write some R code using `ggplot2` to make a bar chart using the `esoph_ca` dataset in the `medicaldata` package to create a bar chart which shows:
+  - `nsubjects` on the y-axis (you'll need to add `ncases` and `ncontrols` to create an `nsubjects` column using `dplyr`
+  - `alcgrp` on the x-axis
+  - grouped bars for each value of `agegp`
+- hint: the `position` argument to `geom_col()` or `geom_bar()`
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects, fill = agegp)) +
+    geom_col(position = "dodge") +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()
+```
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-21-1.png" width="504" /&gt;
+
+---
+
+# Change to facetting by `agegrp` with just one fill colour
+
+- as suggested by Wilke
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_col(fill="lightblue") +
+    facet_wrap(~agegp) +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()
+```
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-23-1.png" width="504" /&gt;
+
+---
+
+# Can you label the facets to show they are age group?
+
+- hint: the `labeller=` argument to `facet_wrap()` and `facet_grid()`
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-24-1.png" width="504" /&gt;
+
+---
+
+# Let's stack the bars by whether they are a case or control
+
+- we need to reshape our dataset
+  - one column holding the count of subjects
+  - one column holding whether the count is for cases or control
+- hint: the `pivot_longer()` function the `tidyr` package (part of the `tidyverse`)
+
+---
+
+![](images/tidyr_cheat_sheet_pg1.png)
+
+---
+
+![](images/pivot_longer.png)
+
+---
+
+# Step by step!
+
+
+```r
+esoph_ca
+```
+
+```
+##    agegp     alcgp    tobgp ncases ncontrols
+## 1  25-34 0-39g/day 0-9g/day      0        40
+## 2  25-34 0-39g/day    10-19      0        10
+## 3  25-34 0-39g/day    20-29      0         6
+## 4  25-34 0-39g/day      30+      0         5
+## 5  25-34     40-79 0-9g/day      0        27
+## 6  25-34     40-79    10-19      0         7
+## 7  25-34     40-79    20-29      0         4
+## 8  25-34     40-79      30+      0         7
+## 9  25-34    80-119 0-9g/day      0         2
+## 10 25-34    80-119    10-19      0         1
+## 11 25-34    80-119      30+      0         2
+## 12 25-34      120+ 0-9g/day      0         1
+## 13 25-34      120+    10-19      1         1
+## 14 25-34      120+    20-29      0         1
+## 15 25-34      120+      30+      0         2
+## 16 35-44 0-39g/day 0-9g/day      0        60
+## 17 35-44 0-39g/day    10-19      1        14
+## 18 35-44 0-39g/day    20-29      0         7
+## 19 35-44 0-39g/day      30+      0         8
+## 20 35-44     40-79 0-9g/day      0        35
+## 21 35-44     40-79    10-19      3        23
+## 22 35-44     40-79    20-29      1        14
+## 23 35-44     40-79      30+      0         8
+## 24 35-44    80-119 0-9g/day      0        11
+## 25 35-44    80-119    10-19      0         6
+## 26 35-44    80-119    20-29      0         2
+## 27 35-44    80-119      30+      0         1
+## 28 35-44      120+ 0-9g/day      2         3
+## 29 35-44      120+    10-19      0         3
+## 30 35-44      120+    20-29      2         4
+## 31 45-54 0-39g/day 0-9g/day      1        46
+## 32 45-54 0-39g/day    10-19      0        18
+## 33 45-54 0-39g/day    20-29      0        10
+## 34 45-54 0-39g/day      30+      0         4
+## 35 45-54     40-79 0-9g/day      6        38
+## 36 45-54     40-79    10-19      4        21
+## 37 45-54     40-79    20-29      5        15
+## 38 45-54     40-79      30+      5         7
+## 39 45-54    80-119 0-9g/day      3        16
+## 40 45-54    80-119    10-19      6        14
+## 41 45-54    80-119    20-29      1         5
+## 42 45-54    80-119      30+      2         4
+## 43 45-54      120+ 0-9g/day      4         4
+## 44 45-54      120+    10-19      3         4
+## 45 45-54      120+    20-29      2         3
+## 46 45-54      120+      30+      4         4
+## 47 55-64 0-39g/day 0-9g/day      2        49
+## 48 55-64 0-39g/day    10-19      3        22
+## 49 55-64 0-39g/day    20-29      3        12
+## 50 55-64 0-39g/day      30+      4         6
+## 51 55-64     40-79 0-9g/day      9        40
+## 52 55-64     40-79    10-19      6        21
+## 53 55-64     40-79    20-29      4        17
+## 54 55-64     40-79      30+      3         6
+## 55 55-64    80-119 0-9g/day      9        18
+## 56 55-64    80-119    10-19      8        15
+## 57 55-64    80-119    20-29      3         6
+## 58 55-64    80-119      30+      4         4
+## 59 55-64      120+ 0-9g/day      5        10
+## 60 55-64      120+    10-19      6         7
+## 61 55-64      120+    20-29      2         3
+## 62 55-64      120+      30+      5         6
+## 63 65-74 0-39g/day 0-9g/day      5        48
+## 64 65-74 0-39g/day    10-19      4        14
+## 65 65-74 0-39g/day    20-29      2         7
+## 66 65-74 0-39g/day      30+      0         2
+## 67 65-74     40-79 0-9g/day     17        34
+## 68 65-74     40-79    10-19      3        10
+## 69 65-74     40-79    20-29      5         9
+## 70 65-74    80-119 0-9g/day      6        13
+## 71 65-74    80-119    10-19      4        12
+## 72 65-74    80-119    20-29      2         3
+## 73 65-74    80-119      30+      1         1
+## 74 65-74      120+ 0-9g/day      3         4
+## 75 65-74      120+    10-19      1         2
+## 76 65-74      120+    20-29      1         1
+## 77 65-74      120+      30+      1         1
+## 78   75+ 0-39g/day 0-9g/day      1        18
+## 79   75+ 0-39g/day    10-19      2         6
+## 80   75+ 0-39g/day      30+      1         3
+## 81   75+     40-79 0-9g/day      2         5
+## 82   75+     40-79    10-19      1         3
+## 83   75+     40-79    20-29      0         3
+## 84   75+     40-79      30+      1         1
+## 85   75+    80-119 0-9g/day      1         1
+## 86   75+    80-119    10-19      1         1
+## 87   75+      120+ 0-9g/day      2         2
+## 88   75+      120+    10-19      1         1
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(ncases = sum(ncases),
+            ncontrols = sum(ncontrols))
+```
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+```
+## # A tibble: 24 × 4
+## # Groups:   alcgp [4]
+##    alcgp     agegp ncases ncontrols
+##    &lt;ord&gt;     &lt;ord&gt;  &lt;dbl&gt;     &lt;dbl&gt;
+##  1 0-39g/day 25-34      0        61
+##  2 0-39g/day 35-44      1        89
+##  3 0-39g/day 45-54      1        78
+##  4 0-39g/day 55-64     12        89
+##  5 0-39g/day 65-74     11        71
+##  6 0-39g/day 75+        4        27
+##  7 40-79     25-34      0        45
+##  8 40-79     35-44      4        80
+##  9 40-79     45-54     20        81
+## 10 40-79     55-64     22        84
+## # … with 14 more rows
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(ncases = sum(ncases),
+            ncontrols = sum(ncontrols)) %&gt;%
+  pivot_longer(cols = c(ncases, ncontrols),
+               names_to = "arm",
+               values_to = "nsubjects")
+```
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+```
+## # A tibble: 48 × 4
+## # Groups:   alcgp [4]
+##    alcgp     agegp arm       nsubjects
+##    &lt;ord&gt;     &lt;ord&gt; &lt;chr&gt;         &lt;dbl&gt;
+##  1 0-39g/day 25-34 ncases            0
+##  2 0-39g/day 25-34 ncontrols        61
+##  3 0-39g/day 35-44 ncases            1
+##  4 0-39g/day 35-44 ncontrols        89
+##  5 0-39g/day 45-54 ncases            1
+##  6 0-39g/day 45-54 ncontrols        78
+##  7 0-39g/day 55-64 ncases           12
+##  8 0-39g/day 55-64 ncontrols        89
+##  9 0-39g/day 65-74 ncases           11
+## 10 0-39g/day 65-74 ncontrols        71
+## # … with 38 more rows
+```
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(ncases = sum(ncases),
+            ncontrols = sum(ncontrols)) %&gt;%
+  pivot_longer(cols = c(ncases, ncontrols),
+               names_to = "arm",
+               values_to = "nsubjects") %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects, fill = arm)) +
+    geom_col() +
+    facet_wrap(~agegp, labeller = label_both) +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()  
+```
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-29-1.png" width="504" /&gt;
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(ncases = sum(ncases),
+            ncontrols = sum(ncontrols)) %&gt;%
+  pivot_longer(cols = c(ncases, ncontrols),
+               names_to = "arm",
+               values_to = "nsubjects") %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects, fill = arm, group = agegp)) +
+    geom_col() +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()  
+```
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-31-1.png" width="504" /&gt;
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(ncases = sum(ncases),
+            ncontrols = sum(ncontrols)) %&gt;%
+  pivot_longer(cols = c(ncases, ncontrols),
+               names_to = "arm",
+               values_to = "nsubjects") %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects, fill = arm, group = agegp)) +
+    geom_col(position = "dodge2") +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal()  
+```
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-33-1.png" width="504" /&gt;
+
+---
+
+# Section 6.3 Dotplots and heatmaps
+
+---
+
+# Draw a dotplot
+
+- using the `esoph_ca` dataset in the `medicaldata` package to create a dot plot which shows:
+  - `nsubjects` on the y-axis (you'll need to add `ncases` and `ncontrols` to create an `nsubjects` column using `dplyr`
+  - `alcgrp` on the x-axis
+  - fill the co-ordinates by 90 degrees
+- hint: **not** `geom_dotplot()`!
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp) %&gt;%
+  summarise(nsubjects = sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = alcgp, y = nsubjects)) +
+    geom_point(fill="lightblue") +
+    labs(x="Alcohol consumption", 
+         y="Number of subjects",
+         title="Oesophageal cancer study") +
+    theme_minimal() +
+    coord_flip()
+```
+
+---
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-35-1.png" width="504" /&gt;
+
+---
+
+# Heatmap of oesophageal cancer risk 
+
+- summarise the `esoph_ca` so that we have the proportion of cases (that is, `ncases/(ncases + ncontrols)`) as a heatmap by `agegp` and `alcgp`
+- hint: `geom_tile()`
+
+---
+
+
+```r
+esoph_ca %&gt;%
+  group_by(alcgp, agegp) %&gt;%
+  summarise(risk = sum(ncases) / sum(ncases + ncontrols)) %&gt;%
+  ggplot(aes(x = agegp, y = alcgp, fill = risk)) +
+    geom_tile() +
+    labs(x="Age group", 
+         y="Alcohol consumption",
+         title="Oesophageal cancer study") +
+    theme_minimal()
+```
+
+---
+
+
+```
+## `summarise()` has grouped output by 'alcgp'. You can override using the
+## `.groups` argument.
+```
+
+&lt;img src="HDAT9800-Chapter-4-ggplot2_files/figure-html/unnamed-chunk-37-1.png" width="504" /&gt;
+
+---
+
+# Challenge
+
+- improve the colour palette and legend
+
+---
+
+![](images/horst-patchwork.jpeg)
+
+---
+
+https://patchwork.data-imaginist.com
+
+---
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
