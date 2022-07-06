@@ -55,14 +55,16 @@ Links to slides and recordings will be posted on the page for each (weekly) chap
 
 </aside>
 
-For Term 2 2022, the course is provided in both blended (hybrid) and online formats. Each Chapter, which corresponds to a week in the ten week course, comprises pre-recorded lectures, interactive tutorials which student work through themselves, and a weekly interactive tutorial session. These tutorial sessions are provided in both online and face-to-face form (on the UNSW Kensington campus).
+For Term 2 2022, the course is provided in both blended (hybrid) and online formats. Each Chapter, which corresponds to a week in the eleven week course (plus one low-activity week for reading and catch-up), comprises pre-recorded lectures, interactive tutorials which student work through themselves, and a weekly interactive tutorial session. These tutorial sessions are provided in both online and face-to-face form (on the UNSW Kensington campus).
 
-There is a web page for each chapter (week) of the course, setting out exactly what you need to do each week (see links in the Course Schedule table below).
+There is a web page for each chapter of the course, setting out exactly what you need to do each week (see links in the Course Schedule table below).
 
 ```{r schedule}
 
 firstDay <- as.Date("20220530", format = "%Y%m%d")
-startDays <- format(firstDay + seq(0,69, 7), "%a %d %B")
+startDays <- format(firstDay + seq(0,76, 7), "%a %d %B")
+
+chapter <- c(1:5, NA, 6:10)
 
 topic <- c(
 'Course Introduction; What is Data Visualisation; Introduction to R; Introduction to git',
@@ -70,6 +72,7 @@ topic <- c(
 'Constructing Charts using ggplot2',
 'Collaborative Report Writing (including tables)',
 'Visualisation and Mapping part 1',
+'Low activity week',
 'Building Interactive Data-driven Web Apps using Shiny part 1',
 'Visualisation and Mapping part 2',
 'Building Interactive Data-driven Web Apps using Shiny part 2',
@@ -83,11 +86,12 @@ extension <- c(
 'Some more visualisation theory; more on data visualisation using ggplot2',
 'Visualisation with Python -- guest tutorial by Dr Georgina Kennedy',
 'Theories of Visual Perception -- guest tutorial by Andy Blance; a visualisation I am proud of (Dr Malcolm Gillies)',
-'Guest lecture by Prof Louisa Jorm on communicating with non-technical audiences; Visualisation and exploratory data analysis; visualisation of statistical models',
-'Incorporating time -- uses and misuses of animation in data visualisation; accessibility aspects of visualisation',
-'Visualisation of categorical data; visualising big data; a visualisation I am proud of (guest presentation)',
+'Guest lecture by Prof Louisa Jorm on communicating with non-technical audiences; hands-on ggplot2 practice coding', 
+'Incorporating time -- uses and misuses of animation in data visualisation; accessibility aspects of visualisation, more hands-on ggplot2 coding exercises',
+'Visualisation of categorical data; visualising big data, yet more ggplot2 coding explorations',
 'Communicating COVID-19 models through Markdown documents, web sites, pre-print papers and Shiny apps -- guest presentation by Dr Mark Hanly',
-'Visualising higher dimensions -- uses and misuses of 3D graphics; dimensionality reduction techniques, including a guest presentation by Dr Nic Kuo on t-SNE dimensionality reduction for visualising NLP models'
+'Visualising higher dimensions -- uses and misuses of 3D graphics; dimensionality reduction techniques, including a guest presentation by Dr Nic Kuo on t-SNE dimensionality reduction for visualising NLP models',
+'(Optional) group project presentations; other material by request (things we have missed)'
 )
 
 online_tutorials <- c(
@@ -100,7 +104,8 @@ online_tutorials <- c(
 "6:00pm-8:30pm (online), Wed 13 Jul",
 "6:00pm-8:30pm (online), Wed 20 Jul",
 "6:00pm-8:30pm (online), Wed 27 Jul",
-"6:00pm-8:30pm (online), Wed 3 Aug"
+"6:00pm-8:30pm (online), Wed 3 Aug",
+"6:00pm-8:30pm (online), Wed 10 Aug"
 )
 
 f2f_tutorials <- c(
@@ -113,7 +118,8 @@ f2f_tutorials <- c(
 "2:00pm-4:30pm (F2F), Thur 14 Jul",
 "2:00pm-4:30pm (F2F), Thur 21 Jul",
 "2:00pm-4:30pm (F2F), Thur 28 Jul",
-"2:00pm-4:30pm (F2F), Thur 4 Aug"
+"2:00pm-4:30pm (F2F), Thur 4 Aug",
+"2:00pm-4:30pm (F2F), Thur 11 Aug"
 )
 
 learnrLinks <- c(
@@ -122,7 +128,7 @@ learnrLinks <- c(
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch3-ggplot2/' target='_blank'></a>",
   "<a class='fa fa-code' href='https://cbdrh.shinyapps.io/HDAT9800-Ch4-git-conflicts/' target='_blank'></a>",
   "<a class='fa fa-code' href='https://rstudio.github.io/leaflet/' target='_blank'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 5)
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 6)
 )
 
 
@@ -131,7 +137,7 @@ recordings <- c(
   "<a class='fa fa-video' href='recordings.html#chapter-2'></a>",
   "<a class='fa fa-video' href='recordings.html#chapter-3'></a>",
   "<a class='fa fa-video' href='recordings.html#chapter-4'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 6)
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 7)
 )
 
 
@@ -141,13 +147,14 @@ chapterPages <- c(
   "<a class='fa fa-book' href='chapter3.html' target='_self'></a>",
   "<a class='fa fa-book' href='chapter4.html' target='_self'></a>",
   "<a class='fa fa-book' href='chapter5.html' target='_self'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 5)
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 6)
 )
 
 df <-
   data.frame(
-    Week = paste("Week", 1:10),
+    Week = paste("Week", 1:11),
     Start = startDays,
+    Chapter = chapter,
     Topic = topic,
     Extension = extension,
     learnrLinks = learnrLinks,
@@ -159,8 +166,8 @@ df <-
 
 kbl(df, 
     escape = FALSE,
-    align = c('l', 'l', 'l', 'l', 'l', 'c', 'c', 'l', 'c'),
-    col.names = c("Week", "Week starting", "Core topic(s)", "Additional topic(s)", "learnr tutorial", 'Online Tutorial', 'Face-to-Face Tutorial',  'Chapter web page', "Tutorial recordings")
+    align = c('l', 'l', 'c', 'l', 'l', 'l', 'c', 'c', 'l', 'c'),
+    col.names = c("Week", "Week starting", "Chapter", "Core topic(s)", "Additional topic(s)", "learnr tutorial", 'Online Tutorial', 'Face-to-Face Tutorial',  'Chapter web page', "Tutorial recordings")
     ) %>% 
   kable_styling(bootstrap_options = "hover")
 
@@ -257,7 +264,7 @@ In the 2021 running of this course we set these additional assessment tasks ever
 
 ## Group assessment
 
-In week 6 of the course, you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 4 of the course. Each group will be required to present their group project in the Thursday sessions in week 10, and then submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.
+In week 7 of the course you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 6 of the course. Each group will be given the opportunity to present their group project in the Wednesday (online) or Thursday face-to-face sessions in week 11, but these presentations are optional and are not assessed. Groups must submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.
 
 ## Assessment exercises timetable
 
@@ -270,29 +277,29 @@ df <- data.frame(
             "Chapter 3 assessment", 
             "Chapter 4 assessment", 
             "Chapter 5 assessment", 
-            "Additional assessment", 
             "Chapter 6 assessment", 
             "Chapter 7 assessment", 
+            "Additional individual assessment", 
             "Group assessment"),
   weight <- c("8%",
               "8%",
               "8%",
               "8%",
               "8%",
+              "8%",
+              "8%",
               "14%",
-              "8%",
-              "8%",
               "30%" ),
   
   due <- c("9am, Mon 20 Jun",
            "9am, Mon 27 Jun",
            "9am, Mon 4 Jul",
            "9am, Mon 11 Jul",
-           "9am, Mon 18 Jul",
-           "9am, Thur 4 Aug",
            "9am, Mon 25 Jul",
            "9am, Mon 1 Aug",
-           "9am, Mon 7 Aug"
+           "9am, Mon 8 Aug",
+           "9am, Thu 11 Aug",
+           "9am, Fri 19 Aug"
            ),
   
   link <- c(
