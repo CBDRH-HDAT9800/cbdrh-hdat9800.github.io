@@ -83,7 +83,11 @@ The Chapter 5 interactive sessions (online Wednesday at 6pm, face-to-face Thursd
 
 As usual, for the hands-on workshop, you will need your laptop with `R` and `RStudio` installed You need to have installed the `dplyr` and `ggplot2` packages. The easiest way to do that is to just install the `tidyverse` meta-package, if you have not already done so. We'll be installing a few other packages during the session.
 
-Slide decks for the presentations and hands-on tutorial will be posted here following the Thurs afternoon tutorial session.
+## Slide deck
+
+The slide deck for Andy Blance's presentation is available [here](https://unsw.sharepoint.com/:p:/s/CLS-HDAT9800_T2_5226_Combined/EaipDu1Fm6hAur3KAbcQ9UQBJQe3wvG5bpHAv1v94R_nFQ?e=Fkpn1F) (you will need to be logged in to UNSW Teams to access this). 
+
+A video recording of the Chapter 5 online session is available [here](https://unsw.sharepoint.com/:v:/r/sites/CLS-HDAT9800_T2_5226_Combined/Shared%20Documents/General/Recordings/General-20220629_180528-Meeting%20Recording.mp4?csf=1&web=1&e=tTHmae).
 
 # Chapter 5 assessment exercise
 

@@ -727,6 +727,9 @@ esoph_ca %>%
 
 ---
 
+# Patchwork
+
+- an R package that allows you to easily arrange `ggplot2` charts in simple or complex arrangements 
 [https://patchwork.data-imaginist.com](https://patchwork.data-imaginist.com)
 
 ---

@@ -76,7 +76,9 @@ For the hands-on workshop (if we have time), you will need your laptop with `R` 
 
 The slide deck in HTML (web) format for the session can be accessed <a class='fa fa-file-powerpoint' href='Chapter-4-ggplot2/HDAT9800-Chapter-4-ggplot2.html' target='_blank'> here</a> (a PDF version will be added here).
 
-The slide deck for Dr Georgie Kennedy's talk on data viz in python will be posted here shortly.
+The Jupyter notebooks and associated files for Dr Georgie Kennedy's talk on data viz in python can be downloaded as a zip file [here](https://unsw.sharepoint.com/:u:/s/CLS-HDAT9800_T2_5226_Combined/ESBq9zNqRcBGmOIN36331b8Bo2pXQdiwzvpnMhiM33NOXg?e=0qIn6p). You will need to be logged in to UNSW teams to access this file. Once you have downloaded it, unzip it and open the notebooks using Jupyter.
+
+A supplementry slide deck comparing visualisation in Python and R will appear here soon.
 
 A video recording of the Chapter 4 online session is available [here](https://unsw.sharepoint.com/:v:/s/CLS-HDAT9800_T2_5226_Combined/EWjmC_HS9gtGmtCIsg4zKmQBcjJIbcjO1Vr-itktDhnwZA?e=rmXewu).
 
