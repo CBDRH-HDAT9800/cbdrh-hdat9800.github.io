@@ -49,8 +49,6 @@ embed_url("https://youtu.be/7ki559mCHKA")
 
 [**Slide deck for Chapter 5**](assets/HDAT9800-2022-T2-Chapter-5.pdf)
 
-After you have viewed the lecture, please proceed to do the related `conflicts in git` tutorial (see below).
-
 # Online tutorial for Chapter 5
 
 This chapter's practical is a tutorial called "Leaflet for R" from RStudio that is available from here: http://rstudio.github.io/leaflet/ 

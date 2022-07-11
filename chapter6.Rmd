@@ -1,0 +1,120 @@
+---
+title: "HDAT9800 Chapter 6"
+description: |
+  Chapter 5 material for HDAT9800 Visualisation & Communication of Health Data
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(hexSticker)
+library(ggplot2)
+library(shiny)
+library(vembedr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+```{r course-logo, preview=TRUE}
+knitr::include_graphics("images/shiny.png")
+```
+
+# What's in the lectures and tutorials for this Chapter?
+
+In this chapter we look at the `Shiny` environment for `R`. `Shiny` allows you to build very sophisticated interactive web sites )or apps) using just R code. It is an example of similar environments in other programming languages which hide most of the arcane and confusing aspects of web development and allow you to concentrate on how and what you wish to communicate to the audience for the web site or app.
+
+Topics to be covered:
+
+* What is Shiny
+* Shiny app architecture (2 or 1 file apps)
+* Inside a Shiny app
+* UI 
+* This week's `learnr` tutorial
+
+After viewing the pre-recorded lecture below (the slide deck for it is available below the video), you should go through the interactive learnr tutorial for this chapter (see below). 
+
+There are also large numbers of alternative tutorials on Shiny available on the internet: some are very good, others not so good. If possible, you should go through some of these as well. The tutorials provided by RStudio (see the readings and resources table for this chapter, below) are recommended. Nonetheless, the introduction to Shiny lecture above is still a very good place to start.
+
+```{r ch6-video, preview=TRUE}
+embed_url("https://youtu.be/VzDkIpvDDxU")
+```
+
+[**Slide deck for Chapter 6**](assets/HDAT9800-2022-T2-Chapter-6.pdf)
+
+After you have viewed the lecture, please proceed to do the related `Intro to shiny` tutorial (see below).
+
+#  `learnr` tutorial for Chapter 6
+
+You should download and re-install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Instructions for installing `R` and `RStudio` are provided [here](installing_r.html).
+
+The tutorial for this chapter is also available online via the link from the course schedule table on the course home page.
+
+The tutorial covers much of the same  material as in the pre-recorded lecture, but goes into quite a lot more detail. 
+
+If you have any questions about the lectures or tutorials, or if you want to share any useful resources or post insights, please post in the [Teams space](https://teams.microsoft.com/l/channel/19%3af1876c04b0a44549bd2aa63050155355%40thread.tacv2/Chapter%25206?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3) for the course, in the channel for Chapter 6.
+
+# Interactive sessions for Chapter 6
+
+Forthcoming soon.
+
+# Chapter 6 assessment exercise
+
+
+Forthcoming soon.
+
+## Requesting early marking
+
+You may request early marking of your submitted assessment by following the steps outlined [here](requesting_early_marking.html).
+
+
+# Readings and Resources for Chapter 6
+
+```{r, eval=TRUE, include=TRUE}
+
+reading = c(
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 10 - Visualizing proportions: Empirical cumulative distribution functions and q-q plots",
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 1 - Visualizing nested proportions",
+      "RStudio. Building Web Applications with Shiny (tutorials)"
+    )
+
+links <- c(
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/visualizing-proportions.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/nested-proportions.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://rstudio-education.github.io/shiny-course/' target='_blank'></a>"
+  
+)
+
+
+df <- data.frame(
+  reading = reading,
+  links = links
+)
+
+
+kbl(df, escape = FALSE,
+    align = c('l', 'c'),
+    col.names = NULL) %>%
+  kable_styling(bootstrap_options = "hover") %>% 
+    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings")  %>% 
+    kableExtra::group_rows(start_row = 3, end_row = 3, group_label = "Optional but recommended readings") 
+
+```
+
+<aside>
+
+<br>
+
+You should prioritise the core readings each week.  
+
+</aside>
+
+
+
+
+
+
