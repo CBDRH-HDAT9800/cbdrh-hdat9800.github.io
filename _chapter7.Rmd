@@ -1,7 +1,7 @@
 ---
-title: "HDAT9800 Chapter 6"
+title: "HDAT9800 Chapter 7"
 description: |
-  Chapter 6 material for HDAT9800 Visualisation & Communication of Health Data
+  Chapter 7 material for HDAT9800 Visualisation & Communication of Health Data
 ---
 
 ```{r setup, include=FALSE}
