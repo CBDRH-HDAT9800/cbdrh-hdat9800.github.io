@@ -60,12 +60,19 @@ If you have any questions about the lectures or tutorials, or if you want to sha
 
 # Interactive sessions for Chapter 6
 
-Forthcoming soon.
+Details forthcoming soon.
 
 # Chapter 6 assessment exercise
 
+For Chapter 6, the assessment exercise is intended to check your understanding of the material covered in the Chapter 6 pre-recorded lecture and the Chapter 6 `learnr` tutorial on building interactive `shiny` apps.  The framework for the `shiny` app is supplied, and you just need to add code to build the appl functionality as instructed in the README file for the assessment. Don't be intimidated, it is easier than it seems at first!. Access the assessment repository the same way as for previous chapters, by clicking on this link to the Chapter 6 assessment GitHub Classroom repository:  [https://classroom.github.com/a/sYSWaGHH](https://classroom.github.com/a/sYSWaGHH)
 
-Forthcoming soon.
+This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
+
+You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
+
+**Be sure that you can successfully run the `shiny` app that you will be working on in this assessment, before you commit and push your final version. The instructors will be running your app as well as looking at your code for it when marking the assessment.
+
+You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 
 ## Requesting early marking
 

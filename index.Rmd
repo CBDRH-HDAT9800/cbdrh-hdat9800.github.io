@@ -315,7 +315,8 @@ df <- data.frame(
     "<a class='fa fa-link' href='https://classroom.github.com/a/QqP0VEjV' target='_blank'></a>",
     "<a class='fa fa-link' href='https://classroom.github.com/a/Tu9O8IFj' target='_blank'></a>",
     "<a class='fa fa-link' href='https://classroom.github.com/a/XpclGgGm' target='_blank'></a>",
-    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 4)
+    "<a class='fa fa-link' href='https://classroom.github.com/a/sYSWaGHH' target='_blank'></a>",
+    rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 3)
   )
   
 )
