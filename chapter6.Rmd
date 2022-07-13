@@ -81,7 +81,7 @@ This will create a new GitHub repository for you, just for this assignment. Only
 
 You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
 
-**Be sure that you can successfully run the `shiny` app that you will be working on in this assessment, before you commit and push your final version. The instructors will be running your app as well as looking at your code for it when marking the assessment.
+**Note**: Be sure that you can successfully run the `shiny` app that you will be working on in this assessment, before you commit and push your final version. The instructors will be running your app as well as looking at your code for it when marking the assessment.
 
 You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
 
