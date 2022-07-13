@@ -71,7 +71,7 @@ As usual, for the hands-on workshop, you will need your laptop with `R` and `RSt
 
 ## Notes for the talk and interactive exercises
 
-The notes for the talk and the example code fo the interactive exercises on animation can be accessed [here](Chapter-6-animation/HDAT9800-Chapter-6-animation.html).
+The notes for the talk and the example code fo the interactive exercises on animation can be accessed <a class='fa fa-file-powerpoint' href='Chapter-6-animation/HDAT9800-Chapter-6-animation.html' target='_blank'> here</a>.
 
 # Chapter 6 assessment exercise
 
