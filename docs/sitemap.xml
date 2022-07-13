@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" version="1.0">
   <url>
+    <loc>https://cbdrh-hdat9800.github.io/additional_assessment.html</loc>
+    <lastmod>2022-07-13T15:33:58+10:00</lastmod>
+  </url>
+  <url>
     <loc>https://cbdrh-hdat9800.github.io/chapter1.html</loc>
     <lastmod>2022-06-24T14:26:15+10:00</lastmod>
   </url>
@@ -34,7 +38,7 @@
   </url>
   <url>
     <loc>https://cbdrh-hdat9800.github.io/</loc>
-    <lastmod>2022-07-12T14:01:33+10:00</lastmod>
+    <lastmod>2022-07-13T15:29:20+10:00</lastmod>
   </url>
   <url>
     <loc>https://cbdrh-hdat9800.github.io/installing_r.html</loc>

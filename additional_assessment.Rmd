@@ -1,0 +1,35 @@
+---
+title: "HDAT9800 Additional Individual Assessment Task"
+description: |
+  Information about the additional individual assessment task for HDAT9800 Visualisation & Communication of Health Data
+---
+
+This assessment is worth 14 marks (14% of the total marks for the HDAT9800 course).
+
+Your task is to create a dashboard which presents information of current and past COVID infection and/or testing rates in NSW, using:
+
+* the `flexdashboard` package for R (see https://pkgs.rstudio.com/flexdashboard/ )
+* NSW government data on COVID cases and testing, available at https://data.nsw.gov.au/nsw-covid-19-data
+  * note that many of the COVID data series previously provided by the NSW government have been discontinued, but the following are still available:
+    * counts of COVID cases by date and geographic location
+    * counts of COVID cases by date and age group
+    * counts of negative PCR COVID tests by date an geographic location
+
+You should clone the additional assignment repository from GitHub Classroom in the usual way using this URL: [https://classroom.github.com/a/bFmZ23IU](https://classroom.github.com/a/bFmZ23IU), and you should submit your assessment solution in the usual way by committing your work to git locally and then pushing that back to your assessment GitHuib repository, in exactly the same way as for the other assessments. You can, and should, commit your work often as it progresses, and periodically push that back to GitHub. The version of your work that has been pushed to GitHub by the due date and time for this assessment will be the one which is marked. Please note that early marking for this assessment is not offered.
+
+The dashboard you create should have the following characteristics (with the number of marks awarded for each characteristic shown in brackets):
+
+* it should use at least two of the three NSW government COVID data files mentioned above (1.5 marks)
+* it should automatically download (or otherwise use) the latest version of those data files from the NSW government data web site (see URL above) each time the dashboard Rmd document is rendered (knitted) (1.5 marks)
+* it should have three tabs or pages, each displaying a different chart visualising the NSW COVID data in a useful manner. That is, the dashboard should provide three charts or visualistions. You may provide additional tabs or pages for documentation, but you should not create more than three visualisations. The charts might be line charts, bar charts, histograms, maps or any other type of chart that you can create using the `ggplot2` package and any extensions or add-ins for it. R packages for `htmlwidgets` (see https://www.htmlwidgets.org) may also be used. Each chart or visualisation should be accompanied by a brief explanation of what it is showing, although commentary or analysis of the current data is not required -- in other words, explain in general terms what data your visualsiations are displaying and how to interpret that information, but don't write commentaries about the current trends or patterns in the data (as that may change by the time your dashboard is marked). (3 marks will be awarded for each of the three charts or visualisations, with 1.5 marks awarded for a basic but correct chart, and a further 1.5 marks for a well-executed chart with a good explanation, improvements to its appearance over the default chart appearance, and/or additional features) (9 marks all together)
+* two additional marks will be awarded if one of the charts is either animated or includes some useful interactive aspect. There is no need to do both animated **and** interactive charts, no extra marks will be awarded for both (but no marks will be deducted if you do both).
+* marks will be deducted for charts or visualisation which lack proper labelling of axes and legends and which do not have informative titles.
+
+This is an individual assignment and must be your own work. However, students are encouraged to assist each other by sharing information or resources which help in completing the assessment. Students are also encouraged to seek help (including suggestions for type of charts etc) from the course instructors via Teams. The instructors are happy to clarify these instructions if required -- this assessment exercise is intended to be open-ended and not too prescriptive, and thus not every aspect has or can be described or specified exhaustively here. Any clarification given to one student will be shared with all via Teams.
+
+This assessment task is new for 2022. It is inspired by the dashboard which one of the course instructors created in 2020 at the beginning of the COVID pandemic -- see https://cbdrh.github.io/ozcoviz/ -- feel free to borrow ideas from that example and to inspect its source code for help with implementation (but note that it uses several different data sources). Do not copy code directly from it, though.
+
+
+
+
+
