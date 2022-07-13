@@ -60,7 +60,18 @@ If you have any questions about the lectures or tutorials, or if you want to sha
 
 # Interactive sessions for Chapter 6
 
-Details forthcoming soon.
+The Chapter 6 interactive sessions (online Wednesday at 6pm, face-to-face Thursday at 2pm) will cover the following topics:
+
+* Q&A on Chapter 5 (and previous chapters) curriculum material
+* details of the additional assessment task
+* a talk on the principles of animation in data visualisation
+* a hands-on workshop on exploring practical animation using the `gganimate` package for `ggplot2`  
+
+As usual, for the hands-on workshop, you will need your laptop with `R` and `RStudio` installed. You need to have installed the `ggplot2` package. The easiest way to do that is to just install the `tidyverse` meta-package, if you have not already done so. We'll be installing a few other packages during the session, in partcular the `gganimate` package and the `gapminder` package.
+
+## Notes for the talk and interactive exercises
+
+The notes for the talk and the example code fo the interactive exercises on animation can be accessed [here](Chapter-6-animation/HDAT9800-Chapter-6-animation.html).
 
 # Chapter 6 assessment exercise
 
