@@ -1,0 +1,133 @@
+---
+title: "HDAT9800 Chapter 7"
+description: |
+  Chapter 7 material for HDAT9800 Visualisation & Communication of Health Data
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(fontawesome)
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(hexSticker)
+library(ggplot2)
+library(shiny)
+library(vembedr)
+
+options(kableExtra.html.bsTable = T)
+
+```
+
+```{r course-logo, preview=TRUE}
+knitr::include_graphics("images/sf.png")
+```
+
+# What's in the lectures and tutorials for this Chapter?
+
+This week we look at maps in general and consider variuos types of maps:
+
+* Chloropleths
+* Isopleths
+* Proportional symbols
+* Cartograms
+* Heat maps
+
+After viewing the pre-recorded lecture below (the slide deck for it is available below the video), you should go through the interactive learnr tutorial for this chapter (see below). 
+
+
+```{r ch6-video, preview=TRUE}
+embed_url("https://youtu.be/bu9vd14MhTM")
+```
+
+[**Slide deck for Chapter 7**](assets/HDAT9800-2022-T2-Chapter-7.pdf)
+
+After you have viewed the lecture, please proceed to do the related `Mapping in shiny` tutorial (see below).
+
+#  `learnr` tutorial for Chapter 7
+
+You should download and re-install the `hdat9800` tutorials package for `R` by following the instructions provided on the home page. Instructions for installing `R` and `RStudio` are provided [here](installing_r.html).
+
+Please note that the tutorial for this chapter is **not** currently available online via the link from the course schedule table on the course home page, due to a technical error on the RStudio hosting web site which affects just this tutorial, and which we are trying to debug.
+
+The tutorial covers much of the same  material as in the pre-recorded lecture, but goes into quite a lot more detail. 
+
+If you have any questions about the lectures or tutorials, or if you want to share any useful resources or post insights, please post in the [Teams space](https://teams.microsoft.com/l/channel/19%3af1876c04b0a44549bd2aa63050155355%40thread.tacv2/Chapter%25206?groupId=40f150b6-6fa9-478e-875f-cd02465b18a2&tenantId=3ff6cfa4-e715-48db-b8e1-0867b9f9fba3) for the course, in the channel for Chapter 6.
+
+# Interactive sessions for Chapter 7
+
+In the interactive session we will go through Chapters 10 and 11 of the Wilke textbook and attempt to reproduce the charts in those chapters using different data sets.
+
+There is also a `learnr` tutorial on categorical data visualisation available in the `hdat9800tutorials` package. We will go through **some** of that (it is long and quite technical, too much matter to cover in full in a single session).
+
+This tutorial on categorical data visualisation **is** also available online at [https://cbdrh.shinyapps.io/HDAT9800_categorical/](https://cbdrh.shinyapps.io/HDAT9800_categorical/)
+
+# Chapter 7 assessment exercise
+
+For Chapter 7, the assessment exercise is once again intended to check your understanding of the material covered in the Chapter 7 pre-recorded lecture and the Chapter 7 `learnr` tutorial on building interactive `shiny` apps with maps.  The framework for the `shiny` app is supplied, and you just need to add code to build the app functionality as instructed in the README.Rmd file (or the README.html rendered version of it)  for the assessment. Don't be intimidated, it is easier than it seems at first! However, some aspects have been left deliberately vague, to make you think. Access the assessment repository the same way as for previous chapters, by clicking on this link to the Chapter 7 assessment GitHub Classroom repository:  [https://classroom.github.com/a/WFCmHFQ-](https://classroom.github.com/a/WFCmHFQ-)
+
+This will create a new GitHub repository for you, just for this assignment. Only you and the course instructors can access it, it is not public.
+
+You should then clone this assignment repository to your local computer, using RStudio (or other git interfaces such as GitHub Desktop if you prefer). Complete the assignment (assessment task) according to the instructions given, save and commit your work to your local git repository, and then push that work back to the remote `GitHub` repository for the assessment (this should all be automatically set up when you clone the repo in RStudio).
+
+**Note**: Be sure that you can successfully run the `shiny` app that you will be working on in this assessment, before you commit and push your final version. The instructors will be running your app as well as looking at your code for it when marking the assessment.
+
+**Note**: PLEASE do not push the zip files or their contents back to your assessment repo on GitHub. This request not to push them to GitHub in repeated in the README.Rmd file for the assessment. the `.gitignore` file is set up to help prevent this, but please double-check that you are not committing any large mapping data files!
+
+You may revise your assessment task(s) as many times as you wish. We will mark the last committed version that you push to the GitHub repository for your chapter assessment by the due date. 
+
+
+## Requesting early marking
+
+You may request early marking of your submitted assessment by following the steps outlined [here](requesting_early_marking.html).
+
+
+# Readings and Resources for Chapter 7
+
+There are no new readings for this week, to allow everyone to catch up. Thus we will revisit Chapters 10 and 11 of Wilke.
+
+```{r, eval=TRUE, include=TRUE}
+
+reading = c(
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 10 - Visualizing proportions: Empirical cumulative distribution functions and q-q plots",
+      "Claus O. Wilke. Fundamentals of Data Visualization. Chapter 1 - Visualizing nested proportions",
+      "RStudio. Building Web Applications with Shiny (tutorials)"
+    )
+
+links <- c(
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/visualizing-proportions.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://clauswilke.com/dataviz/nested-proportions.html' target='_blank'></a>",
+  "<a class='fa fa-globe' href='https://rstudio-education.github.io/shiny-course/' target='_blank'></a>"
+  
+)
+
+
+df <- data.frame(
+  reading = reading,
+  links = links
+)
+
+
+kbl(df, escape = FALSE,
+    align = c('l', 'c'),
+    col.names = NULL) %>%
+  kable_styling(bootstrap_options = "hover") %>% 
+    kableExtra::group_rows(start_row = 1, end_row = 2, group_label = "Core readings")  %>% 
+    kableExtra::group_rows(start_row = 3, end_row = 3, group_label = "Optional but recommended readings") 
+
+```
+
+<aside>
+
+<br>
+
+You should prioritise the core readings each week.  
+
+</aside>
+
+
+
+
+
+

@@ -31,6 +31,8 @@ navbar:
           href: chapter5.html
         - text: "Chapter 6"
           href: chapter6.html
+        - text: "Chapter 7"
+          href: chapter7.html
         - text: "Additional assessment info"
           href: additional_assessment.html
         - text: "Favourite visualisations"

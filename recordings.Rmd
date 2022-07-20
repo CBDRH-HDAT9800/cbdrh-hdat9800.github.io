@@ -49,6 +49,10 @@ vembedr::embed_url("https://youtu.be/unur6FBh_x0")
 
 The slide deck for Prof Jorm's talk is available [here](https://unsw.sharepoint.com/:p:/s/CLS-HDAT9800_T2_5226_Combined/EaEUbTdiCY5NhTy6G_v_SFIB6dH3W5I3DQPpncWy5qw3dA?e=QxZk3N).
 
+# Chapter 6
+
+[Week 6 online session video](https://unsw.sharepoint.com/:v:/s/CLS-HDAT9800_T2_5226_Combined/ESGylK3mMmdEokr3UjnxBpoBFv-ik_E8kKYxY9Uo2gzynQ?e=3Z4GpV)
+
 <aside>
 
 <br>
