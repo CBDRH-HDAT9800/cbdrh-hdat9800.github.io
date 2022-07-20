@@ -35,6 +35,8 @@ navbar:
           href: chapter7.html
         - text: "Additional assessment info"
           href: additional_assessment.html
+        - text: "Group assessment project info"
+          href: group_project.html
         - text: "Favourite visualisations"
           href: favourite_visualisations.html
     - text: "Recordings"

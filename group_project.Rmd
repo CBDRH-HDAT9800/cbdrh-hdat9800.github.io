@@ -1,0 +1,72 @@
+---
+title: "HDAT9800 Group Project Assessment Task"
+description: |
+  Information about the group project  assessment task for HDAT9800 Visualisation & Communication of Health Data
+---
+
+The group project assessment task is worth 30 marks (30% of the total marks for the HDAT9800 course).
+
+Two group project tasks are available. Your group only needs to do one of them, A or B, not both!
+
+Group Project A is similar to the group project in previous years for this course. It involves building a fairly sophisticated shiny app. Much of the code is provided, but not all of it. There are detailed instructions. We recommend this project for students who are relatively new to programming in general, or programming in R specifically. The project provides a clear framework for what you are supposed to do.
+
+Group Project B is intended for students who have a more extensive background in coding and are looking for a creative challenge. The task is **very** open-ended, and there are many aspects in meeting the challenge which will require thought and investigation.
+
+Both Project A and Project B offer the same marks. However, to achieve full marks or close to full marks in Project A, the submitted solution will need to be flawless in all respects. In previous years, the best groups scored 27 or 28 out of 30 marks, with most groups scoring in the low 20s. By contrast, marking for Project B will focus more on the innovative or novel aspects of the submitted assessment.
+
+Because there are no detailed marking rubrics for the group assessment, all group assessments will be dual-marked independently by both course instructors (Tim and Dami), and the average of the two marks will be awarded. 
+
+# Group Project A 
+
+Your task is to build a shiny app showcasing some of the things we have been learning about this term.
+
+A description of the project is contained in the `README.Rmd` file (which has also been rendered as an HTML file, available [here](assets/group_project_README.html) in the assignment starter repository. Make sure you read it.
+
+This is a collaborative assignment using git and you must use git to do it. You cannot copy files around using USB sticks or send them to each other via email. You will lose marks for doing so. There must be evidence of collaboration using git.
+
+You may like to revise the tutorial on conflicts in the Introduction to git tutorial package.
+
+# Group Project B
+
+This alternative project is very open-ended and is intended for groups of students with a greater coding background who want more of a creative and/or coding challenge.
+
+You task is to create some novel or innovative visualisations of some aspect or aspects of the recently-released 2021 Australian Census data, which is available via the ABS (Australian Bureau of Statistics) web site.
+
+Note that there are **many* web sites providing dashboard-like access with fairly standard bar charts and other visualisations of these Census data. You should not attempt to replicate any of these. You do not have to provide a comprehensive visualisation facility for the Census data. Instead, aim for something novel  or innovative. It may be interactive, or it may be static.
+
+An example of a suitable project might be to use the DataShader library for python, to create zoomable, ultra-detailed maps of all of Australia (or a whole state such as NSW), where each person in the population is represented as a point with a colour shading representing some value (eg age, income, educational level etc). Census data do not contain such individual data, so you would need to synthesise individual data at the SA1 geographic level from the summary (tabular) counts of people, and then assign random geographic coordinates for each individual with the boundaries of the SA1 geographic area to which they belong.
+
+If your group chooses Project B, **please** discuss your intended project with the course instructors (via Teams) before getting started, to ensure your goals are not too ambitious, nor too constrained.
+
+Marking will reflect the novelty or innovative nature of the project solution, as well as the success of the execution. Novel or innovative solutions can expect high marks.
+
+You do not have to use R for Project B. Python is also acceptable, as is JavaScript or any other open-source languge and tools. Mixed programming languages are fine. However, proprietary software should not be used. The instructors need to be able to run your solution on heir laptops (which are quite powerful with 16 or 32GB of RAM) without having to purchase any software licenses.
+
+You should submit your assignment using this same repository, but you may delete all the files related to Project A from it.
+
+## How to form a project group (groups of 3 or 4 student)
+
+You should form yourselves into groups of 3 or 4 for this assignment. At a pinch a group of two may be possible but it will mean more work for you aand is not recommended. It will not be possible to do this in groups of more than four or to do this assignment individually.
+
+The group members should choose a (unique) name for themselves and elect one person to start a group by using the GitHub Classroom link to start the group and give it a name. Once the assignment group is created the remaining members can join the project. At that point it’s just a regular git project: everyone should clone their own copy and work on the assignment together by working on their sections and pushing and pulling commits to GitHub.
+
+Please ensure you have found partners and formed your groups by 29 July 2022. 
+
+## Group Project Github Repository 
+
+The GitHub Classroom link for this project is [https://classroom.github.com/a/o4mZXeEU](https://classroom.github.com/a/o4mZXeEU)
+
+## Optional Demonstration 
+
+There will be an opportunity to talk about and/or demonstrate your group assignment project, or ask advice, during the online and face-to-face sessions for Week 10. Presentation or demonstration is entirely optional and you and your group will not be penalised if you chose not to present. 
+In previous years, part of the group assignment involved a short (marked) presentation on how you approached your task and what it showed. However, in view of the current COVID-19 restrictions and the difficulties of hosting such group presentation online, we have decided to drop this aspect of the assessment. Last year we tried video presentations during similar COVID-19 lockdown restrictions, but they were not entirely successful and created a lot of extra work, and stress, for students and instructors alike.
+
+# Group Project Deadline 
+
+Your final group project is due by Friday 19th August 2022 9am. 
+
+The version on GitHub at this time will be deemed to be your solution.
+
+
+
+

@@ -274,7 +274,7 @@ In the 2021 running of this course we set these additional assessment tasks ever
 
 ## Group assessment
 
-In week 7 of the course you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 6 of the course. Each group will be given the opportunity to present their group project in the Wednesday (online) or Thursday face-to-face sessions in week 11, but these presentations are optional and are not assessed. Groups must submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.
+In week 7 of the course you will be asked to form into small groups of 3 or 4 students each, to undertake a group assessment task. More details of this task will be provided in week 6 of the course. Each group will be given the opportunity to present their group project in the Wednesday (online) or Thursday face-to-face sessions in week 11 (Chapter 10), but these presentations are optional and are not assessed. Groups must submit all the code for the project in the week following that. The group assessment is worth 30% of the overall course marks.
 
 ## Assessment exercises timetable
 
@@ -321,8 +321,8 @@ df <- data.frame(
     "<a class='fa fa-link' href='https://classroom.github.com/a/sYSWaGHH' target='_blank'></a>",
     "<a class='fa fa-link' href='https://classroom.github.com/a/WFCmHFQ-' target='_blank'></a>",
     "<a class='fa fa-link' href='https://classroom.github.com/a/bFmZ23IU' target='_blank'></a>",
-    "<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>"
-  )
+    "<a class='fa fa-link' href='https://classroom.github.com/a/o4mZXeEU' target='_blank'></a>"
+)
   
 )
 
