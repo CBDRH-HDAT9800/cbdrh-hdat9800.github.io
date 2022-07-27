@@ -33,6 +33,10 @@ navbar:
           href: chapter6.html
         - text: "Chapter 7"
           href: chapter7.html
+        - text: "Chapter 8"
+          href: chapter8.html
+        - text: "Chapter 9"
+          href: chapter9.html
         - text: "Additional assessment info"
           href: additional_assessment.html
         - text: "Group assessment project info"
