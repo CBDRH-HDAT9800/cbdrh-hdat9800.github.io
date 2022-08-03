@@ -57,6 +57,7 @@ We will also consider 3D visualisations, their uses and misuses. We will review 
 
 Other issues to be discussed:
 
+* news (including that the [RStudio not-for-profit company](https://www.rstudio.com) is re-branding as [Posit](https://posit.co) and expanding their focus to include python as well as R, including quarto (knitr for python) and shiny-for-python)
 * assessment marking
 * Q&A about core chapter content
 * questions about the additional and group assessment tasks
