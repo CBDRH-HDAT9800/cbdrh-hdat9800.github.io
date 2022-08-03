@@ -148,7 +148,9 @@ recordings <- c(
   "<a class='fa fa-video' href='recordings.html#low-activity-week'></a>",
   "<a class='fa fa-video' href='recordings.html#chapter-6'></a>",
   "<a class='fa fa-video' href='recordings.html#chapter-7'></a>",
-  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 3)
+  "<a class='fa fa-video' href='recordings.html#chapter-8'></a>",
+  "<a class='fa fa-video' href='recordings.html#chapter-9'></a>",
+  rep("<a class='fa fa-clock' href='https://media.giphy.com/media/XIqCQx02E1U9W/giphy.gif' target='_blank'></a>", 1)
 )
 
 
