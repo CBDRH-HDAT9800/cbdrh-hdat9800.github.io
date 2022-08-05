@@ -55,7 +55,10 @@ In the interactive session we will have a guest presentation from Dr Nic Kuo on 
 
 The slide deck for Nic's talk can be found [here](https://docs.google.com/presentation/d/1FcFPjWqoXVbtxjUcwtPdY1yqJT1gH27CC9z9jP8f8rc/edit#slide=id.p).
 
-We will also consider 3D visualisations, their uses and misuses. We will review [Chapter 26 of the Wilke textbook](https://clauswilke.com/dataviz/no-3d.html), in which he admonishes against the use of 3D visualisations except in some special circumstances, and then we rather informally look at examples of 3D visualisation and the facilities for creating then in R. A set of links to the things we examine will be posted here after the session.
+An Rmarkdown notebook illustrating the use of t-SNE which Nic spoke about is available as a GitHub gists [here](https://gist.github.com/timchurches/95f348aa8765beddaa9e2ff6a06b5c2f). You can download that (or just copy and paste the code into an Rmd file on your laptop) and run each section.
+
+
+We will also consider 3D visualisations (note: this has been held over to Chapter 10), their uses and misuses. We will review [Chapter 26 of the Wilke textbook](https://clauswilke.com/dataviz/no-3d.html), in which he admonishes against the use of 3D visualisations except in some special circumstances, and then we rather informally look at examples of 3D visualisation and the facilities for creating then in R. A set of links to the things we examine will be posted here after the session.
 
 Other issues to be discussed:
 
