@@ -63,7 +63,7 @@ In previous years, part of the group assignment involved a short (marked) presen
 
 # Group Project Deadline 
 
-Your final group project is due by Friday 19th August 2022 9am. 
+Your final group project is due by Monday 22nd August 2022 9am. 
 
 The version on GitHub at this time will be deemed to be your solution.
 

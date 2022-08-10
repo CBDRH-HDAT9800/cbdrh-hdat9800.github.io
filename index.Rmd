@@ -309,15 +309,15 @@ df <- data.frame(
               "14%",
               "30%" ),
   
-  due <- c("9am, Mon 20 Jun",
-           "9am, Mon 27 Jun",
-           "9am, Mon 4 Jul",
-           "9am, Mon 11 Jul",
-           "9am, Mon 25 Jul",
-           "9am, Mon 1 Aug",
-           "9am, Mon 8 Aug",
-           "9am, Thu 11 Aug",
-           "9am, Fri 19 Aug"
+  due <- c("9am, Mon 20 Jun 2022",
+           "9am, Mon 27 Jun 2022",
+           "9am, Mon 4 Jul 2022",
+           "9am, Mon 11 Jul 2022",
+           "9am, Mon 25 Jul 2022",
+           "9am, Mon 1 Aug 2022",
+           "9am, Mon 8 Aug 2022",
+           "9am, Mon 15 Aug 2022",
+           "9am, Mon 22 Aug 2022"
            ),
   
   link <- c(
